@@ -89,7 +89,7 @@ export default function Testimonials() {
             Explore Sample Agents
           </h2>
           <p className="text-lg text-indigo-200/65">
-            Get started with one of our pre-built AI analysts for your differet needs 
+            Get started with one of our pre-built AI analysts for your different needs 
           </p>
         </div>
 
