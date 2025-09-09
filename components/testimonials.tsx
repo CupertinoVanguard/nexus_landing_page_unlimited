@@ -36,7 +36,7 @@ const testimonials_1 = [
     // clientImg: ClientImg02,
     agent_name: "Subscription Churn Risk Analysis Agent",
     status: "Non-Recurring",
-    integration_list: ["Mixpanel"],
+    integration_list: ["Mixpanel",'Supabase'],
     summary: "Analyzes subscription-based churn patterns to identify high-risk segments.",
     content:
       "Analyzes customer churn patterns within subscription-based businesses by leveraging relational database schemas. Identifies high-risk segments, uncovers seasonal trends, and provides actionable insights to minimize attrition. Defines churn, segments customers, and pinpoints product-specific churn drivers for targeted retention strategies.",
