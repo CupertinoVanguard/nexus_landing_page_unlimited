@@ -23,20 +23,20 @@ const testimonials_1 = [
   {
     img: TestimonialImg01,
     // clientImg: ClientImg01,
-    agent_name: "High-Value Customer Churn Risk Analyst",
+    agent_name: "High-Value Customer Churn Risk Agent",
     status: "Recurring",
-    integration_list: ["Hubspot", "Supabase"],
+    integration_list: ["Amplitude"],
     summary: "Proactively monitors high-value customers to identify and prevent churn risks.",
     content:
       "Monitors high-value (Tier 1) customers to proactively identify, analyze, and alert on potential churn risks and significant behavioral shifts. Detects subtle warning signs, performs root cause analysis, and generates actionable insights to help you prevent customer attrition and retain your most valuable clients.",
-    categories: [1, 3, 5],
+    categories: [1, 5],
   },
   {
     img: TestimonialImg02,
     // clientImg: ClientImg02,
-    agent_name: "Subscription Churn Risk Analyst",
+    agent_name: "Subscription Churn Risk Analysis Agent",
     status: "Non-Recurring",
-    integration_list: ["Postgres"],
+    integration_list: ["Mixpanel"],
     summary: "Analyzes subscription-based churn patterns to identify high-risk segments.",
     content:
       "Analyzes customer churn patterns within subscription-based businesses by leveraging relational database schemas. Identifies high-risk segments, uncovers seasonal trends, and provides actionable insights to minimize attrition. Defines churn, segments customers, and pinpoints product-specific churn drivers for targeted retention strategies.",
@@ -45,9 +45,9 @@ const testimonials_1 = [
   {
     img: TestimonialImg03,
     // clientImg: ClientImg03,
-    agent_name: "Customer Churn Pattern Analyst",
+    agent_name: "Customer Churn Pattern Analysis Agent",
     status: "Non-Recurring",
-    integration_list: ["Supabase"],
+    integration_list: ["Google Analytics",'Hubspot'],
     summary: "Leverages demographic data to understand why customers leave.",
     content:
       "Identifies and analyzes customer churn patterns by leveraging demographic and transactional data. Defines churn, performs cohort analysis, and investigates behavioral trends to uncover why customers leave. Segments customers and pinpoints high-risk groups for proactive retention efforts.",
@@ -56,25 +56,47 @@ const testimonials_1 = [
   {
     img: TestimonialImg04,
     // clientImg: ClientImg04,
-    agent_name: "Customer Churn & Behavior Pattern Analyst",
+    agent_name: "Customer Behavior Pattern Agent",
     status: "Recurring",
-    integration_list: ["ClickUp", "Postgres"],
-    summary: "Analyzes behavioral patterns to identify key churn indicators.",
+    integration_list: ["Posthog",'Hubspot'],
+    summary: "Analyzes behavioral patterns of customers while using your platform.",
     content:
       "Uncovers customer churn drivers and behavioral patterns by analyzing historical data for trends, correlations, and anomalies. Segments customers, identifies key behavioral indicators, and provides actionable insights for retention strategies and targeted marketing. Pinpoints critical touchpoints to reduce attrition.",
     categories: [1, 4],
   },
   {
-    img: TestimonialImg05,
-    // clientImg: ClientImg05,
-    agent_name: "High-Value Customer Churn Analyst",
+    img: TestimonialImg04,
+    // clientImg: ClientImg04,
+    agent_name: "Feature Adoption Analysis Agent",
     status: "Recurring",
-    integration_list: ["Postgres"],
-    summary: "Detects churn risk and recommends actions for high-value customers.",
+    integration_list: ["Posthog"],
+    summary: "Analyzes how customers are interacting with your specific features.",
     content:
-      "Focuses on high-value (Tier 1) customers to proactively detect churn risk, analyze changes in purchase behavior, and deliver actionable retention insights. Flags critical anomalies, prioritizes alerts for your most valuable clients, and recommends immediate actions to maximize customer lifetime value.",
-    categories: [1, 3, 5],
+      "Uncovers customer churn drivers and behavioral patterns by analyzing historical data for trends, correlations, and anomalies. Segments customers, identifies key behavioral indicators, and provides actionable insights for retention strategies and targeted marketing. Pinpoints critical touchpoints to reduce attrition.",
+    categories: [1, 4],
   },
+  {
+    img: TestimonialImg04,
+    // clientImg: ClientImg04,
+    agent_name: "Customer Retention Analysis Agent",
+    status: "Recurring",
+    integration_list: ["Posthog",'Neon','ClickUp'],
+    summary: "Understands what features keep customers engaged with your platform.",
+    content:
+      "Uncovers customer churn drivers and behavioral patterns by analyzing historical data for trends, correlations, and anomalies. Segments customers, identifies key behavioral indicators, and provides actionable insights for retention strategies and targeted marketing. Pinpoints critical touchpoints to reduce attrition.",
+    categories: [1, 3, 4],
+  },
+  // {
+  //   img: TestimonialImg05,
+  //   // clientImg: ClientImg05,
+  //   agent_name: "High-Value Customer Churn Analyst",
+  //   status: "Recurring",
+  //   integration_list: ["Postgres"],
+  //   summary: "Detects churn risk and recommends actions for high-value customers.",
+  //   content:
+  //     "Focuses on high-value (Tier 1) customers to proactively detect churn risk, analyze changes in purchase behavior, and deliver actionable retention insights. Flags critical anomalies, prioritizes alerts for your most valuable clients, and recommends immediate actions to maximize customer lifetime value.",
+  //   categories: [1, 3, 5],
+  // },
 ];
 
 interface ModalState {
@@ -157,7 +179,7 @@ export default function Testimonials() {
                 >
                   <path d="M2.428 10c.665-1.815 1.98-3.604 3.44-4.802-.6-1.807-1.443-3.079-2.29-3.18-1.91-.227-2.246 2.04-.174 2.962a1 1 0 1 1-.813 1.827C-1.407 5.028-.589-.491 3.815.032c1.605.191 2.925 1.811 3.79 4.07.979-.427 1.937-.51 2.735-.092.818.429 1.143 1.123 1.294 2.148.015.1.022.149.043.32.542-.537 1.003-.797 1.693-.622.64.162.894.493 1.195 1.147l.018.04a1 1 0 0 1 1.133 1.61c-.46.47-1.12.574-1.744.398a1.661 1.661 0 0 1-.87-.592 2.127 2.127 0 0 1-.224-.349 3.225 3.225 0 0 1-.55.477c-.377.253-.8.368-1.259.267-.993-.218-1.21-.779-1.367-2.05-.027-.22-.033-.262-.046-.353-.067-.452-.144-.617-.244-.67-.225-.118-.665-.013-1.206.278.297 1.243.475 2.587.516 3.941H15a1 1 0 0 1 0 2H8.68l-.025.285c-.173 1.918-.906 3.381-2.654 3.668-1.5.246-3.013-.47-3.677-1.858-.29-.637-.39-1.35-.342-2.095H1a1 1 0 0 1 0-2h1.428Zm2.11 0h2.175a18.602 18.602 0 0 0-.284-2.577c-.205.202-.408.42-.606.654A9.596 9.596 0 0 0 4.537 10Zm2.135 2H3.942c-.032.465.03.888.194 1.25.258.538.89.836 1.54.73.546-.09.888-.772.988-1.875L6.673 12Z" />
                 </svg>
-                <span>Revenue Agents</span>
+                <span>Retention Agents</span>
               </button>
               {/* Button #4 */}
               <button
