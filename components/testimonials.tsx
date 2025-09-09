@@ -59,9 +59,9 @@ const testimonials_1 = [
     agent_name: "Customer Behavior Pattern Agent",
     status: "Recurring",
     integration_list: ["Posthog",'Hubspot'],
-    summary: "Analyzes behavioral patterns of customers while using your platform.",
+    summary: "Detects behavioral patterns of customers while using your platform.",
     content:
-      "Uncovers customer churn drivers and behavioral patterns by analyzing historical data for trends, correlations, and anomalies. Segments customers, identifies key behavioral indicators, and provides actionable insights for retention strategies and targeted marketing. Pinpoints critical touchpoints to reduce attrition.",
+      "Detects and interprets customer behavior trends to reveal drivers of churn and engagement. Segments customers, uncovers key behavioral indicators, and highlights actionable insights to improve retention and optimize marketing strategies. Identifies critical touchpoints to reduce attrition and enhance customer experience.",
     categories: [1, 4],
   },
   {
@@ -70,9 +70,9 @@ const testimonials_1 = [
     agent_name: "Feature Adoption Analysis Agent",
     status: "Recurring",
     integration_list: ["Posthog"],
-    summary: "Analyzes how customers are interacting with your specific features.",
+    summary: "Tracks how customers are interacting with your specific features.",
     content:
-      "Uncovers customer churn drivers and behavioral patterns by analyzing historical data for trends, correlations, and anomalies. Segments customers, identifies key behavioral indicators, and provides actionable insights for retention strategies and targeted marketing. Pinpoints critical touchpoints to reduce attrition.",
+      "Tracks how customers interact with product features to reveal adoption trends and usage patterns. Identifies underutilized features, uncovers barriers to adoption, and provides actionable insights to drive engagement, improve product design, and optimize feature rollout strategies.",
     categories: [1, 4],
   },
   {
@@ -83,7 +83,7 @@ const testimonials_1 = [
     integration_list: ["Posthog",'Neon','ClickUp'],
     summary: "Understands what features keep customers engaged with your platform.",
     content:
-      "Uncovers customer churn drivers and behavioral patterns by analyzing historical data for trends, correlations, and anomalies. Segments customers, identifies key behavioral indicators, and provides actionable insights for retention strategies and targeted marketing. Pinpoints critical touchpoints to reduce attrition.",
+      "Evaluates customer behaviors and interactions to uncover drivers of loyalty and churn. Identifies at-risk segments, highlights key retention factors, and provides actionable insights to improve engagement, strengthen relationships, and reduce attrition.",
     categories: [1, 3, 4],
   },
   // {
