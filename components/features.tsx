@@ -5,13 +5,13 @@ import FeaturesImage from "@/public/images/features.png";
 import ClickUp from "@/public/images/clickup_background_removed.png";
 import Supabase from "@/public/images/supabase_background_removed.png";
 import Snowflake from "@/public/images/snowflake.png";
-import HubSpot from "@/public/images/hubspot.png"
-import Neon from "@/public/images/neon_logo.png"
-import Tableau from "@/public/images/tableau_logo.png"
-import Amplitude from "@/public/images/amplitude.png"
-import Mixpanel from "@/public/images/mixpanel.png"
-import GoogleAnalytics from "@/public/images/google-analytics.png"
-import Posthog from "@/public/images/posthog.png"
+import HubSpot from "@/public/images/hubspot.png";
+import Neon from "@/public/images/neon_logo.png";
+import Tableau from "@/public/images/tableau_logo.png";
+import Amplitude from "@/public/images/amplitude.png";
+import Mixpanel from "@/public/images/mixpanel.png";
+import GoogleAnalytics from "@/public/images/google-analytics.png";
+import PostHog from "@/public/images/posthog.png";
 
 export default function Features() {
   return (
@@ -67,7 +67,7 @@ export default function Features() {
           </div> */}
           {/* Items */}
           <div className="mx-auto grid max-w-sm gap-12 sm:max-w-none sm:grid-cols-2 md:gap-x-14 md:gap-y-16 lg:grid-cols-3 items-center">
-            {/* New Row */}
+            {/* Row 1: Product Analytics Platforms */}
             <article>
               <Image className="rounded-t rounded-b" src={Amplitude} alt="Amplitude Logo" width={32} height={32} />
               <div className="flex flex-row justify-between">
@@ -103,7 +103,7 @@ export default function Features() {
             </article>
             <article>
               {/* <Image className="rounded-t rounded-b" src={Tableau} alt="Tableau Logo" width={32} height={32} /> */}
-              <Image className="rounded-t rounded-b" src={Posthog} alt="Posthog Logo" width={32} height={32} />
+              <Image className="rounded-t rounded-b" src={PostHog} alt="Posthog Logo" width={32} height={32} />
               <div className="flex flex-row justify-between">
                 <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
                   Posthog
@@ -119,31 +119,15 @@ export default function Features() {
             </article>
             {/* Original Articles */}
             <article>
-              {/* <svg
-                className="mb-3 fill-indigo-500"
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-              >
-                <path d="M0 0h14v17H0V0Zm2 2v13h10V2H2Z" />
-                <path
-                  fillOpacity=".48"
-                  d="m16.295 5.393 7.528 2.034-4.436 16.412L5.87 20.185l.522-1.93 11.585 3.132 3.392-12.55-5.597-1.514.522-1.93Z"
-                />
-              </svg> */}
               <Image className="rounded-t rounded-b" src={HubSpot} alt="HubSpot Logo" width={32} height={32} />
               <div className="flex flex-row justify-between">
                 <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
-                  Hubspot
+                  HubSpot
                 </h3>
                 <p className="text-indigo-200">
                   CRM
                 </p>
               </div>
-              {/* <p className="text-indigo-200/65">
-                Track progress across custom flows for your team. Find the right
-                balance for the user, privacy and security.
-              </p> */}
             </article>
             <article>
               <Image className="rounded-t rounded-b" src={ClickUp} alt="ClickUp Logo" width={32} height={32} />
@@ -170,13 +154,6 @@ export default function Features() {
                   Database
                 </p>
               </div>
-              {/* <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
-                Team Views
-              </h3> */}
-              {/* <p className="text-indigo-200/65">
-                Track progress across custom flows for your team. Find the right
-                balance for the user, privacy and security.
-              </p> */}
             </article>
             <article>
               <Image className="rounded-t rounded-b" src={Neon} alt="Neon Logo" width={32} height={32} />
@@ -199,16 +176,12 @@ export default function Features() {
               <Image className="rounded-t rounded-b" src={Snowflake} alt="Snowflake Logo" width={32} height={32} />
               <div className="flex flex-row justify-between">
                 <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
-                  SnowFlake (Coming Soon)
+                  Snowflake
                 </h3>
                 <p className="text-indigo-200">
                   Database
                 </p>
               </div>
-              {/* <p className="text-indigo-200/65">
-                Track progress across custom flows for your team. Find the right
-                balance for the user, privacy and security.
-              </p> */}
             </article>
           </div>
         </div>

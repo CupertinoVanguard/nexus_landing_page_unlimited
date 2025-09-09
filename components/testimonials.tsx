@@ -243,7 +243,7 @@ export default function Testimonials() {
           onClick={() => setModal({ isOpen: false, testimonial: null })}
         ></div>
         {modal.testimonial && (
-          <div className={`relative max-h-[90vh] w-full px-10 item-center justify-center max-w-2xl overflow-auto rounded-2xl bg-linear-to-br from-gray-900/50 via-gray-800/25 to-gray-900/50 p-6 backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] transition-all duration-300 ${modal.isOpen ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-95 opacity-0'}`}>
+          <div className={`relative max-h-[90vh] items-center justify-center px-10 w-full max-w-2xl overflow-auto rounded-2xl bg-linear-to-br from-gray-900/50 via-gray-800/25 to-gray-900/50 p-6 backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] transition-all duration-300 ${modal.isOpen ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-95 opacity-0'}`}>
             <div className="flex justify-end mb-2">
               <button
                 className="rounded-full p-2 text-gray-400 hover:text-gray-200 hover:bg-gray-800/50 transition-colors"
