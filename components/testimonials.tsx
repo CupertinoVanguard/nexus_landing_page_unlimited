@@ -221,7 +221,7 @@ export default function Testimonials() {
           onClick={() => setModal({ isOpen: false, testimonial: null })}
         ></div>
         {modal.testimonial && (
-          <div className={`relative max-h-[90vh] w-full max-w-2xl overflow-auto rounded-2xl bg-linear-to-br from-gray-900/50 via-gray-800/25 to-gray-900/50 p-6 backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] transition-all duration-300 ${modal.isOpen ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-95 opacity-0'}`}>
+          <div className={`relative max-h-[90vh] w-full px-10 item-center justify-center max-w-2xl overflow-auto rounded-2xl bg-linear-to-br from-gray-900/50 via-gray-800/25 to-gray-900/50 p-6 backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] transition-all duration-300 ${modal.isOpen ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-95 opacity-0'}`}>
             <div className="flex justify-end mb-2">
               <button
                 className="rounded-full p-2 text-gray-400 hover:text-gray-200 hover:bg-gray-800/50 transition-colors"
@@ -231,7 +231,7 @@ export default function Testimonials() {
               </button>
             </div>
             
-            <div className="mb-6 aspect-[16/9] w-full overflow-hidden rounded-xl bg-gray-700/50">
+            {/* <div className="mb-6 aspect-[16/9] w-full overflow-hidden rounded-xl bg-gray-700/50">
               <Image
                 src={modal.testimonial.img}
                 alt={modal.testimonial.agent_name}
@@ -239,7 +239,7 @@ export default function Testimonials() {
                 width={1200}
                 height={675}
               />
-            </div>
+            </div> */}
             
             <h3 className="mb-4 animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text font-nacelle text-2xl font-semibold text-transparent md:text-3xl">
               {modal.testimonial.agent_name}
@@ -280,7 +280,7 @@ export function Testimonial({
       className={`relative rounded-2xl bg-linear-to-br from-gray-900/50 via-gray-800/25 to-gray-900/50 p-5 backdrop-blur-xs transition-opacity before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] ${!testimonial.categories.includes(category) ? "opacity-30" : ""}`}
     >
       <div className="flex flex-col gap-2">
-        <div className="mb-4 aspect-[16/9] w-full overflow-hidden rounded-xl bg-gray-700/50">
+        {/* <div className="mb-4 aspect-[16/9] w-full overflow-hidden rounded-xl bg-gray-700/50">
           <Image
             src={testimonial.img}
             alt={testimonial.agent_name}
@@ -288,7 +288,7 @@ export function Testimonial({
             width={800}
             height={450}
           />
-        </div>
+        </div> */}
         <h4 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle font-semibold text-transparent text-2xl md:text-2xl">
           {testimonial.agent_name}
         </h4>
@@ -323,7 +323,7 @@ export function Testimonial({
 
         <div className="flex justify-center w-full mt-6">
           <button
-            className="mx-auto px-8 py-2 flex items-center justify-center rounded-md border border-gray-700/50 bg-blue-800/65 text-gray-200 hover:bg-blue-700/65 transition-colors"
+            className="mx-auto px-8 py-2 flex w-full items-center justify-center rounded-xl border border-gray-700/50 bg-blue-800/65 text-gray-200 hover:bg-blue-700/65 transition-colors"
             aria-label="Use agent now"
           >
             Use Agent Now
