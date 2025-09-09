@@ -57,7 +57,7 @@ export default function HeroHome() {
             thumbWidth={1104}
             thumbHeight={576}
             thumbAlt="Modal video thumbnail"
-            video="videos//NexusYCDemoAug4.mp4"
+            video="https://nexus-software-access.s3.us-east-2.amazonaws.com/ImprovedNexusDemo.mp4"
             videoWidth={1920}
             videoHeight={1080}
           />
