@@ -5,7 +5,7 @@ import { CalendarIcon } from "lucide-react";
 export default function Cta() {
   return (
     <section className="relative overflow-hidden">
-      <div
+      {/* <div
         className="pointer-events-none absolute bottom-0 left-1/2 -z-10 -mb-24 ml-20 -translate-x-1/2"
         aria-hidden="true"
       >
@@ -16,7 +16,7 @@ export default function Cta() {
           height={668}
           alt="Blurred shape"
         />
-      </div>
+      </div> */}
       <div className="max-w6xl mx-auto px-4 sm:px-6">
         <div className="bg-linear-to-r from-transparent via-gray-800/50 py-12 md:py-20">
           <div className="mx-auto max-w-3xl text-center rounded-xl bg-gradient-to-tr from-blue-500 via-transparent to-blue-300 p-10 shadow-md shadow-gray-800">

@@ -13,7 +13,7 @@ import Cta from "@/components/cta";
 export default function Home() {
   return (
     <>
-      <PageIllustration />
+      {/* <PageIllustration /> */}
       <Hero />
       <Testimonials />
       <Workflows />

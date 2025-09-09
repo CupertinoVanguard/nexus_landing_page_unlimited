@@ -31,7 +31,7 @@ export default function ModalVideo({
   return (
     <div className="relative">
       {/* Secondary illustration */}
-      <div
+      {/* <div
         className="pointer-events-none absolute bottom-8 left-1/2 -z-10 -ml-28 -translate-x-1/2 translate-y-1/2"
         aria-hidden="true"
       >
@@ -42,7 +42,7 @@ export default function ModalVideo({
           height={1012}
           alt="Secondary illustration"
         />
-      </div>
+      </div> */}
 
       {/* Video replaces thumbnail, autoplaying */}
       <div
