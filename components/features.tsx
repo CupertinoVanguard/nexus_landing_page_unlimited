@@ -8,7 +8,10 @@ import Snowflake from "@/public/images/snowflake.png";
 import HubSpot from "@/public/images/hubspot.png"
 import Neon from "@/public/images/neon_logo.png"
 import Tableau from "@/public/images/tableau_logo.png"
-
+import Amplitude from "@/public/images/amplitude.png"
+import Mixpanel from "@/public/images/mixpanel.png"
+import GoogleAnalytics from "@/public/images/google-analytics.png"
+import Posthog from "@/public/images/posthog.png"
 
 export default function Features() {
   return (
@@ -64,6 +67,42 @@ export default function Features() {
           </div> */}
           {/* Items */}
           <div className="mx-auto grid max-w-sm gap-12 sm:max-w-none sm:grid-cols-2 md:gap-x-14 md:gap-y-16 lg:grid-cols-3 items-center">
+            {/* New Row */}
+            <article>
+              <Image className="rounded-t rounded-b" src={Amplitude} alt="Amplitude Logo" width={32} height={32} />
+              <div className="flex flex-row justify-between">
+                <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
+                  Amplitude
+                </h3>
+                <p className="text-indigo-200">
+                  Product Analytics
+                </p>
+              </div>
+            </article>
+            <article>
+              <Image className="rounded-t rounded-b" src={Mixpanel} alt="Mixpanel Logo" width={32} height={32} />
+              <div className="flex flex-row justify-between">
+                <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
+                  Mixpanel
+                </h3>
+                <p className="text-indigo-200">
+                  Product Analytics
+                </p>
+              </div>
+            </article>
+            <article>
+              <Image className="rounded-t rounded-b" src={GoogleAnalytics} alt="Google Analytics Logo" width={32} height={32} />
+              <div className="flex flex-row justify-between">
+                <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
+                  Google Analytics
+                </h3>
+                <p className="text-indigo-200">
+                  Product Analytics
+                </p>
+              </div>
+            </article>
+
+            {/* Original Articles */}
             <article>
               {/* <svg
                 className="mb-3 fill-indigo-500"
@@ -140,13 +179,14 @@ export default function Features() {
               </p> */}
             </article>
             <article>
-              <Image className="rounded-t rounded-b" src={Tableau} alt="Tableau Logo" width={32} height={32} />
+              {/* <Image className="rounded-t rounded-b" src={Tableau} alt="Tableau Logo" width={32} height={32} /> */}
+              <Image className="rounded-t rounded-b" src={Posthog} alt="Posthog Logo" width={32} height={32} />
               <div className="flex flex-row justify-between">
                 <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
-                  Tableau (Coming Soon)
+                  Posthog
                 </h3>
                 <p className="text-indigo-200">
-                  BI Tool
+                  Product Analytics
                 </p>
               </div>
               {/* <p className="text-indigo-200/65">

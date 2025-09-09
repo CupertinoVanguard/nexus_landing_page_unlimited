@@ -3,15 +3,11 @@
 import { useState } from "react";
 import useMasonry from "@/utils/useMasonry";
 import Image, { StaticImageData } from "next/image";
-import TestimonialImg01 from "@/public/images/testimonial-01.jpg";
-import TestimonialImg02 from "@/public/images/testimonial-02.jpg";
-import TestimonialImg03 from "@/public/images/testimonial-03.jpg";
-import TestimonialImg04 from "@/public/images/testimonial-04.jpg";
-import TestimonialImg05 from "@/public/images/testimonial-05.jpg";
-import TestimonialImg06 from "@/public/images/testimonial-06.jpg";
-import TestimonialImg07 from "@/public/images/testimonial-07.jpg";
-import TestimonialImg08 from "@/public/images/testimonial-08.jpg";
-import TestimonialImg09 from "@/public/images/testimonial-09.jpg";
+import TestimonialImg01 from "@/public/images/recurring_and_proactive.png";
+import TestimonialImg02 from "@/public/images/workflow-01.png";
+import TestimonialImg03 from "@/public/images/workflow-02.png";
+import TestimonialImg04 from "@/public/images/workflow-03.png";
+import TestimonialImg05 from "@/public/images/features.png";
 import ClientImg01 from "@/public/images/client-logo-01.svg";
 import ClientImg02 from "@/public/images/client-logo-02.svg";
 import ClientImg03 from "@/public/images/client-logo-03.svg";
@@ -21,7 +17,7 @@ import ClientImg06 from "@/public/images/client-logo-06.svg";
 import ClientImg07 from "@/public/images/client-logo-07.svg";
 import ClientImg08 from "@/public/images/client-logo-08.svg";
 import ClientImg09 from "@/public/images/client-logo-09.svg";
-import { Rocket } from "lucide-react";
+import { Plus, X } from "lucide-react";
 
 const testimonials_1 = [
   {
@@ -30,6 +26,7 @@ const testimonials_1 = [
     agent_name: "High-Value Customer Churn Risk Analyst",
     status: "Recurring",
     integration_list: ["Hubspot", "Supabase"],
+    summary: "Proactively monitors high-value customers to identify and prevent churn risks.",
     content:
       "Monitors high-value (Tier 1) customers to proactively identify, analyze, and alert on potential churn risks and significant behavioral shifts. Detects subtle warning signs, performs root cause analysis, and generates actionable insights to help you prevent customer attrition and retain your most valuable clients.",
     categories: [1, 3, 5],
@@ -40,6 +37,7 @@ const testimonials_1 = [
     agent_name: "Subscription Churn Risk Analyst",
     status: "Non-Recurring",
     integration_list: ["Postgres"],
+    summary: "Analyzes subscription-based churn patterns to identify high-risk segments.",
     content:
       "Analyzes customer churn patterns within subscription-based businesses by leveraging relational database schemas. Identifies high-risk segments, uncovers seasonal trends, and provides actionable insights to minimize attrition. Defines churn, segments customers, and pinpoints product-specific churn drivers for targeted retention strategies.",
     categories: [1, 2, 4],
@@ -50,6 +48,7 @@ const testimonials_1 = [
     agent_name: "Customer Churn Pattern Analyst",
     status: "Non-Recurring",
     integration_list: ["Supabase"],
+    summary: "Leverages demographic data to understand why customers leave.",
     content:
       "Identifies and analyzes customer churn patterns by leveraging demographic and transactional data. Defines churn, performs cohort analysis, and investigates behavioral trends to uncover why customers leave. Segments customers and pinpoints high-risk groups for proactive retention efforts.",
     categories: [1, 2, 5],
@@ -60,6 +59,7 @@ const testimonials_1 = [
     agent_name: "Customer Churn & Behavior Pattern Analyst",
     status: "Recurring",
     integration_list: ["ClickUp", "Postgres"],
+    summary: "Analyzes behavioral patterns to identify key churn indicators.",
     content:
       "Uncovers customer churn drivers and behavioral patterns by analyzing historical data for trends, correlations, and anomalies. Segments customers, identifies key behavioral indicators, and provides actionable insights for retention strategies and targeted marketing. Pinpoints critical touchpoints to reduce attrition.",
     categories: [1, 4],
@@ -70,15 +70,29 @@ const testimonials_1 = [
     agent_name: "High-Value Customer Churn Analyst",
     status: "Recurring",
     integration_list: ["Postgres"],
+    summary: "Detects churn risk and recommends actions for high-value customers.",
     content:
       "Focuses on high-value (Tier 1) customers to proactively detect churn risk, analyze changes in purchase behavior, and deliver actionable retention insights. Flags critical anomalies, prioritizes alerts for your most valuable clients, and recommends immediate actions to maximize customer lifetime value.",
     categories: [1, 3, 5],
   },
 ];
 
+interface ModalState {
+  isOpen: boolean;
+  testimonial: {
+    img: StaticImageData;
+    agent_name: string;
+    content: string;
+  } | null;
+}
+
 export default function Testimonials() {
   const masonryContainer = useMasonry();
   const [category, setCategory] = useState<number>(1);
+  const [modal, setModal] = useState<ModalState>({
+    isOpen: false,
+    testimonial: null,
+  });
 
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -187,13 +201,55 @@ export default function Testimonials() {
           >
             {testimonials_1.map((testimonial, index) => (
               <div key={index} className="group">
-                <Testimonial testimonial={testimonial} category={category}>
+                <Testimonial 
+                  testimonial={testimonial} 
+                  category={category}
+                  onExpand={(t) => setModal({ isOpen: true, testimonial: t })}
+                >
                   {testimonial.content}
                 </Testimonial>
               </div>
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Modal */}
+      <div className={`fixed inset-0 z-50 flex items-center justify-center px-4 sm:px-6 transition-opacity duration-300 ${modal.isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div 
+          className={`fixed inset-0 bg-gray-900/75 backdrop-blur-sm transition-opacity duration-300 ${modal.isOpen ? 'opacity-100' : 'opacity-0'}`}
+          onClick={() => setModal({ isOpen: false, testimonial: null })}
+        ></div>
+        {modal.testimonial && (
+          <div className={`relative max-h-[90vh] w-full max-w-2xl overflow-auto rounded-2xl bg-linear-to-br from-gray-900/50 via-gray-800/25 to-gray-900/50 p-6 backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] transition-all duration-300 ${modal.isOpen ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-95 opacity-0'}`}>
+            <div className="flex justify-end mb-2">
+              <button
+                className="rounded-full p-2 text-gray-400 hover:text-gray-200 hover:bg-gray-800/50 transition-colors"
+                onClick={() => setModal({ isOpen: false, testimonial: null })}
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            
+            <div className="mb-6 aspect-[16/9] w-full overflow-hidden rounded-xl bg-gray-700/50">
+              <Image
+                src={modal.testimonial.img}
+                alt={modal.testimonial.agent_name}
+                className="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
+                width={1200}
+                height={675}
+              />
+            </div>
+            
+            <h3 className="mb-4 animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text font-nacelle text-2xl font-semibold text-transparent md:text-3xl">
+              {modal.testimonial.agent_name}
+            </h3>
+            
+            <p className="text-base text-gray-200/80 leading-relaxed">
+              {modal.testimonial.content}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -203,68 +259,75 @@ export function Testimonial({
   testimonial,
   category,
   children,
+  onExpand,
 }: {
   testimonial: {
     img: StaticImageData;
     // clientImg: StaticImageData;
-    agent_name: string
+    agent_name: string;
     status: string;
     integration_list: string[];
+    summary: string;
     content: string;
     categories: number[];
   };
   category: number;
   children: React.ReactNode;
+  onExpand: (testimonial: { img: StaticImageData; agent_name: string; content: string }) => void;
 }) {
   return (
     <article
       className={`relative rounded-2xl bg-linear-to-br from-gray-900/50 via-gray-800/25 to-gray-900/50 p-5 backdrop-blur-xs transition-opacity before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] ${!testimonial.categories.includes(category) ? "opacity-30" : ""}`}
     >
       <div className="flex flex-col gap-2">
-        {/* <div>
-          <Image src={testimonial.clientImg} height={36} alt="Client logo" />
-        </div> */}
+        <div className="mb-4 aspect-[16/9] w-full overflow-hidden rounded-xl bg-gray-700/50">
+          <Image
+            src={testimonial.img}
+            alt={testimonial.agent_name}
+            className="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
+            width={800}
+            height={450}
+          />
+        </div>
         <h4 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle font-semibold text-transparent text-2xl md:text-2xl">
           {testimonial.agent_name}
         </h4>
-        <p className="text-indigo-200/65 break-words line-clamp-6">
-          {children}
+        <p className="text-indigo-200/65 break-words">
+          {testimonial.summary}
         </p>
         <div className="flex items-center gap-3">
-          {/* <Image
-            className="inline-flex shrink-0 rounded-full"
-            src={testimonial.img}
-            width={36}
-            height={36}
-            alt={testimonial.name}
-          /> */}
-          <div className="text-sm font-medium text-gray-200">
-            <span className="flex flex-row flex-wrap gap-1">
-              {testimonial.integration_list.map((integration, index) => (
-                <span key={index} className="transition-colors hover:text-indigo-500 flex flex-row items-center gap-1 font-bold">
-                  {integration}
-                  {index < testimonial.integration_list.length - 1 && (
-                    <span className="text-gray-500">·</span>
-                  )}
+          <div className="text-sm font-medium text-gray-200 w-full">
+            <div className="flex flex-col gap-3 mt-4">
+              <div className="flex justify-between items-center">
+                <span className="flex flex-row flex-wrap gap-1 pr-4">
+                  {testimonial.integration_list.map((integration, index) => (
+                    <span key={index} className="transition-colors hover:text-indigo-500 flex flex-row items-center gap-1 font-bold">
+                      {integration}
+                      {index < testimonial.integration_list.length - 1 && (
+                        <span className="text-gray-500">·</span>
+                      )}
+                    </span>
+                  ))}
                 </span>
-              ))}
-            </span>
-            <span className="text-indigo-200/65">{testimonial.status}</span>
-            <div
-                className="absolute right-6 bottom-6 py-1 px-2 flex items-center justify-center rounded-t-md rounded-b-md border border-gray-700/50 bg-blue-800/65 cursor-pointer text-gray-200 opacity-100 transition-opacity group-hover/card:opacity-100"
-                aria-hidden="true"
-              >
-                Use Agent Now
+                <button
+                  className="h-7 w-7 flex items-center justify-center rounded-full border border-gray-700/50 bg-gray-800/65 text-gray-200 hover:bg-gray-700/65 transition-colors flex-shrink-0"
+                  onClick={() => onExpand({ img: testimonial.img, agent_name: testimonial.agent_name, content: testimonial.content })}
+                  aria-label="View full testimonial"
+                >
+                  <Plus className="h-3.5 w-3.5" />
+                </button>
               </div>
-            
-            {/* <span className="text-indigo-200/65 transition-colors hover:text-indigo-500">{testimonial.company}</span> */}
-            {/* <a
-              className="text-indigo-200/65 transition-colors hover:text-indigo-500"
-              href="#0"
-            >
-              {testimonial.company}
-            </a> */}
+            </div>
           </div>
+        </div>
+
+        <div className="flex justify-center w-full mt-6">
+          <button
+            className="mx-auto px-8 py-2 flex items-center justify-center rounded-md border border-gray-700/50 bg-blue-800/65 text-gray-200 hover:bg-blue-700/65 transition-colors"
+            aria-label="Use agent now"
+          >
+            Use Agent Now
+          </button>
         </div>
       </div>
     </article>
