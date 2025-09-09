@@ -11,10 +11,10 @@ export default function HeroHome() {
           {/* Section header */}
           <div className="pb-12 md:pb-20">
             <h1 
-              className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-3xl font-semibold text-transparent md:text-5xl"
+              className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-blue-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-3xl font-semibold text-transparent md:text-5xl"
               data-aos="fade-up"
             >
-              AI agents that help you make product decisions faster
+              AI agents that help you make faster product decisions
               {/*Have to change this title*/}
             </h1>
             <div className="max-w-3xl">
@@ -23,16 +23,16 @@ export default function HeroHome() {
                 data-aos="fade-up"
                 data-aos-delay={200}
               >
-                Launch specialized AI agents that handle and automate understanding how your platform and latest features are performing with your customers.
+                Launch specialized AI agents that understand how your platform and latest features are performing with customers.
               </p>
-              <div className="max-w-xs sm:flex sm:max-w-none">
+              <div className="max-w-xs sm:flex sm:max-w-none xs:items-center">
                 <div data-aos="fade-up" data-aos-delay={400}>
                   <a
                     className="btn group mb-4 px-4 py-2 w-full bg-linear-to-t from-blue-400 to-blue-800 bg-[length:100%_100%] bg-[bottom] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
                     href="https://nexus-ba-platform.vercel.app/"
                   >
                     <span className="relative inline-flex items-center">
-                      Start Building?
+                      Start Building
                     </span>
                   </a>
                 </div>

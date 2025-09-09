@@ -26,7 +26,7 @@ export default function Header() {
             <li>
               <Link
                 href="https://calendly.com/nikilpillai2002/30min?month=2025-08"
-                className="btn-sm bg-linear-to-t from-blue-600 to-blue-800 bg-[length:100%_100%] bg-[bottom] py-[5px] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%]"
+                className="btn-sm bg-linear-to-t from-blue-400 to-blue-800 bg-[length:100%_100%] bg-[bottom] py-[5px] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%]"
               >
                 Schedule Demo
               </Link>

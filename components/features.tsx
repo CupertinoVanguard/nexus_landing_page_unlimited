@@ -50,10 +50,10 @@ export default function Features() {
               </span>
             </div>
             <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
-              Integrate Your Business Tools
+              Integrate Your Tools
             </h2>
             <p className="text-lg text-indigo-200/65">
-              Nexus agents seamlessly connect with your business tools to manage, monitor, and analyze them autonomously.
+              Nexus agents seamlessly connect with your product analytics tools and more to manage, monitor, and analyze them autonomously.
             </p>
           </div>
           {/* <div className="flex justify-center pb-4 md:pb-12" data-aos="fade-up">
@@ -101,7 +101,22 @@ export default function Features() {
                 </p>
               </div>
             </article>
-
+            <article>
+              {/* <Image className="rounded-t rounded-b" src={Tableau} alt="Tableau Logo" width={32} height={32} /> */}
+              <Image className="rounded-t rounded-b" src={Posthog} alt="Posthog Logo" width={32} height={32} />
+              <div className="flex flex-row justify-between">
+                <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
+                  Posthog
+                </h3>
+                <p className="text-indigo-200">
+                  Product Analytics
+                </p>
+              </div>
+              {/* <p className="text-indigo-200/65">
+                Track progress across custom flows for your team. Find the right
+                balance for the user, privacy and security.
+              </p> */}
+            </article>
             {/* Original Articles */}
             <article>
               {/* <svg
@@ -120,6 +135,21 @@ export default function Features() {
               <div className="flex flex-row justify-between">
                 <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
                   Hubspot
+                </h3>
+                <p className="text-indigo-200">
+                  CRM
+                </p>
+              </div>
+              {/* <p className="text-indigo-200/65">
+                Track progress across custom flows for your team. Find the right
+                balance for the user, privacy and security.
+              </p> */}
+            </article>
+            <article>
+              <Image className="rounded-t rounded-b" src={ClickUp} alt="ClickUp Logo" width={32} height={32} />
+              <div className="flex flex-row justify-between">
+                <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
+                  ClickUp
                 </h3>
                 <p className="text-indigo-200">
                   CRM
@@ -163,37 +193,8 @@ export default function Features() {
                 balance for the user, privacy and security.
               </p> */}
             </article>
-            <article>
-              <Image className="rounded-t rounded-b" src={ClickUp} alt="ClickUp Logo" width={32} height={32} />
-              <div className="flex flex-row justify-between">
-                <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
-                  ClickUp
-                </h3>
-                <p className="text-indigo-200">
-                  CRM
-                </p>
-              </div>
-              {/* <p className="text-indigo-200/65">
-                Track progress across custom flows for your team. Find the right
-                balance for the user, privacy and security.
-              </p> */}
-            </article>
-            <article>
-              {/* <Image className="rounded-t rounded-b" src={Tableau} alt="Tableau Logo" width={32} height={32} /> */}
-              <Image className="rounded-t rounded-b" src={Posthog} alt="Posthog Logo" width={32} height={32} />
-              <div className="flex flex-row justify-between">
-                <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
-                  Posthog
-                </h3>
-                <p className="text-indigo-200">
-                  Product Analytics
-                </p>
-              </div>
-              {/* <p className="text-indigo-200/65">
-                Track progress across custom flows for your team. Find the right
-                balance for the user, privacy and security.
-              </p> */}
-            </article>
+            
+            
             <article>
               <Image className="rounded-t rounded-b" src={Snowflake} alt="Snowflake Logo" width={32} height={32} />
               <div className="flex flex-row justify-between">

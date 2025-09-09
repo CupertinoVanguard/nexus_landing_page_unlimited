@@ -102,8 +102,8 @@ export default function Testimonials() {
           <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
             Explore Sample Agents
           </h2>
-          <p className="text-lg text-indigo-200/65">
-            Get started with one of our pre-built AI analysts for your different needs 
+          <p className="text-lg text-indigo-200/65"> 
+            Get started with one of our pre-built agents for different tasks 
           </p>
         </div>
 
@@ -118,7 +118,7 @@ export default function Testimonials() {
                 onClick={() => setCategory(1)}
               >
                 <svg
-                  className={`fill-current ${category === 1 ? "text-indigo-500" : "text-gray-600"}`}
+                  className={`fill-current ${category === 1 ? "text-blue-500" : "text-gray-600"}`}
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height={16}
@@ -134,7 +134,7 @@ export default function Testimonials() {
                 onClick={() => setCategory(2)}
               >
                 <svg
-                  className={`fill-current ${category === 2 ? "text-indigo-500" : "text-gray-600"}`}
+                  className={`fill-current ${category === 2 ? "text-blue-500" : "text-gray-600"}`}
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height={16}
@@ -150,7 +150,7 @@ export default function Testimonials() {
                 onClick={() => setCategory(3)}
               >
                 <svg
-                  className={`fill-current ${category === 3 ? "text-indigo-500" : "text-gray-600"}`}
+                  className={`fill-current ${category === 3 ? "text-blue-500" : "text-gray-600"}`}
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height={16}
@@ -166,7 +166,7 @@ export default function Testimonials() {
                 onClick={() => setCategory(4)}
               >
                 <svg
-                  className={`fill-current ${category === 4 ? "text-indigo-500" : "text-gray-600"}`}
+                  className={`fill-current ${category === 4 ? "text-blue-500" : "text-gray-600"}`}
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height={16}
@@ -178,10 +178,10 @@ export default function Testimonials() {
               {/* Button #5 */}
               <a href="https://nexus-ba-platform.vercel.app/" className="cursor-pointer flex items-center h-8">
                 <button
-                  className={`flex h-8 flex-1 items-center gap-2.5 whitespace-nowrap rounded-full px-3 text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-indigo-200 ${category === 5 ? "relative bg-linear-to-b from-gray-900 via-gray-800/60 to-gray-900 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-indigo-500/0),--theme(--color-indigo-500/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]" : "opacity-65 transition-opacity hover:opacity-90"}`}
+                  className={`flex h-8 flex-1 items-center hover:cursor-pointer gap-2.5 whitespace-nowrap rounded-full px-3 text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-indigo-200 ${category === 5 ? "relative bg-linear-to-b from-gray-900 via-gray-800/60 to-gray-900 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-indigo-500/0),--theme(--color-indigo-500/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]" : "opacity-65 transition-opacity hover:opacity-90"}`}
                 >
                   <svg
-                    className={`fill-current ${category === 5 ? "text-indigo-500" : "text-gray-600"}`}
+                    className={`fill-current ${category === 5 ? "text-blue-500" : "text-gray-600"}`}
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height={16}
@@ -310,7 +310,7 @@ export function Testimonial({
                   ))}
                 </span>
                 <button
-                  className="h-7 w-7 flex items-center justify-center rounded-full border border-gray-700/50 bg-gray-800/65 text-gray-200 hover:bg-gray-700/65 transition-colors flex-shrink-0"
+                  className="h-7 w-7 flex items-center justify-center rounded-full border border-gray-700/50 bg-gray-800/65 text-gray-200 hover:bg-gray-700/65 transition-colors flex-shrink-0 hover:cursor-pointer"
                   onClick={() => onExpand({ img: testimonial.img, agent_name: testimonial.agent_name, content: testimonial.content })}
                   aria-label="View full testimonial"
                 >
@@ -323,7 +323,7 @@ export function Testimonial({
 
         <div className="flex justify-center w-full mt-6">
           <button
-            className="mx-auto px-8 py-2 flex w-full items-center justify-center rounded-xl border border-gray-700/50 bg-blue-800/65 text-gray-200 hover:bg-blue-700/65 transition-colors"
+            className="mx-auto px-8 py-2 bg-linear-to-t font-nacelle font-semibold from-blue-400 to-blue-800 bg-[length:100%_100%] bg-[bottom] flex w-full items-center justify-center rounded-xl border border-gray-700/50 bg-blue-800/65 text-gray-200 hover:bg-blue-700/65 transition-colors hover:cursor-pointer"
             aria-label="Use agent now"
           >
             Use Agent Now
