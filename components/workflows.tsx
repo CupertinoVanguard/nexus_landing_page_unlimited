@@ -4,7 +4,7 @@ import WorflowImg02 from "@/public/images/workflow-02.png";
 import WorflowImg03 from "@/public/images/workflow-03.png";
 import QuickTimeDeployment from "@/public/images/quicktimedeployment.png";
 import RecurringAndProactive from "@/public/images/recurring_and_proactive.png";
-import CheckInAnytime from "@/public/images/tapinnexus.png"
+import CheckInAnytime from "@/public/images/tapinnexus_resized.png"
 import Spotlight from "@/components/spotlight";
 
 export default function Workflows() {
