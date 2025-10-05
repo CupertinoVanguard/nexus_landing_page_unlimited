@@ -1,6 +1,8 @@
 import VideoThumb from "@/public/images/hero-image-01.jpg";
 import ModalVideo from "@/components/modal-video";
 import NexusThumbnail from "@/public/images/nexus_thumbnail.png"
+import FlowGraphic from "@/components/flow-graphic";
+ 
 
 export default function HeroHome() {
   return (
@@ -9,14 +11,14 @@ export default function HeroHome() {
         {/* Hero content */}
         <div className="py-12 md:py-20">
           {/* Section header */}
-          <div className="mt-16 md:mt-28 pb-12 md:pb-20">
+          <div className="mt-6 md:mt-10 pb-6 md:pb-12">
             <div className="flex justify-center mb-4">
               <a
                 href="#"
                 className="inline-flex items-center rounded-full border border-white/30 px-4 py-1.5 text-sm text-white transition-colors hover:bg-white/10"
                 style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
               >
-                new: try session replay agent
+                New: Session Replay Agent
               </a>
             </div>
             <h1 
@@ -24,7 +26,7 @@ export default function HeroHome() {
               data-aos="fade-up"
             >
                {/* AI agents that help you make faster product decisions */}
-               ETL, AI/ML Ops, Data Orchestration.
+               Your station for product orchestration. 
               {/*Have to change this title*/}
             </h1>
             <div className="max-w-3xl mx-auto">
@@ -34,21 +36,21 @@ export default function HeroHome() {
                 data-aos-delay={200}
               >
                 {/* Launch specialized AI agents that understand how your platform and latest features are performing with customers. */}
-                Have your product tasks always running. 
+                Always running. 
                 {/* Orchestrating product tasks made simple. */}
               </p>
-              <div className="flex justify-center mt-16 md:mt-28">
+              <div className="flex justify-center mt-2 md:mt-4">
                 <div data-aos="fade-up" data-aos-delay={400}>
                   <a
-                    className="btn group px-10 py-5 text-2xl md:text-3xl font-semibold rounded-2xl bg-linear-to-t from-blue-400 to-blue-800 bg-[length:100%_100%] bg-[bottom] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%]"
-                    href="#"
+                    className="btn-sm py-[5px] bg-white text-black hover:bg-gray-100"
+                    style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
+                    href="https://cal.com/nexus-ai-sf"
                   >
-                    <span className="relative inline-flex items-center">
-                      Launch
-                    </span>
+                    Book a Demo
                   </a>
                 </div>
               </div>
+              <FlowGraphic />
             </div>
           </div>
 

@@ -9,19 +9,32 @@ import Workflows from "@/components/workflows";
 import Features from "@/components/features";
 import Testimonials from "@/components/testimonials";
 import Cta from "@/components/cta";
-import DataEngPromo from "@/components/data-eng-promo";
 import Principles from "@/components/principles";
 import FeaturesGrid from "@/components/features-grid";
+// import FeatureCards from "@/components/feature-cards";
+import WorkforcePromo from "@/components/workforce-promo";
+import KnowledgeBasePromo from "@/components/knowledge-base-promo";
+import ConstantlyLearningPromo from "@/components/constantly-learning-promo";
+import HowItWorks from "@/components/how-it-works";
+import IntegrationsTicker from "@/components/integrations-ticker";
+import Faq from "@/components/faq";
+import AgentTaskforce from "@/components/agent-taskforce";
 
 export default function Home() {
   return (
     <>
       {/* <PageIllustration /> */}
       <Hero />
-      <DataEngPromo />
+      <WorkforcePromo />
+      <KnowledgeBasePromo />
+      <ConstantlyLearningPromo />
       <Principles />
+      <AgentTaskforce />
       <FeaturesGrid />
+      <IntegrationsTicker />
       <Features />
+      <HowItWorks />
+      <Faq />
       {/* <Testimonials /> */}
       {/* <Workflows /> */}
       {/* <Cta /> */}

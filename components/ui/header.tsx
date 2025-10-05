@@ -26,11 +26,11 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://calendly.com/nikilpillai2002/30min?month=2025-08"
+                href="https://cal.com/nexus-ai-sf"
                 className="btn-sm py-[5px] bg-white text-black hover:bg-gray-100"
                 style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
               >
-                Schedule Demo
+                Book a Demo
               </Link>
             </li>
           </ul>
