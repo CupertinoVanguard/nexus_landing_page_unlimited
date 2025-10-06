@@ -25,19 +25,19 @@ export default function Home() {
     <>
       {/* <PageIllustration /> */}
       <Hero />
-      <WorkforcePromo />
+      {/* <WorkforcePromo />
       <KnowledgeBasePromo />
-      <ConstantlyLearningPromo />
+      <ConstantlyLearningPromo /> */}
       <Principles />
-      <AgentTaskforce />
+      {/* <AgentTaskforce /> */}
       <FeaturesGrid />
       <IntegrationsTicker />
-      <Features />
+      {/* <Features /> */}
       <HowItWorks />
-      <Faq />
+      {/* <Faq /> */}
       {/* <Testimonials /> */}
       {/* <Workflows /> */}
-      {/* <Cta /> */}
+      <Cta />
     </>
   );
 }

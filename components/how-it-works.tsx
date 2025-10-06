@@ -6,21 +6,21 @@ import Workflow3 from "@/public/images/workflow-03.png";
 export default function HowItWorks() {
   const cards = [
     {
-      title: "Design your AI teammate in minutes",
-      body: "Set up roles, tasks, and workflows instantly, no coding required.",
+      title: "Integrate",
+      body: "Connect with your tools effortlessly.",
       image: Workflow1,
-      alt: "Design AI teammate",
-    },
-    {
-      title: "Integrate in one click",
-      body: "Connect with your favorite tools effortlessly and start running right away.",
-      image: Workflow2,
       alt: "Integrate tools",
     },
     {
-      title: "Watch AI handle the work",
-      body: "Free your team from repetitive tasks, so they can focus on high-value work.",
+      title: "Build or Choose",
+      body: "Deploy agents with your own defined goals or select from our pre-built agents.",
       image: Workflow3,
+      alt: "Design AI teammate",
+    },
+    {
+      title: "Launch",
+      body: "Let Nexus agents handle your tasks, so you can focus on the decisions that matter.",
+      image: Workflow2,
       alt: "AI handling work",
     },
   ];

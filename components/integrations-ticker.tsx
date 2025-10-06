@@ -13,7 +13,7 @@ import ClickUp from "@/public/images/clickup_background_removed.png";
 
 type Logo = { src: any; alt: string };
 
-const logosRow1: Logo[] = [
+const logosCol1: Logo[] = [
   { src: HubSpot, alt: "HubSpot" },
   { src: Mixpanel, alt: "Mixpanel" },
   { src: GoogleAnalytics, alt: "Google Analytics" },
@@ -21,12 +21,12 @@ const logosRow1: Logo[] = [
   { src: Posthog, alt: "PostHog" },
 ];
 
-const logosRow2: Logo[] = [
+const logosCol2: Logo[] = [
   { src: Snowflake, alt: "Snowflake" },
   { src: Neon, alt: "Neon" },
   { src: Supabase, alt: "Supabase" },
   { src: ClickUp, alt: "ClickUp" },
-  { src: Amplitude, alt: "Amplitude" },
+  { src: GoogleAnalytics, alt: "Google Analytics" },
 ];
 
 export default function IntegrationsTicker() {
@@ -34,71 +34,51 @@ export default function IntegrationsTicker() {
     <section>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-16">
-          <div className="mx-auto max-w-3xl pb-6 text-center">
-            <h2 className="font-nacelle text-3xl md:text-4xl font-semibold text-white">
-              Integrates with all your tools.
-            </h2>
-            <p className="mt-3 text-lg text-indigo-200/75">
-              Bring your company knowledge together from ERPs, Microsoft Suite, Google Workspace, phone calls, communication tools, and more.
-            </p>
-          </div>
-
-          <div className="relative overflow-hidden">
-            <div
-              className="relative"
-              style={{
-                WebkitMaskImage:
-                  "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-                maskImage:
-                  "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-              }}
-            >
-              <Ticker logos={logosRow1} durationSec={28} />
+          <div className="relative flex items-center justify-between gap-6">
+            <div className="shrink-0">
+              <TickerColumn logos={logosCol1} durationSec={50} />
             </div>
-            <div
-              className="relative mt-6"
-              style={{
-                WebkitMaskImage:
-                  "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-                maskImage:
-                  "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-              }}
-            >
-              <Ticker logos={logosRow2} durationSec={32} reverse />
+            <div className="flex-1 flex h-full items-center justify-center px-2">
+              <h2 className="font-nacelle whitespace-nowrap text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white text-center">
+                Integrates with all your tools
+              </h2>
+            </div>
+            <div className="shrink-0">
+              <TickerColumn logos={logosCol2} durationSec={58} reverse />
             </div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+        @keyframes marqueeY {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-50%); }
         }
-        @keyframes marquee-reverse {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0); }
+        @keyframes marqueeYReverse {
+          0% { transform: translateY(-50%); }
+          100% { transform: translateY(0); }
         }
       `}</style>
     </section>
   );
 }
 
-function Ticker({ logos, durationSec, reverse = false }: { logos: Logo[]; durationSec: number; reverse?: boolean }) {
-  const items = [...logos, ...logos];
+function TickerColumn({ logos, durationSec, reverse = false }: { logos: Logo[]; durationSec: number; reverse?: boolean }) {
+  const items = [...logos, ...logos, ...logos, ...logos];
   return (
-    <div className="w-full">
+    <div className="h-56 overflow-hidden">
       <ul
-        className="flex items-center gap-6"
+        className="flex flex-col items-center gap-3"
         style={{
-          width: "200%",
-          animation: `${reverse ? "marquee-reverse" : "marquee"} ${durationSec}s linear infinite`,
+          height: "400%",
+          animation: `${reverse ? "marqueeYReverse" : "marqueeY"} ${durationSec}s linear infinite`,
         }}
       >
         {items.map((logo, idx) => (
           <li key={idx} className="flex-shrink-0">
-            <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-gray-800/40">
-              <Image src={logo.src} alt={logo.alt} className="object-contain" width={40} height={40} />
+            <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-white">
+              <Image src={logo.src} alt={logo.alt} className="object-contain" width={36} height={36} />
             </div>
           </li>
         ))}

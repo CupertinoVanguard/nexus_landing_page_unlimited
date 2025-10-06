@@ -2,16 +2,16 @@ export default function Faq() {
   const faqs = [
     {
       q: "What makes Nexus different from other AI platforms?",
-      a: "Nexus provides specialized, autonomous agents that integrate with your existing stack and continuously run product workflows, reducing manual toil and accelerating decision-making.",
+      a: "Nexus provides specialized, autonomous agents that integrate with your existing tools and continuously focus on your product goals, reducing manual toil and accelerating decision-making.",
     },
     {
       q: "How quickly can I get started with Nexus?",
       a: "Most teams connect tools and deploy their first agent in minutes. Our opinionated templates help you ship fast without heavy setup.",
     },
-    {
-      q: "Is Nexus secure for enterprise use?",
-      a: "Yes. Data access is scoped to your integrations, and actions are observable with guardrails. We follow best practices for encryption and access control.",
-    },
+    // {
+    //   q: "Is Nexus secure for enterprise use?",
+    //   a: "Yes. Data access is scoped to your integrations, and actions are observable with guardrails. We follow best practices for encryption and access control.",
+    // },
   ];
 
   return (
@@ -21,7 +21,7 @@ export default function Faq() {
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-nacelle text-3xl font-semibold text-white md:text-4xl">Questions?</h2>
             <p className="mt-3 text-lg text-indigo-200/75">
-              Here are some common questions from teams getting started with AI automation.
+             Common questions from teams getting started with Nexus.
             </p>
           </div>
 
