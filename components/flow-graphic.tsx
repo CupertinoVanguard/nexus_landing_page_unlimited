@@ -111,7 +111,7 @@ export default function FlowGraphic() {
             preserveAspectRatio="xMidYMid meet"
           />
         </g>
-        <g transform="translate(220,120)">
+        {/* <g transform="translate(220,120)">
           <circle cx="0" cy="0" r="36" fill="#ffffff" />
           <circle cx="0" cy="0" r="36" fill="none" stroke="#ffffff" strokeWidth="2" />
           <image
@@ -122,7 +122,7 @@ export default function FlowGraphic() {
             height="64"
             preserveAspectRatio="xMidYMid meet"
           />
-        </g>
+        </g> */}
         <g transform="translate(400,120)">
           <circle cx="0" cy="0" r="36" fill="#ffffff" />
           <circle cx="0" cy="0" r="36" fill="none" stroke="#ffffff" strokeWidth="2" />
@@ -137,7 +137,7 @@ export default function FlowGraphic() {
         </g>
 
         {/* additional logos after hub (same spacing) */}
-        <g transform="translate(1310,120)">
+        {/* <g transform="translate(1310,120)">
           <circle cx="0" cy="0" r="36" fill="#ffffff" />
           <circle cx="0" cy="0" r="36" fill="none" stroke="#ffffff" strokeWidth="2" />
           <image
@@ -172,16 +172,16 @@ export default function FlowGraphic() {
             height="64"
             preserveAspectRatio="xMidYMid meet"
           />
-        </g>
+        </g> */}
 
         {/* destination (Slack) */}
         <g transform="translate(1920,120)">
           {/* white background behind Slack logo */}
-          <circle cx="0" cy="0" r="40" fill="#ffffff" />
+          <circle cx="0" cy="0" r="50" fill="#ffffff" />
           {/* ring */}
           <circle cx="0" cy="0" r="46" fill="none" stroke="rgba(255,255,255,0.3)" />
           <image
-            href="https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png"
+            href="/images/slack.png"
             x="-40"
             y="-40"
             width="80"

@@ -7,7 +7,9 @@ import FlowGraphic from "@/components/flow-graphic";
 export default function HeroHome() {
   return (
     <section>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+       {/* <div className="mx-auto max-w-3xl text-center rounded-xl bg-gradient-to-tr from-blue-500 via-transparent to-blue-300 p-10 shadow-md shadow-gray-800">
+            */}
+      <div className="mx-auto max-w-8xl px-4 sm:px-6 bg-gradient-to-tr from-blue-500 via-transparent to-blue-300 p-10 shadow-md shadow-gray-800">
         {/* Hero content */}
         <div className="py-12 md:py-20">
           {/* Section header */}
