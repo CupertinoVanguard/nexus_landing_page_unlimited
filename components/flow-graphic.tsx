@@ -5,7 +5,7 @@ export default function FlowGraphic() {
   return (
     <div className="mx-auto my-1 w-full">
       <svg
-        viewBox="0 0 2000 220"
+        viewBox="-15 0 2000 220"
         role="img"
         aria-label="Integrations flowing through Nexus to Slack"
         className="w-full h-[220px] sm:h-[260px] md:h-[300px]"
@@ -57,14 +57,42 @@ export default function FlowGraphic() {
 
         {/* remove vertical branches - all logos sit on the main line */}
 
+
+
+
+        {/* vertical branch from hub to destination */}
+        <line x1="1050" y1="0" x2="1050" y2="305" stroke="#00e5ff" strokeWidth="12"  />
+        {/* horizontal branch from previous vertical branch to the right */}
+        <line x1="1400" y1="300" x2="1045" y2="300" stroke="#00e5ff" strokeWidth="12"   />
+
+         {/* vertical branch from hub to destination */}
+         <line x1="950" y1="0" x2="950" y2="305" stroke="#00e5ff" strokeWidth="12" />
+        {/* horizontal branch from previous vertical branch to the left */}
+        <line x1="600" y1="300" x2="955" y2="300" stroke="#00e5ff" strokeWidth="12" opacity="0.25"/>
+
+         {/* vertical branch from hub to destination */}
+         <line x1="1050" y1="0" x2="1050" y2="-105" stroke="#00e5ff" strokeWidth="12" />
+        {/* horizontal branch from previous vertical branch to the right */}
+        <line x1="1400" y1="-100" x2="1045" y2="-100" stroke="#00e5ff" strokeWidth="12" opacity="0.25" />
+
+
+         {/* vertical branch from hub to destination */}
+         <line x1="950" y1="0" x2="950" y2="-105" stroke="#00e5ff" strokeWidth="12"  />
+        {/* horizontal branch from previous vertical branch to the left */}
+        <line x1="600" y1="-100" x2="955" y2="-100" stroke="#00e5ff" strokeWidth="12"    />
+
+        
+
+
+
         {/* center hub (Nexus) */}
         <circle cx="1000" cy="120" r="110" fill="none" stroke="rgba(255,255,255,0.45)" strokeWidth="3" />
         <image
           href="/images/nexuslogo (3) (1).png"
-          x="890"
-          y="10"
-          width="220"
-          height="220"
+          x="820"
+          y="-60"
+          width="350"
+          height="350"
           preserveAspectRatio="xMidYMid meet"
         />
 
@@ -74,20 +102,20 @@ export default function FlowGraphic() {
         {/* source logos (left on the main line, wider spacing, smaller size) */}
         <g transform="translate(40,120)">
           {/* white background behind logo */}
-          <circle cx="0" cy="0" r="36" fill="#ffffff" />
+          <circle cx="0" cy="0" r="55" fill="#ffffff" />
           {/* ring */}
           <circle cx="0" cy="0" r="36" fill="none" stroke="#ffffff" strokeWidth="2" />
           <image
-            href="/images/snowflake.png"
-            x="-32"
-            y="-32"
-            width="64"
-            height="64"
+            href="/images/posthog.png"
+            x="-50"
+            y="-50"
+            width="100"
+            height="100"
             preserveAspectRatio="xMidYMid meet"
           />
         </g>
         {/* additional logos before hub (same size and style) */}
-        <g transform="translate(580,120)">
+        {/* <g transform="translate(580,120)">
           <circle cx="0" cy="0" r="36" fill="#ffffff" />
           <circle cx="0" cy="0" r="36" fill="none" stroke="#ffffff" strokeWidth="2" />
           <image
@@ -110,20 +138,32 @@ export default function FlowGraphic() {
             height="64"
             preserveAspectRatio="xMidYMid meet"
           />
-        </g>
-        {/* <g transform="translate(220,120)">
+        </g> */}
+        <g transform="translate(600,-100)">
           <circle cx="0" cy="0" r="36" fill="#ffffff" />
           <circle cx="0" cy="0" r="36" fill="none" stroke="#ffffff" strokeWidth="2" />
           <image
-            href="/images/hubspot.png"
+            href="/images/hubspot_transparent.png"
             x="-32"
-            y="-32"
+            y="-30"
             width="64"
             height="64"
             preserveAspectRatio="xMidYMid meet"
           />
-        </g> */}
-        <g transform="translate(400,120)">
+        </g>
+        <g transform="translate(600,300)">
+          <circle cx="0" cy="0" r="36" fill="#ffffff" />
+          <circle cx="0" cy="0" r="36" fill="none" stroke="#ffffff" strokeWidth="2" />
+          <image
+            href="/images/zendesk.svg"
+            x="-27"
+            y="-25"
+            width="54"
+            height="54"
+            preserveAspectRatio="xMidYMid meet"
+          />
+        </g>
+        {/* <g transform="translate(400,120)">
           <circle cx="0" cy="0" r="36" fill="#ffffff" />
           <circle cx="0" cy="0" r="36" fill="none" stroke="#ffffff" strokeWidth="2" />
           <image
@@ -134,7 +174,7 @@ export default function FlowGraphic() {
             height="64"
             preserveAspectRatio="xMidYMid meet"
           />
-        </g>
+        </g> */}
 
         {/* additional logos after hub (same spacing) */}
         {/* <g transform="translate(1310,120)">
@@ -148,20 +188,20 @@ export default function FlowGraphic() {
             height="64"
             preserveAspectRatio="xMidYMid meet"
           />
-        </g>
-        <g transform="translate(1490,120)">
+        </g> */}
+        <g transform="translate(1400,-100)">
           <circle cx="0" cy="0" r="36" fill="#ffffff" />
           <circle cx="0" cy="0" r="36" fill="none" stroke="#ffffff" strokeWidth="2" />
           <image
-            href="/images/neon_logo.png"
-            x="-32"
-            y="-32"
-            width="64"
-            height="64"
+            href="/images/neon.avif"
+            x="-27"
+            y="-27"
+            width="54"
+            height="54"
             preserveAspectRatio="xMidYMid meet"
           />
         </g>
-        <g transform="translate(1670,120)">
+        <g transform="translate(1400,300)">
           <circle cx="0" cy="0" r="36" fill="#ffffff" />
           <circle cx="0" cy="0" r="36" fill="none" stroke="#ffffff" strokeWidth="2" />
           <image
@@ -172,12 +212,12 @@ export default function FlowGraphic() {
             height="64"
             preserveAspectRatio="xMidYMid meet"
           />
-        </g> */}
+        </g> 
 
         {/* destination (Slack) */}
         <g transform="translate(1920,120)">
           {/* white background behind Slack logo */}
-          <circle cx="0" cy="0" r="50" fill="#ffffff" />
+          <circle cx="0" cy="0" r="55" fill="#ffffff" />
           {/* ring */}
           <circle cx="0" cy="0" r="46" fill="none" stroke="rgba(255,255,255,0.3)" />
           <image

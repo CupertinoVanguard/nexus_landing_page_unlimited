@@ -27,7 +27,7 @@ export default function Principles() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="border-t py-12 md:py-20 [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-400/.25),transparent)1]">
           <div className="mx-auto max-w-3xl pb-8 text-center">
-            <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text text-3xl font-semibold text-transparent md:text-4xl" style={{ fontFamily: "Helvetica, Arial, sans-serif", letterSpacing: "-0.02em" }}>
+            <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text text-3xl font-bold text-transparent md:text-4xl" style={{ fontFamily: "Helvetica, Arial, sans-serif", letterSpacing: "-0.02em" }}>
               Our Principles
             </h2>
           </div>
