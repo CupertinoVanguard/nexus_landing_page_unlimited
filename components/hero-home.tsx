@@ -1,58 +1,64 @@
+'use client'
 import VideoThumb from "@/public/images/hero-image-01.jpg";
 import ModalVideo from "@/components/modal-video";
 import NexusThumbnail from "@/public/images/nexus_thumbnail.png"
+import FlowGraphic from "@/components/flow-graphic";
+ 
 
 export default function HeroHome() {
   return (
     <section>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+       {/* <div className="mx-auto max-w-3xl text-center rounded-xl bg-gradient-to-tr from-blue-500 via-transparent to-blue-300 p-10 shadow-md shadow-gray-800">
+            */}
+      <div className="mx-auto max-w-8xl px-4 sm:px-6 bg-gradient-to-tr from-blue-500 via-transparent to-blue-300 pt-10 pr-10 pl-10 shadow-md shadow-gray-800">
         {/* Hero content */}
         <div className="py-12 md:py-20">
           {/* Section header */}
-          <div className="pb-12 md:pb-20">
+          <div className="mt-6 md:mt-10 pb-2 md:pb-3">
+            <div className="flex justify-center mb-4">
+              <a
+                href="https://cal.com/nexus-ai-sf"
+                className="relative inline-flex items-center rounded-full border border-white/30 px-4 py-1.5 text-sm text-white transition-colors hover:bg-white/10"
+                style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
+              >
+                <span>New: Session Replay Agent</span>
+              </a>
+            </div>
             <h1 
-              className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-blue-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-3xl font-semibold text-transparent md:text-5xl"
+              className="pb-5 font-nacelle text-white text-4xl font-normal text-center md:text-6xl"
               data-aos="fade-up"
             >
-              AI agents that help you make faster product decisions
+               {/* AI agents that help you make faster product decisions */}
+               AI Workers for your Product Goals 
               {/*Have to change this title*/}
             </h1>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <p
-                className="mb-8 text-xl text-indigo-200/95 font-nacelle"
+                className="mb-8 text-xl text-indigo-200/95 font-nacelle text-center"
                 data-aos="fade-up"
                 data-aos-delay={200}
               >
-                Launch specialized AI agents that understand how your platform and latest features are performing with customers.
+                {/* Launch specialized AI agents that understand how your platform and latest features are performing with customers. */}
+                Nexus saves you time with always-on AI agents that orchestrate insights across all your tools to completely handle the end-to-end of your product tasks.
+                {/* Orchestrating product tasks made simple. */}
               </p>
-              <div className="max-w-xs flex sm:max-w-none xs:items-center">
+              <div className="flex justify-center mt-2 md:mt-4">
                 <div data-aos="fade-up" data-aos-delay={400}>
                   <a
-                    className="btn group mb-4 px-4 py-2 w-full bg-linear-to-t from-blue-400 to-blue-800 bg-[length:100%_100%] bg-[bottom] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
-                    href="https://tally.so/r/3l187v"
+                    className="btn-sm py-[5px] bg-white text-black hover:bg-gray-100"
+                    style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
+                    href="https://cal.com/nexus-ai-sf"
                   >
-                    <span className="relative inline-flex items-center">
-                      Join the Waitlist
-                    </span>
+                    Book a Demo <span className="ml-1 tracking-normal text-black/50 transition-transform group-hover:translate-x-0.5">&rarr;</span>
                   </a>
                 </div>
-                <div data-aos="fade-up" data-aos-delay={600}>
-                  <a
-                    className="btn relative px-4 py-2 w-full text-gray-100 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-gray-800 sm:ml-4 sm:w-auto"
-                    href="https://calendly.com/nikilpillai2002/30min?month=2025-08"
-                  >
-                    Schedule Demo
-                    <span className="ml-1 tracking-normal text-white/50 transition-transform group-hover:translate-x-0.5">
-                        -&gt;
-                    </span>
-                  </a>
-                </div>
-
               </div>
+              <br />
+              <FlowGraphic />
             </div>
           </div>
 
-          <ModalVideo
+          {/* <ModalVideo
             thumb={NexusThumbnail}
             thumbWidth={1104}
             thumbHeight={576}
@@ -60,7 +66,7 @@ export default function HeroHome() {
             video="https://nexus-software-access.s3.us-east-2.amazonaws.com/ImprovedNexusDemo.mp4"
             videoWidth={1920}
             videoHeight={1080}
-          />
+          /> */}
         </div>
       </div>
     </section>

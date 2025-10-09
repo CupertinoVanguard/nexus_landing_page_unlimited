@@ -1,13 +1,14 @@
 import Link from "next/link";
-import Image from "next/image";
-import logo from "@/public/images/logo.svg";
-import nexus_logo from "@/public/images/icon.png"
-
 
 export default function Logo() {
   return (
-    <Link href="/" className="inline-flex shrink-0" aria-label="Cruip">
-      <Image src={nexus_logo} alt="Cruip Logo" width={32} height={32} />
+    <Link href="/" className="inline-flex shrink-0" aria-label="Nexus">
+      <span
+        className="text-blue-300 tracking-tighter text-2xl md:text-3xl font-semibold font-nacelle"
+        style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
+      >
+        Nexus
+      </span>
     </Link>
   );
 }

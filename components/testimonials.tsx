@@ -23,69 +23,69 @@ const testimonials_1 = [
   {
     img: TestimonialImg01,
     // clientImg: ClientImg01,
-    agent_name: "High-Value Customer Churn Risk Agent",
+    agent_name: "Session Replay Agent",
     status: "Recurring",
-    integration_list: ["Amplitude"],
+    integration_list: ["Zendesk","Posthog"],
     summary: "Proactively monitors high-value customers to identify and prevent churn risks.",
     content:
-      "Monitors high-value (Tier 1) customers to proactively identify, analyze, and alert on potential churn risks and significant behavioral shifts. Detects subtle warning signs, performs root cause analysis, and generates actionable insights to help you prevent customer attrition and retain your most valuable clients.",
-    categories: [1, 5],
+    "Proactively monitors high-value customers to identify and prevent churn risks.",  
+    categories: [1, 2],
   },
   {
     img: TestimonialImg02,
     // clientImg: ClientImg02,
-    agent_name: "Subscription Churn Risk Analysis Agent",
+    agent_name: "Feature Rollout Agent",
     status: "Non-Recurring",
-    integration_list: ["Mixpanel",'Supabase'],
-    summary: "Analyzes subscription-based churn patterns to identify high-risk segments.",
+    integration_list: ["Hubspot",'Supabase'],
+    summary: "Manages feature rollout campaign and delivers insights on feature expansion and impact.",
     content:
-      "Analyzes customer churn patterns within subscription-based businesses by leveraging relational database schemas. Identifies high-risk segments, uncovers seasonal trends, and provides actionable insights to minimize attrition. Defines churn, segments customers, and pinpoints product-specific churn drivers for targeted retention strategies.",
-    categories: [1, 2, 4],
+      "Manages feature rollout campaign and delivers insights on feature expansion and impact",
+    categories: [1, 3],
   },
   {
     img: TestimonialImg03,
     // clientImg: ClientImg03,
-    agent_name: "Customer Churn Pattern Analysis Agent",
+    agent_name: "Churn Risk Agent",
     status: "Non-Recurring",
-    integration_list: ["Google Analytics",'Hubspot'],
-    summary: "Leverages demographic data to understand why customers leave.",
+    integration_list: ["Amplitude",'Neon'],
+    summary: "Monitors changes in churn trends and connects across user behavior patterns",
     content:
-      "Identifies and analyzes customer churn patterns by leveraging demographic and transactional data. Defines churn, performs cohort analysis, and investigates behavioral trends to uncover why customers leave. Segments customers and pinpoints high-risk groups for proactive retention efforts.",
-    categories: [1, 2, 5],
-  },
-  {
-    img: TestimonialImg04,
-    // clientImg: ClientImg04,
-    agent_name: "Customer Behavior Pattern Agent",
-    status: "Recurring",
-    integration_list: ["Posthog",'Hubspot'],
-    summary: "Detects behavioral patterns of customers while using your platform.",
-    content:
-      "Detects and interprets customer behavior trends to reveal drivers of churn and engagement. Segments customers, uncovers key behavioral indicators, and highlights actionable insights to improve retention and optimize marketing strategies. Identifies critical touchpoints to reduce attrition and enhance customer experience.",
+      "Monitors changes in churn trends and connects across user behavior patterns",
     categories: [1, 4],
   },
-  {
-    img: TestimonialImg04,
-    // clientImg: ClientImg04,
-    agent_name: "Feature Adoption Analysis Agent",
-    status: "Recurring",
-    integration_list: ["Posthog"],
-    summary: "Tracks how customers are interacting with your specific features.",
-    content:
-      "Tracks how customers interact with product features to reveal adoption trends and usage patterns. Identifies underutilized features, uncovers barriers to adoption, and provides actionable insights to drive engagement, improve product design, and optimize feature rollout strategies.",
-    categories: [1, 4],
-  },
-  {
-    img: TestimonialImg04,
-    // clientImg: ClientImg04,
-    agent_name: "Customer Retention Analysis Agent",
-    status: "Recurring",
-    integration_list: ["Posthog",'Neon','ClickUp'],
-    summary: "Understands what features keep customers engaged with your platform.",
-    content:
-      "Evaluates customer behaviors and interactions to uncover drivers of loyalty and churn. Identifies at-risk segments, highlights key retention factors, and provides actionable insights to improve engagement, strengthen relationships, and reduce attrition.",
-    categories: [1, 3, 4],
-  },
+  // {
+  //   img: TestimonialImg04,
+  //   // clientImg: ClientImg04,
+  //   agent_name: "Customer Behavior Pattern Agent",
+  //   status: "Recurring",
+  //   integration_list: ["Posthog",'Hubspot'],
+  //   summary: "Detects behavioral patterns of customers while using your platform.",
+  //   content:
+  //     "Detects and interprets customer behavior trends to reveal drivers of churn and engagement. Segments customers, uncovers key behavioral indicators, and highlights actionable insights to improve retention and optimize marketing strategies. Identifies critical touchpoints to reduce attrition and enhance customer experience.",
+  //   categories: [1, 4],
+  // },
+  // {
+  //   img: TestimonialImg04,
+  //   // clientImg: ClientImg04,
+  //   agent_name: "Feature Adoption Analysis Agent",
+  //   status: "Recurring",
+  //   integration_list: ["Posthog"],
+  //   summary: "Tracks how customers are interacting with your specific features.",
+  //   content:
+  //     "Tracks how customers interact with product features to reveal adoption trends and usage patterns. Identifies underutilized features, uncovers barriers to adoption, and provides actionable insights to drive engagement, improve product design, and optimize feature rollout strategies.",
+  //   categories: [1, 4],
+  // },
+  // {
+  //   img: TestimonialImg04,
+  //   // clientImg: ClientImg04,
+  //   agent_name: "Customer Retention Analysis Agent",
+  //   status: "Recurring",
+  //   integration_list: ["Posthog",'Neon','ClickUp'],
+  //   summary: "Understands what features keep customers engaged with your platform.",
+  //   content:
+  //     "Evaluates customer behaviors and interactions to uncover drivers of loyalty and churn. Identifies at-risk segments, highlights key retention factors, and provides actionable insights to improve engagement, strengthen relationships, and reduce attrition.",
+  //   categories: [1, 3, 4],
+  // },
   // {
   //   img: TestimonialImg05,
   //   // clientImg: ClientImg05,
@@ -163,7 +163,7 @@ export default function Testimonials() {
                 >
                   <path d="M6.5 3.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM9 6.855A3.502 3.502 0 0 0 8 0a3.5 3.5 0 0 0-1 6.855v1.656L5.534 9.65a3.5 3.5 0 1 0 1.229 1.578L8 10.267l1.238.962a3.5 3.5 0 1 0 1.229-1.578L9 8.511V6.855Zm2.303 4.74c.005-.005.01-.01.013-.016l.012-.016a1.5 1.5 0 1 1-.025.032ZM3.5 11A1.497 1.497 0 0 1 5 12.5 1.5 1.5 0 1 1 3.5 11Z" />
                 </svg>
-                <span>Customer Churn Agents</span>
+                <span>Session Replay</span>
               </button>
               {/* Button #3 */}
               <button
@@ -179,7 +179,7 @@ export default function Testimonials() {
                 >
                   <path d="M2.428 10c.665-1.815 1.98-3.604 3.44-4.802-.6-1.807-1.443-3.079-2.29-3.18-1.91-.227-2.246 2.04-.174 2.962a1 1 0 1 1-.813 1.827C-1.407 5.028-.589-.491 3.815.032c1.605.191 2.925 1.811 3.79 4.07.979-.427 1.937-.51 2.735-.092.818.429 1.143 1.123 1.294 2.148.015.1.022.149.043.32.542-.537 1.003-.797 1.693-.622.64.162.894.493 1.195 1.147l.018.04a1 1 0 0 1 1.133 1.61c-.46.47-1.12.574-1.744.398a1.661 1.661 0 0 1-.87-.592 2.127 2.127 0 0 1-.224-.349 3.225 3.225 0 0 1-.55.477c-.377.253-.8.368-1.259.267-.993-.218-1.21-.779-1.367-2.05-.027-.22-.033-.262-.046-.353-.067-.452-.144-.617-.244-.67-.225-.118-.665-.013-1.206.278.297 1.243.475 2.587.516 3.941H15a1 1 0 0 1 0 2H8.68l-.025.285c-.173 1.918-.906 3.381-2.654 3.668-1.5.246-3.013-.47-3.677-1.858-.29-.637-.39-1.35-.342-2.095H1a1 1 0 0 1 0-2h1.428Zm2.11 0h2.175a18.602 18.602 0 0 0-.284-2.577c-.205.202-.408.42-.606.654A9.596 9.596 0 0 0 4.537 10Zm2.135 2H3.942c-.032.465.03.888.194 1.25.258.538.89.836 1.54.73.546-.09.888-.772.988-1.875L6.673 12Z" />
                 </svg>
-                <span>Retention Agents</span>
+                <span>Features</span>
               </button>
               {/* Button #4 */}
               <button
@@ -195,7 +195,7 @@ export default function Testimonials() {
                 >
                   <path d="M3.757 3.758a6 6 0 0 1 8.485 8.485 5.992 5.992 0 0 1-5.301 1.664 1 1 0 1 0-.351 1.969 8 8 0 1 0-4.247-2.218 1 1 0 0 0 1.415-.001L9.12 8.294v1.827a1 1 0 1 0 2 0v-4.2a.997.997 0 0 0-1-1.042H5.879a1 1 0 1 0 0 2h1.829l-4.599 4.598a6 6 0 0 1 .648-7.719Z" />
                 </svg>
-                <span>Customer Behavior Agents</span>
+                <span>Churn</span>
               </button>
               {/* Button #5 */}
               <a href="https://tally.so/r/3l187v" className="cursor-pointer flex items-center h-8">
