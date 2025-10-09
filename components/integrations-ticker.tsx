@@ -10,7 +10,9 @@ import Snowflake from "@/public/images/snowflake.png";
 import Neon from "@/public/images/neon_logo.png";
 import Supabase from "@/public/images/supabase_background_removed.png";
 import ClickUp from "@/public/images/clickup_background_removed.png";
-
+import Jira from "@/public/images/jira_background_removed.png";
+import Zendesk from "@/public/images/zendesk.svg";
+import Slack from "@/public/images/slack.png";
 type Logo = { src: any; alt: string };
 
 const logosCol1: Logo[] = [
@@ -18,15 +20,21 @@ const logosCol1: Logo[] = [
   { src: Mixpanel, alt: "Mixpanel" },
   { src: GoogleAnalytics, alt: "Google Analytics" },
   { src: Amplitude, alt: "Amplitude" },
-  { src: Posthog, alt: "PostHog" },
 ];
 
 const logosCol2: Logo[] = [
+  { src: Posthog, alt: "PostHog" },
   { src: Snowflake, alt: "Snowflake" },
   { src: Neon, alt: "Neon" },
   { src: Supabase, alt: "Supabase" },
+];
+
+const logosCol3: Logo[] = [
   { src: ClickUp, alt: "ClickUp" },
-  { src: GoogleAnalytics, alt: "Google Analytics" },
+  { src: Jira, alt: "Jira" },
+  { src: Zendesk, alt: "Zendesk" },
+  { src: Slack, alt: "Slack" },
+  // You can add two more logos here if you want to keep all columns at 4, or leave as is if only 10 total
 ];
 
 export default function IntegrationsTicker() {
@@ -58,18 +66,31 @@ export default function IntegrationsTicker() {
                 <TickerColumn logos={logosCol2} durationSec={18} reverse />
               </div>
               <div className="shrink-0">
-                <TickerColumn logos={logosCol1} durationSec={20} />
+                <TickerColumn logos={logosCol3} durationSec={20} />
               </div>
             </div>
 
             {/* Mobile grid view - visible only on mobile - md:hidden (according to chat)*/}
-            <div className="md:hidden px-4">
-              <div className="grid grid-cols-3 gap-3 max-w-sm mx-auto">
+            {/* <div className="md:hidden px-4">
+              <div className="grid grid-cols-3 gap-3 max-w-full mx-auto">
                 {[...logosCol1, ...logosCol2].slice(0, 9).map((logo, idx) => (
                   <div key={idx} className="flex items-center justify-center h-20 w-full rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 p-3">
                     <Image src={logo.src} alt={logo.alt} className="object-contain" width={40} height={40} />
                   </div>
                 ))}
+                
+                
+              </div>
+            </div> */}
+            <div className="md:hidden gap-6 space-y-3 px-4">
+              <div className="shrink-0">
+                <HorizonalTickerColumn logos={logosCol1} durationSec={15} />
+              </div>
+              <div className="shrink-0">
+                <HorizonalTickerColumn logos={logosCol2} durationSec={18} reverse />
+              </div>
+              <div className="shrink-0">
+                <HorizonalTickerColumn logos={logosCol3} durationSec={20} />
               </div>
             </div>
           </div>
@@ -85,6 +106,14 @@ export default function IntegrationsTicker() {
           0% { transform: translateY(-50%); }
           100% { transform: translateY(0); }
         }
+        @keyframes marqueeX {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marqueeXReverse {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
       `}</style>
     </section>
   );
@@ -99,6 +128,29 @@ function TickerColumn({ logos, durationSec, reverse = false }: { logos: Logo[]; 
         style={{
           height: "400%",
           animation: `${reverse ? "marqueeYReverse" : "marqueeY"} ${durationSec}s linear infinite`,
+        }}
+      >
+        {items.map((logo, idx) => (
+          <li key={idx} className="flex-shrink-0">
+            <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-white">
+              <Image src={logo.src} alt={logo.alt} className="object-contain" width={36} height={36} />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function HorizonalTickerColumn({ logos, durationSec, reverse = false }: { logos: Logo[]; durationSec: number; reverse?: boolean }) {
+  const items = [...logos, ...logos, ...logos, ...logos];
+  return (
+    <div className="w-full overflow-hidden">
+      <ul
+        className="flex flex-row items-center gap-3"
+        style={{
+          width: "400%",
+          animation: `${reverse ? "marqueeXReverse" : "marqueeX"} ${durationSec}s linear infinite`,
         }}
       >
         {items.map((logo, idx) => (
