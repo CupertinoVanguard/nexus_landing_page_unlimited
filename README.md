@@ -1,4 +1,4 @@
-## Landing page experiment, based on Lumari 
+## Landing page Nexus
 <!-- # Nexus Landing Page
 
 A modern landing page built with Next.js and Tailwind CSS.
