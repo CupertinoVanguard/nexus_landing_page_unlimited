@@ -2,25 +2,28 @@ import Image from "next/image";
 import Workflow1 from "@/public/images/workflow-01.png";
 import Workflow2 from "@/public/images/workflow-02.png";
 import Workflow3 from "@/public/images/workflow-03.png";
+import ABlueIntegration from "@/public/images/a_bl_integration.png";
+import BlueWorkflow1 from "@/public/images/blue_workflow1.jpg";
+import BlueWorkflow3 from "@/public/images/blue_workflow3.jpg";
 
 export default function HowItWorks() {
   const cards = [
     {
       title: "Integrate",
-      body: "Connect with your tools effortlessly.",
-      image: Workflow1,
+      body: "Connect with your tools effortlessly without any additional configurations.",
+      image: BlueWorkflow1,
       alt: "Integrate tools",
     },
     {
-      title: "Build or Choose",
-      body: "Deploy agents with your own defined goals or select from our pre-built agents.",
-      image: Workflow3,
+      title: "Build",
+      body: "Build agents with your own defined goals or select from our pre-built agents all through natural language",
+      image: ABlueIntegration,
       alt: "Design AI teammate",
     },
     {
       title: "Launch",
-      body: "Let Nexus agents handle your tasks, so you can focus on the decisions that matter.",
-      image: Workflow2,
+      body: "Let Nexus agents manage your goals, so you can focus on the decisions that matter.",
+      image: BlueWorkflow3,
       alt: "AI handling work",
     },
   ];

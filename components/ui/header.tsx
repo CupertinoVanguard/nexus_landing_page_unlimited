@@ -32,7 +32,7 @@ export default function Header() {
                 className="btn-sm py-[5px] bg-white text-black hover:bg-gray-100"
                 style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
               >
-                Book a Demo
+                    Book a Demo <span className="ml-1 tracking-normal text-black/50 transition-transform group-hover:translate-x-0.5">&rarr;</span>
               </Link>
             </li>
           </ul>

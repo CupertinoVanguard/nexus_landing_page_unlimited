@@ -4,7 +4,7 @@ export default function Logo() {
   return (
     <Link href="/" className="inline-flex shrink-0" aria-label="Nexus">
       <span
-        className="text-white tracking-tighter text-3xl md:text-4xl font-bold"
+        className="text-blue-300 tracking-tighter text-2xl md:text-3xl font-semibold font-nacelle"
         style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
       >
         Nexus
