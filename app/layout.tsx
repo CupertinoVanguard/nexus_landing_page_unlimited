@@ -53,11 +53,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${nacelle.variable} bg-black font-inter text-base text-gray-200 antialiased`}
       >
-       
-        <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
-          <Header />
-          {children}
-        </div>
+          <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+            <Header />
+            {children}
+          </div>
+        
       </body>
     </html>
   );
