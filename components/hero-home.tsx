@@ -21,7 +21,7 @@ export default function HeroHome() {
                 className="relative inline-flex items-center rounded-full border border-white/30 px-4 py-1.5 text-sm text-white transition-colors hover:bg-white/10"
                 style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
               >
-                <span>New: Session Replay Agent</span>
+                <span>New: Backed by Character Capital</span>
               </a>
             </div>
             <h1 
