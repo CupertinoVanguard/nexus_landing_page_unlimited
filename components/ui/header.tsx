@@ -16,7 +16,7 @@ export default function Header() {
 
           {/* Desktop sign in links */}
           <ul className="flex items-center justify-end w-full space-x-4">
-            <li>
+            {/* <li>
               <Link
                 href="https://tally.so/r/3l187v"
                 // className="btn-sm py-[5px] bg-white text-black hover:bg-gray-100"
@@ -25,7 +25,7 @@ export default function Header() {
               >
                 Join the Waitlist
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 href="https://cal.com/nexus-ai-sf"
