@@ -51,9 +51,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${nacelle.variable} bg-black font-inter text-base text-gray-200 antialiased`}
+        className={`${inter.variable} ${nacelle.variable} bg-[#050810] font-inter text-base text-gray-200 antialiased`}
       >
-          <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+          <div className="relative flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+            {/* Large blurred gradient overlays - consistent across all pages */}
+            <div className="fixed top-0 left-1/4 w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-800/15 rounded-full blur-[100px] pointer-events-none"></div>
+            <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-950/20 rounded-full blur-[150px] pointer-events-none"></div>
+            
             <Header />
             {children}
           </div>

@@ -81,7 +81,7 @@ export default function FlowGraphic() {
 
 
         {/* center hub (Nexus) - much larger */}
-        <circle cx="1000" cy="120" r="105" fill="none" stroke="rgba(255,255,255,0.45)" strokeWidth="5" />
+        <circle cx="1000" cy="120" r="110" fill="rgba(40,20,30,0.9)" stroke="rgba(255,255,255,0.3)" strokeWidth="3" />
         <image
           href="/images/nexuslogo (3) (1).png"
           x="820"
@@ -93,15 +93,15 @@ export default function FlowGraphic() {
 
         {/* Slack logo - top center */}
         <g transform="translate(1000,-420)">
-          <circle cx="0" cy="0" r="70" fill="#ffffff" />
-          <circle cx="0" cy="0" r="70" fill="none" stroke="#ffffff" strokeWidth="2" />
+          <circle cx="0" cy="0" r="68" fill="rgba(30,30,40,0.8)" stroke="rgba(255,255,255,0.2)" strokeWidth="2" />
           <image
             href="/images/slack.png"
-            x="-54"
-            y="-54"
-            width="108"
-            height="108"
+            x="-42"
+            y="-42"
+            width="84"
+            height="84"
             preserveAspectRatio="xMidYMid meet"
+            style={{ filter: "brightness(0) invert(1)" }}
           />
         </g>
         {/* additional logos before hub (same size and style) */}
@@ -131,28 +131,28 @@ export default function FlowGraphic() {
         </g> */}
         {/* Hubspot - top left */}
         <g transform="translate(250,-220)">
-          <circle cx="0" cy="0" r="70" fill="#ffffff" />
-          <circle cx="0" cy="0" r="70" fill="none" stroke="#ffffff" strokeWidth="2" />
+          <circle cx="0" cy="0" r="68" fill="rgba(30,30,40,0.8)" stroke="rgba(255,255,255,0.2)" strokeWidth="2" />
           <image
             href="/images/hubspot_transparent.png"
-            x="-54"
-            y="-52"
-            width="108"
-            height="108"
+            x="-42"
+            y="-42"
+            width="84"
+            height="84"
             preserveAspectRatio="xMidYMid meet"
+            style={{ filter: "brightness(0) invert(1)" }}
           />
         </g>
         {/* Zendesk - bottom left */}
         <g transform="translate(250,420)">
-          <circle cx="0" cy="0" r="70" fill="#ffffff" />
-          <circle cx="0" cy="0" r="70" fill="none" stroke="#ffffff" strokeWidth="2" />
+          <circle cx="0" cy="0" r="68" fill="rgba(30,30,40,0.8)" stroke="rgba(255,255,255,0.2)" strokeWidth="2" />
           <image
             href="/images/zendesk.svg"
-            x="-47"
-            y="-43"
-            width="94"
-            height="94"
+            x="-42"
+            y="-42"
+            width="84"
+            height="84"
             preserveAspectRatio="xMidYMid meet"
+            style={{ filter: "brightness(0) invert(1)" }}
           />
         </g>
         {/* <g transform="translate(400,120)">
@@ -183,28 +183,28 @@ export default function FlowGraphic() {
         </g> */}
         {/* Posthog - top right */}
         <g transform="translate(1750,-220)">
-          <circle cx="0" cy="0" r="70" fill="#ffffff" />
-          <circle cx="0" cy="0" r="70" fill="none" stroke="#ffffff" strokeWidth="2" />
+          <circle cx="0" cy="0" r="68" fill="rgba(30,30,40,0.8)" stroke="rgba(255,255,255,0.2)" strokeWidth="2" />
           <image
             href="/images/posthog.png"
-            x="-54"
-            y="-54"
-            width="108"
-            height="108"
+            x="-42"
+            y="-42"
+            width="84"
+            height="84"
             preserveAspectRatio="xMidYMid meet"
+            style={{ filter: "brightness(0) invert(1)" }}
           />
         </g>
         {/* Supabase - bottom right */}
         <g transform="translate(1750,420)">
-          <circle cx="0" cy="0" r="70" fill="#ffffff" />
-          <circle cx="0" cy="0" r="70" fill="none" stroke="#ffffff" strokeWidth="2" />
+          <circle cx="0" cy="0" r="68" fill="rgba(30,30,40,0.8)" stroke="rgba(255,255,255,0.2)" strokeWidth="2" />
           <image
             href="/images/supabase_background_removed.png"
-            x="-54"
-            y="-54"
-            width="108"
-            height="108"
+            x="-42"
+            y="-42"
+            width="84"
+            height="84"
             preserveAspectRatio="xMidYMid meet"
+            style={{ filter: "brightness(0) invert(1)" }}
           />
         </g>
       </svg>

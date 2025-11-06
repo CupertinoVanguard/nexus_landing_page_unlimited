@@ -3,25 +3,25 @@ import VideoThumb from "@/public/images/hero-image-01.jpg";
 import ModalVideo from "@/components/modal-video";
 import NexusThumbnail from "@/public/images/nexus_thumbnail.png"
 import FlowGraphic from "@/components/flow-graphic";
+import { SparklesIcon } from "lucide-react";
  
 
 export default function HeroHome() {
   return (
-    <section>
-       {/* <div className="mx-auto max-w-3xl text-center rounded-xl bg-gradient-to-tr from-blue-500 via-transparent to-blue-300 p-10 shadow-md shadow-gray-800">
-            */}
-      <div className="mx-auto max-w-8xl px-4 sm:px-6 bg-gradient-to-tr from-blue-500 via-transparent to-blue-300 pt-10 pr-10 pl-10 shadow-md shadow-gray-800">
+    <section className="relative overflow-hidden">
+      <div className="relative mx-auto max-w-8xl px-4 sm:px-6 pt-10 pr-10 pl-10">
         {/* Hero content */}
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="mt-6 md:mt-10 pb-2 md:pb-3">
             <div className="flex justify-center mb-4">
               <a
-                href="https://cal.com/nexus-ai-sf"
-                className="relative inline-flex items-center rounded-full border border-white/30 px-4 py-1.5 text-sm text-white transition-colors hover:bg-white/10"
+                href="https://cal.com/nikhilpillai/nexus-15-min-intro-call"
+                className="relative gap-2 inline-flex items-center rounded-full border border-white/30 px-4 py-1.5 text-sm text-white transition-colors hover:bg-white/10"
                 style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
               >
-                <span>New: Backed by Character Capital</span>
+                <SparklesIcon className="w-4 h-4 ml-1" />
+                <span>New: Now Backed by Character Capital</span>
               </a>
             </div>
             <h1 
@@ -42,14 +42,23 @@ export default function HeroHome() {
                 Nexus saves you time with always-on AI agents that orchestrate insights across all your tools to completely handle the end-to-end of your product tasks.
                 {/* Orchestrating product tasks made simple. */}
               </p>
-              <div className="flex justify-center mt-2 md:mt-4">
+              <div className="flex flex-col md:flex-row justify-center mt-2 md:mt-4 gap-5">
                 <div data-aos="fade-up" data-aos-delay={400}>
                   <a
-                    className="btn-sm py-[5px] bg-white text-black hover:bg-gray-100"
+                    className="btn-md bg-black text-white hover:bg-gray-800 hover:scale-105 transition-all duration-300"
                     style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                    href="https://cal.com/nexus-ai-sf"
+                    href="#how-it-works"
                   >
-                    Book a Demo <span className="ml-1 tracking-normal text-black/50 transition-transform group-hover:translate-x-0.5">&rarr;</span>
+                    See how it works <span className="ml-1 tracking-normal text-white transition-transform group-hover:translate-x-0.5">&rarr;</span>
+                  </a>
+                </div>
+                <div data-aos="fade-up" data-aos-delay={400}>
+                  <a
+                    className="btn-md bg-gray-300 text-black hover:bg-gray-100 hover:scale-105 transition-all duration-300"
+                    style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
+                    href="#cta"
+                  >
+                    Get Early Access
                   </a>
                 </div>
               </div>
@@ -68,6 +77,11 @@ export default function HeroHome() {
             videoHeight={1080}
           /> */}
         </div>
+      </div>
+      
+      {/* Divider */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-700/50 to-transparent"></div>
       </div>
     </section>
   );

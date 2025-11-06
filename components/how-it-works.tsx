@@ -29,7 +29,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section>
+    <section id="how-it-works">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-16">
           <div className="mx-auto max-w-3xl pb-8 text-center">

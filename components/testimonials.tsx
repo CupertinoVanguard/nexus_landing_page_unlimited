@@ -36,7 +36,7 @@ const testimonials_1 = [
     // clientImg: ClientImg02,
     agent_name: "Feature Rollout Agent",
     status: "Non-Recurring",
-    integration_list: ["Hubspot",'Supabase'],
+    integration_list: ["Hubspot",'Supabase', 'Posthog'],
     summary: "Manages feature rollout campaign and delivers insights on feature expansion and impact.",
     content:
       "Manages feature rollout campaign and delivers insights on feature expansion and impact",
@@ -345,10 +345,16 @@ export function Testimonial({
 
         <div className="flex justify-center w-full mt-6">
           <button
-            className="mx-auto px-8 py-2 bg-linear-to-t font-nacelle font-semibold from-blue-400 to-blue-800 bg-[length:100%_100%] bg-[bottom] flex w-full items-center justify-center rounded-xl border border-gray-700/50 bg-blue-800/65 text-gray-200 hover:bg-blue-700/65 transition-colors hover:cursor-pointer"
+            className="mx-auto px-8 py-2 bg-linear-to-t font-nacelle font-semibold bg-gray-200 bg-[length:100%_100%] bg-[bottom] flex w-full items-center justify-center rounded-xl border border-gray-700/50 bg-blue-800/65 text-black hover:bg-blue-200 transition-colors hover:cursor-pointer"
             aria-label="Use agent now"
+            
           >
-            Use Agent Now
+            <a 
+              href="https://cal.com/nikhilpillai/nexus-15-min-intro-call"
+              className="hover:cursor-pointer"
+            >
+              Use Agent Now
+            </a>
           </button>
         </div>
       </div>

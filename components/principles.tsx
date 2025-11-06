@@ -32,7 +32,7 @@ export default function Principles() {
     {
       title: "Company Context Layer",
       body: `
-        Nexus understand the relevant connections and context from your data and feedback platforms so you never manually configure them.
+        Nexus understands the relevant connections and context from your data and feedback platforms so you never manually configure them.
       `,
       image: StackContext,
     },

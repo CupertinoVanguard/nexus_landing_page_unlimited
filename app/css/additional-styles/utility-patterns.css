@@ -1,11 +1,16 @@
 /* Buttons */
 .btn,
+.btn-md,
 .btn-sm {
     @apply inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all;
 }
 
 .btn {
     @apply px-4 py-[11px];
+}
+
+.btn-md {
+    @apply px-4 py-[9px];
 }
 
 .btn-sm {
@@ -52,4 +57,9 @@ input[type='search']::-webkit-search-results-decoration {
 
 .form-checkbox {
     @apply rounded-xs;
+}
+
+/* Custom Gradients */
+.bg-gradient-radial {
+    background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
 }
