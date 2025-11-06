@@ -42,7 +42,7 @@ export default function HeroHome() {
                 Nexus saves you time with always-on AI agents that orchestrate insights across all your tools to completely handle the end-to-end of your product tasks.
                 {/* Orchestrating product tasks made simple. */}
               </p>
-              <div className="flex flex-col justify-center mt-2 md:mt-4 gap-5">
+              <div className="flex flex-row justify-center mt-2 md:mt-4 gap-5">
                 <div data-aos="fade-up" data-aos-delay={400}>
                   <a
                     className="btn-md bg-black text-white hover:bg-gray-800 hover:scale-105 transition-all duration-300"
