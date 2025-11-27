@@ -29,7 +29,14 @@ export default function HeroHome() {
               data-aos="fade-up"
             >
                {/* AI agents that help you make faster product decisions */}
-               AI Workers for your Product Goals 
+
+               {/* This is the old title */}
+               {/* AI Workers for your Product Goals  */}
+
+               {/* This is an option that incorporates wording from Dhavan and also kind of like Karumi */}
+              {/* Don't lose visibility on your product  */}
+              Don't lose sight of your product
+
               {/*Have to change this title*/}
             </h1>
             <div className="max-w-3xl mx-auto">

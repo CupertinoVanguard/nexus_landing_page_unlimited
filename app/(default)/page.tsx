@@ -19,6 +19,9 @@ import IntegrationsTicker from "@/components/integrations-ticker";
 import Faq from "@/components/faq";
 import AgentTaskforce from "@/components/agent-taskforce";
 import Testimonials from "@/components/testimonials";
+import ProblemStatement from "@/components/problem-statement";
+import SlackExamples from "@/components/slack-examples";
+
 
 export default function Home() {
   return (
@@ -28,6 +31,8 @@ export default function Home() {
       {/* <WorkforcePromo />
       <KnowledgeBasePromo />
       <ConstantlyLearningPromo /> */}
+      <ProblemStatement />
+      <SlackExamples />
       <Principles />
       <Testimonials />
       {/* <FeaturesGrid /> */}
