@@ -7,7 +7,9 @@ export default function ProblemStatement() {
         <div className="relative border border-gray-800 rounded-3xl overflow-hidden bg-gradient-to-b from-gray-900 to-gray-950 py-12 md:py-16">
           {/* Decorative ellipse/circle */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-          
+          <h1 className="font-nacelle text-md sm:text-md md:text-md lg:text-md font-semibold text-white mb-4">
+            [Problem Statement]
+          </h1>
           {/* Content wrapper */}
           <div className="relative md:flex md:flex-row md:items-center">
             {/* Header section */}

@@ -13,6 +13,7 @@ import ClickUp from "@/public/images/clickup_background_removed.png";
 import Jira from "@/public/images/jira_background_removed.png";
 import Zendesk from "@/public/images/zendesk.svg";
 import Slack from "@/public/images/slack.png";
+import FlowGraphic from "./flow-graphic";
 type Logo = { src: any; alt: string };
 
 const logosCol1: Logo[] = [
@@ -58,7 +59,7 @@ export default function IntegrationsTicker() {
             </div>
 
             {/* Ticker section - hidden on mobile, visible on md+ */}
-            <div className="hidden md:flex items-center justify-center gap-6 px-4">
+            {/* <div className="hidden md:flex items-center justify-center gap-6 px-4">
               <div className="shrink-0">
                 <TickerColumn logos={logosCol1} durationSec={15} />
               </div>
@@ -68,7 +69,7 @@ export default function IntegrationsTicker() {
               <div className="shrink-0">
                 <TickerColumn logos={logosCol3} durationSec={20} />
               </div>
-            </div>
+            </div> */}
 
             {/* Mobile grid view - visible only on mobile - md:hidden (according to chat)*/}
             {/* <div className="md:hidden px-4">
@@ -82,7 +83,7 @@ export default function IntegrationsTicker() {
                 
               </div>
             </div> */}
-            <div className="md:hidden gap-6 space-y-3 px-4">
+            {/* <div className="md:hidden gap-6 space-y-3 px-4">
               <div className="shrink-0">
                 <HorizonalTickerColumn logos={logosCol1} durationSec={15} />
               </div>
@@ -92,7 +93,8 @@ export default function IntegrationsTicker() {
               <div className="shrink-0">
                 <HorizonalTickerColumn logos={logosCol3} durationSec={20} />
               </div>
-            </div>
+            </div> */}
+            <FlowGraphic />
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ export default function HeroHome() {
                 style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
               >
                 <SparklesIcon className="w-4 h-4 ml-1" />
-                <span>New: Now Backed by Character Capital</span>
+                <span>Backed by <b>Character Capital</b></span>
               </a>
             </div>
             <h1 
@@ -70,7 +70,7 @@ export default function HeroHome() {
                 </div>
               </div>
               <br />
-              <FlowGraphic />
+              {/* <FlowGraphic /> */}
             </div>
           </div>
 

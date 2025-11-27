@@ -22,25 +22,23 @@ export default function Principles() {
     //     "Like any great teammate, your AI workforce learns from you and constantly adapts over time to deliver more accurate and consistent results.",
     // },
     {
-      title: "Workforce of Specialized AI Teammates",
+      title: "Capability #1",
       body: `
-        Build or use a reliable workforce of AI agents that integrate into your product tools,
-        work 24/7, and autonomously handle an entire product/customer goal.
+        Nexus does so and so < 15 words. Title is an action
       `,
       image: DelegationImg,
     },
     {
-      title: "Company Context Layer",
+      title: "Capability #2",
       body: `
-        Nexus understands the relevant connections and context from your data and feedback platforms so you never manually configure them.
+      Nexus does so and so < 15 words. Title is an action
       `,
       image: StackContext,
     },
     {
-      title: "Constantly Adapting",
+      title: "Capability #3",
       body: `
-        Nexus agents continuously learn and adapt to your evolving platforms and product goals,
-        delivering more consistent results over time.
+       Nexus does so and so < 15 words. Title is an action
       `,
       image: AdaptiveIntelligence,
     },
@@ -59,10 +57,10 @@ export default function Principles() {
           
           <div className="mx-auto max-w-3xl pb-12 text-center">
             <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
-              Automate Product Outcomes
+              [High Level Description of Nexus]
             </h2>
-            <p className="text-md text-indigo-200/65">
-            Specialized AI agents that autonomously handle product tasks across feature rollouts, engagement, churn, and more by connecting insights across all your sources so your team can focus on decisions.            </p>
+            {/* <p className="text-md text-indigo-200/65">
+            Specialized AI agents that autonomously handle product tasks across feature rollouts, engagement, churn, and more by connecting insights across all your sources so your team can focus on decisions.            </p> */}
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {cards.map((card, idx) => (

@@ -28,21 +28,24 @@ export default function Home() {
     <>
       {/* <PageIllustration /> */}
       <Hero />
+      <Principles />
+      <ProblemStatement />
+      <Features/>
       {/* <WorkforcePromo />
       <KnowledgeBasePromo />
       <ConstantlyLearningPromo /> */}
-      <ProblemStatement />
-      <SlackExamples />
-      <Principles />
-      <Testimonials />
+      {/* <SlackExamples /> */}
+      
+      {/* <Testimonials /> */}
       {/* <FeaturesGrid /> */}
       <IntegrationsTicker />
       {/* <Features /> */}
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       {/* <Faq /> */}
       {/* <Testimonials /> */}
       {/* <Workflows /> */}
       <Cta />
+      <Faq />
     </>
   );
 }
