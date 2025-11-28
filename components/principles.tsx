@@ -22,23 +22,23 @@ export default function Principles() {
     //     "Like any great teammate, your AI workforce learns from you and constantly adapts over time to deliver more accurate and consistent results.",
     // },
     {
-      title: "Capability #1",
+      title: "Monitor for issues and trends",
       body: `
-        Nexus does so and so < 15 words. Title is an action
+       Nexus autonomously keeps up with issues across replays, customer feedback, and logs to spot trends and patterns early.
       `,
       image: DelegationImg,
     },
     {
-      title: "Capability #2",
+      title: "Context that adapts",
       body: `
-      Nexus does so and so < 15 words. Title is an action
+      Issues  are root-caused across your tools to automatically prioritize fixes based on product and customer impact
       `,
       image: StackContext,
     },
     {
-      title: "Capability #3",
+      title: "Accelerated fixes",
       body: `
-       Nexus does so and so < 15 words. Title is an action
+       Agents file  engineering tickets, generte steps to reproduce errors, and even make fixes in code when possible.
       `,
       image: AdaptiveIntelligence,
     },
@@ -57,7 +57,7 @@ export default function Principles() {
           
           <div className="mx-auto max-w-3xl pb-12 text-center">
             <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
-              [High Level Description of Nexus]
+              Ship faster with the root cause and the fix already taken care of [not a fan]
             </h2>
             {/* <p className="text-md text-indigo-200/65">
             Specialized AI agents that autonomously handle product tasks across feature rollouts, engagement, churn, and more by connecting insights across all your sources so your team can focus on decisions.            </p> */}

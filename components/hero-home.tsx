@@ -35,7 +35,7 @@ export default function HeroHome() {
 
                {/* This is an option that incorporates wording from Dhavan and also kind of like Karumi */}
               {/* Don't lose visibility on your product  */}
-              Don't lose sight of your product
+              [Hero text] Don't lose sight of your product
 
               {/*Have to change this title*/}
             </h1>
@@ -46,7 +46,7 @@ export default function HeroHome() {
                 data-aos-delay={200}
               >
                 {/* Launch specialized AI agents that understand how your platform and latest features are performing with customers. */}
-                Nexus saves you time with always-on AI agents that orchestrate insights across all your tools to completely handle the end-to-end of your product tasks.
+                Nexus catches and deep dives on production bugs to ship context-filled tickets and fixes automatically
                 {/* Orchestrating product tasks made simple. */}
               </p>
               <div className="flex flex-row justify-center mt-2 md:mt-4 gap-5">
