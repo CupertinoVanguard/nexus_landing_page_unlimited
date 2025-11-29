@@ -6,16 +6,34 @@ import Logo from "./logo";
 export default function Header() {
   return (
     // <header className="z-30  w-full  bg-gradient-to-tr shadow-md shadow-gray-800">
-    <header className="fixed top-4 left-0 w-full z-50 backdrop-blur-md p-2 rounded-b-2xl shadow-md">
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 w-3/5  z-50 backdrop-blur-md p-2 rounded-2xl shadow-md bg-gray-800">
       <div className="  px-4 sm:px-6">
         <div className="relative flex items-center justify-between gap-3">
           {/* Site branding */}
-          <div className="flex items-start justify-start">
+          <div className="flex flex-1 items-start justify-start">
             <Logo />
           </div>
 
+          <ul className="flex flex-1 items-center justify-center space-x-4"> 
+            <li> 
+              <Link href="/">
+                Features
+              </Link>
+            </li>
+            <li> 
+              <Link href="/#integration-ticker">
+                Integrations
+              </Link>
+            </li>
+            <li> 
+              <Link href="/">
+                Features
+              </Link>
+            </li>
+          </ul>
+
           {/* Desktop sign in links */}
-          <ul className="flex items-center justify-end w-full space-x-4">
+          <ul className="flex flex-1 items-center justify-end space-x-4">
             {/* <li>
               <Link
                 href="https://tally.so/r/3l187v"

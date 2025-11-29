@@ -14,6 +14,7 @@ import Jira from "@/public/images/jira_background_removed.png";
 import Zendesk from "@/public/images/zendesk.svg";
 import Slack from "@/public/images/slack.png";
 import FlowGraphic from "./flow-graphic";
+import FlowGraphicCircular from "./flow-graphic-circular";
 type Logo = { src: any; alt: string };
 
 const logosCol1: Logo[] = [
@@ -40,11 +41,11 @@ const logosCol3: Logo[] = [
 
 export default function IntegrationsTicker() {
   return (
-    <section className="relative">
+    <section className="relative" id="integration-ticker">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative border border-gray-800 rounded-3xl overflow-hidden bg-gradient-to-b from-gray-900 to-gray-950 py-12 md:py-16">
+        <div className="relative border border-gray-800 rounded-3xl overflow-hidden bg-gradient-to-b from-gray-900 to-gray-950">
           {/* Decorative ellipse/circle */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+          {/* <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" /> */}
           
           {/* Content wrapper */}
           <div className="relative md:flex md:flex-row md:items-center">
