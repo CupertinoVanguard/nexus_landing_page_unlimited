@@ -73,7 +73,30 @@ export default function HeroHome() {
               {/* <FlowGraphic /> */}
             </div>
           </div>
+          {/* This is the screenshot/image of the platform/demonstrating the actions that Nexus can take. */}
+          {/* <div className="flex flex-row justify-center mt-2 md:mt-4 gap-5">
+            <img src="/images/nexus-screenshot-2.png" alt="Nexus Screenshot" className="w-auto max-w-sm h-auto rounded-lg" />
+          </div> */}
+          {/* Strictly for prototype (from Decipher) */}
+        
+          {/* <div className="flex flex-row justify-center mt-2 md:mt-4 gap-5">
+            <p>[Image of value prop]</p>
+            <img src="/images/slack-issue creation.png" alt="Slack Screenshot from Decipher" className="w-auto max-w-sm h-auto rounded-lg" />
+          </div> */}
 
+
+          <div className="flex flex-row justify-center mt-2 md:mt-4 gap-5 overflow-x-auto">
+            <p>[Image of value prop]</p>
+            {/* <img src="/images/nexuslogo (3) (1).png" alt="Linear Screenshot" className="w-auto max-w-sm h-auto rounded-lg" />
+  
+            <img src="/images/nexuslogo (3) (1).png" alt="Linear Screenshot" className="w-auto max-w-sm h-auto rounded-lg" /> */}
+
+            {/* <img src="/images/nexuslogo (3) (1).png" alt="Linear Screenshot" className="w-auto max-w-sm h-auto rounded-lg" /> */}
+            <img src="/images/Linear-Issue-2.png" alt="Linear Screenshot" className="w-auto max-w-sm h-auto rounded-lg" />
+          </div>
+
+          {/* <img src="/images/nexus-screenshot-2.png" alt="Nexus Screenshot" className="w-auto max-w-sm h-auto rounded-lg" />
+           */}
           {/* <ModalVideo
             thumb={NexusThumbnail}
             thumbWidth={1104}

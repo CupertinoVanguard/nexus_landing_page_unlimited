@@ -2,12 +2,19 @@ import Image from "next/image";
 import BlurredShapeGray from "@/public/images/blurred-shape-gray.svg";
 import BlurredShape from "@/public/images/blurred-shape.svg";
 import Posthog from "@/public/images/posthog.png";
+import Linear from "@/public/images/linear.webp";
+import NexusSlack from "@/public/images/nexus-screenshot-2.png";
+// import LinearContext from "@/public/images/Linear-Example-fst.png";
+import LinearRootCause from "@/public/images/Linear-Example-snd.png";
+import LinearNextSteps from "@/public/images/Linear-Next-Steps.png";
+
 
 export default function Features() {
   const cards = [
-    {card_title: "Always-On - need to cut wording below", card_body: "Catching and correlating patterns across user replays and incoming customer signals for production issues on autopilot ", img: Posthog},
-    {card_title: "Autonomous Deep Dive - need to cut wording below", card_body: "Issues that are automatically root-caused to understand exactly why and its customer impact, past patterns, revenue impact ", img: Posthog},
-    {card_title: "Fixes made easy - need to cut wording below or split into two", card_body: "Context-filled engineering tickets with steps on how to repoduce the issue and custom context ready-to-go to automate fixes through AI code tools", img: Posthog},
+    {card_title: "Always-On - need to cut wording below", card_body: "Catch and correlate patterns across user replays and incoming customer signals for production issues on autopilot ", img: NexusSlack},
+    // {card_title: "Always-On - need to cut wording below", card_body: "Catching and correlating patterns across user replays and incoming customer signals for production issues on autopilot ", img: Posthog},
+    {card_title: "Autonomous Deep Dive - need to cut wording below", card_body: "Issues that are automatically root-caused to understand exactly why and its customer impact, past patterns, revenue impact ", img: LinearRootCause},
+    {card_title: "Fixes made easy - need to cut wording below or split into two", card_body: "Context-filled engineering tickets with steps on how to repoduce the issue and custom context ready-to-go to automate fixes through AI code tools", img: LinearNextSteps},
   ]
   return (
     <section className="relative">
