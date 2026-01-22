@@ -22,25 +22,23 @@ export default function Principles() {
     //     "Like any great teammate, your AI workforce learns from you and constantly adapts over time to deliver more accurate and consistent results.",
     // },
     {
-      title: "Workforce of Specialized AI Teammates",
+      title: "Monitor for issues and trends",
       body: `
-        Build or use a reliable workforce of AI agents that integrate into your product tools,
-        work 24/7, and autonomously handle an entire product/customer goal.
+       Nexus autonomously keeps up with issues across replays, customer feedback, and logs to spot trends and patterns early.
       `,
       image: DelegationImg,
     },
     {
-      title: "Company Context Layer",
+      title: "Context that adapts",
       body: `
-        Nexus understands the relevant connections and context from your data and feedback platforms so you never manually configure them.
+      Issues  are root-caused across your tools to automatically prioritize fixes based on product and customer impact
       `,
       image: StackContext,
     },
     {
-      title: "Constantly Adapting",
+      title: "Accelerated fixes",
       body: `
-        Nexus agents continuously learn and adapt to your evolving platforms and product goals,
-        delivering more consistent results over time.
+       Agents file  engineering tickets, generte steps to reproduce errors, and even make fixes in code when possible.
       `,
       image: AdaptiveIntelligence,
     },
@@ -59,10 +57,10 @@ export default function Principles() {
           
           <div className="mx-auto max-w-3xl pb-12 text-center">
             <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
-              Automate Product Outcomes
+              Ship faster with the root cause and the fix already taken care of
             </h2>
-            <p className="text-md text-indigo-200/65">
-            Specialized AI agents that autonomously handle product tasks across feature rollouts, engagement, churn, and more by connecting insights across all your sources so your team can focus on decisions.            </p>
+            {/* <p className="text-md text-indigo-200/65">
+            Specialized AI agents that autonomously handle product tasks across feature rollouts, engagement, churn, and more by connecting insights across all your sources so your team can focus on decisions.            </p> */}
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {cards.map((card, idx) => (
