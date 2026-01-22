@@ -24,7 +24,7 @@ export default function Cta() {
               className="pb-8 font-nacelle text-3xl font-semibold text-gray-100 md:text-4xl"
               data-aos="fade-up"
             >
-              Ready to have agents handle your goals and insights?
+              Don't let AI bugs in prod affect your customer's experience. Use Nexus.
             </h2>
             <br></br>
             <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center gap-4">

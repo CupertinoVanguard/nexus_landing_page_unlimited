@@ -21,16 +21,26 @@ import AgentTaskforce from "@/components/agent-taskforce";
 import Testimonials from "@/components/testimonials";
 import ProblemStatement from "@/components/problem-statement";
 import SlackExamples from "@/components/slack-examples";
-
+import IntegrationSection from "@/components/integration_section";
+import LaunchSection from "@/components/launch_section";
+import CatchIssues from "@/components/catch_issues";
+import DeepDive from "@/components/deep_dive";
+import IssueAction from "@/components/issue_action";
+import AlertRootCauseFix from "@/components/alert-rootcause-fix";
 
 export default function Home() {
   return (
     <>
       {/* <PageIllustration /> */}
       <Hero />
-      <Principles />
-      <ProblemStatement />
-      <Features/>
+      <AlertRootCauseFix />
+      <CatchIssues />
+      <DeepDive />
+      <IntegrationSection />
+      <IssueAction />
+      {/* <Principles /> */}
+      {/* <ProblemStatement /> */}
+      {/* <Features/> */}
       {/* <WorkforcePromo />
       <KnowledgeBasePromo />
       <ConstantlyLearningPromo /> */}
@@ -38,14 +48,14 @@ export default function Home() {
       
       {/* <Testimonials /> */}
       {/* <FeaturesGrid /> */}
-      <IntegrationsTicker />
+      {/* <IntegrationsTicker /> */}
       {/* <Features /> */}
       {/* <HowItWorks /> */}
       {/* <Faq /> */}
       {/* <Testimonials /> */}
       {/* <Workflows /> */}
       <Cta />
-      <Faq />
+      {/* <Faq /> */}
     </>
   );
 }

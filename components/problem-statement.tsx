@@ -4,19 +4,24 @@ export default function ProblemStatement() {
   return (
     <section className="relative">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative border border-gray-800 rounded-3xl overflow-hidden bg-gradient-to-b from-gray-900 to-gray-950 py-12 md:py-16">
+        <div className="relative border border-gray-800 rounded-3xl overflow-hidden bg-gradient-to-b from-gray-700 to-gray-950 py-12 md:py-16">
           {/* Decorative ellipse/circle */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-          <h1 className="font-nacelle text-md sm:text-md md:text-md lg:text-md font-semibold text-white mb-4">
+          {/* <h1 className="font-nacelle text-md sm:text-md md:text-md lg:text-md font-semibold text-white mb-4">
             [Problem Statement]
-          </h1>
+          </h1> */}
           {/* Content wrapper */}
-          <div className="relative md:flex md:flex-row md:items-center">
+          <div className="relative">
             {/* Header section */}
             <div className="px-4 sm:px-6 mb-8 md:mb-12">
-              <h2 className="font-nacelle text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
-               “If something is not working, we don’t really have that much visibility unless I go in and look at the traces.”
+              <h2 className="font-nacelle text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-4">
+               "If something is not working, we don't really have that much visibility unless I go in and look at the traces."
               </h2>
+            </div>
+            {/* Attribution - bottom right corner, below quote */}
+            <div className="px-4 sm:px-6 text-right">
+              <p className="text-sm md:text-base text-gray-200 font-bold">
+                - Product & AI Engineering Head
+              </p>
             </div>
           </div>
         </div>

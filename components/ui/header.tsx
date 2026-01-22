@@ -14,9 +14,9 @@ export default function Header() {
             <Logo />
           </div>
 
-          <ul className="flex flex-1 items-center justify-center space-x-4"> 
+          {/* <ul className="flex flex-1 items-center justify-center space-x-4"> 
             <li> 
-              <Link href="/">
+              <Link href="/#features-rundown">
                 Features
               </Link>
             </li>
@@ -30,7 +30,7 @@ export default function Header() {
                 Features
               </Link>
             </li>
-          </ul>
+          </ul> */}
 
           {/* Desktop sign in links */}
           <ul className="flex flex-1 items-center justify-end space-x-4">
@@ -44,6 +44,15 @@ export default function Header() {
                 Join the Waitlist
               </Link>
             </li> */}
+            <li>
+              <Link
+                  href="https://nexus-ba-platform.vercel.app/"
+                  className="btn-sm py-[5px] text-white font-semibold"
+                  style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
+                >
+                      Log In
+              </Link>
+            </li>
             <li>
               <Link
                 href="https://cal.com/nexus-ai-sf"
