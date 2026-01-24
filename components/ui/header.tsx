@@ -6,9 +6,9 @@ import Logo from "./logo";
 export default function Header() {
   return (
     // <header className="z-30  w-full  bg-gradient-to-tr shadow-md shadow-gray-800">
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 w-3/5  z-50 backdrop-blur-md p-2 rounded-2xl shadow-md bg-gray-800">
-      <div className="  px-4 sm:px-6">
-        <div className="relative flex items-center justify-between gap-3">
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-3xl md:w-3/5 z-50 backdrop-blur-md p-1.5 sm:p-2 rounded-2xl shadow-md bg-gray-800">
+      <div className="px-3 sm:px-4">
+        <div className="relative flex items-center justify-between gap-2 sm:gap-3">
           {/* Site branding */}
           <div className="flex flex-1 items-start justify-start">
             <Logo />
@@ -33,7 +33,7 @@ export default function Header() {
           </ul> */}
 
           {/* Desktop sign in links */}
-          <ul className="flex flex-1 items-center justify-end space-x-4">
+          <ul className="flex items-center justify-end space-x-2 sm:space-x-4">
             {/* <li>
               <Link
                 href="https://tally.so/r/3l187v"
@@ -44,7 +44,7 @@ export default function Header() {
                 Join the Waitlist
               </Link>
             </li> */}
-            <li>
+            {/* <li>
               <Link
                   href="https://nexus-ba-platform.vercel.app/"
                   className="btn-sm py-[5px] text-white font-semibold"
@@ -52,7 +52,7 @@ export default function Header() {
                 >
                       Log In
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 href="https://cal.com/nexus-ai-sf"
