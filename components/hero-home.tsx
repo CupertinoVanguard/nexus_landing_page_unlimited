@@ -11,7 +11,7 @@ export default function HeroHome() {
     <section className="relative overflow-hidden">
       <div className="relative mx-auto max-w-8xl px-8 sm:px-12 pt-10 pr-10 pl-10">
         {/* Hero content */}
-        <div className="py-12 md:py-20 space-y-10">
+        <div className=" md:py-20 space-y-10">
           {/* Section header */}
           <div className="mt-6 md:mt-10 pb-2 md:pb-3 space-y-5">
             <div className="flex justify-center mb-4">
@@ -51,7 +51,7 @@ export default function HeroHome() {
                 Orchestrating product tasks made simple.
               </p> */}
               <div className="flex flex-row justify-center mt-2 md:mt-4 gap-5">
-                <div data-aos="fade-up" data-aos-delay={400}>
+                {/* <div data-aos="fade-up" data-aos-delay={400}>
                   <a
                     className="btn-md bg-black text-white hover:bg-gray-800 hover:scale-105 transition-all duration-300"
                     style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
@@ -59,10 +59,23 @@ export default function HeroHome() {
                   >
                     Join the Waitlist <span className="ml-1 tracking-normal text-white transition-transform group-hover:translate-x-0.5">&rarr;</span>
                   </a>
+                </div> */}
+                <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay={400}>
+                  <button
+                    className="btn-md bg-gray-700 text-white opacity-70 cursor-not-allowed hover:bg-gray-700 transition-all duration-300 px-6"
+                    style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
+                    disabled
+                  >
+                    See Business Impact
+                  </button>
+
+                  <span className="mt-2 text-sm text-white text-center opacity-90" style={{ maxWidth: 250 }}>
+                    (Coming Soon)
+                  </span>
                 </div>
                 <div data-aos="fade-up" data-aos-delay={400}>
                   <a
-                    className="btn-md bg-gray-300 text-black hover:bg-gray-100 hover:scale-105 transition-all duration-300"
+                    className="btn-md bg-white text-black hover:bg-gray-100 hover:scale-105 transition-all duration-300"
                     style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
                     href="https://cal.com/nikhilpillai/nexus-15-min-intro-call"
                   >

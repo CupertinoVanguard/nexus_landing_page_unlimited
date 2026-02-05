@@ -44,18 +44,18 @@ export default function Header() {
                 Join the Waitlist
               </Link>
             </li> */}
-            {/* <li>
+            <li>
               <Link
-                  href="https://nexus-ba-platform.vercel.app/"
+                  href="https://nexus-ba-platform.vercel.app/register"
                   className="btn-sm py-[5px] text-white font-semibold"
                   style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
                 >
-                      Log In
+                  Log In
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link
-                href="https://cal.com/nexus-ai-sf"
+                href="https://cal.com/nikhilpillai/nexus-15-min-intro-call"
                 className="btn-sm py-[5px] bg-white text-black hover:bg-gray-100"
                 style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
               >
