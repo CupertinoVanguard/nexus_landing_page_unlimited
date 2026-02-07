@@ -4,7 +4,7 @@ import ModalVideo from "@/components/modal-video";
 import NexusThumbnail from "@/public/images/nexus_thumbnail.png"
 import FlowGraphic from "@/components/flow-graphic";
 import { SparklesIcon } from "lucide-react";
- 
+
 
 export default function HeroHome() {
   return (
@@ -25,18 +25,18 @@ export default function HeroHome() {
               </a>
             </div>
             <br></br>
-            <h1 
+            <h1
               className="pb-5 font-nacelle text-white text-3xl font-normal text-center md:text-5xl"
               data-aos="fade-up"
             >
-               {/* AI agents that help you make faster product decisions */}
+              {/* AI agents that help you make faster product decisions */}
 
-               {/* This is the old title */}
-               {/* AI Workers for your Product Goals  */}
+              {/* This is the old title */}
+              {/* AI Workers for your Product Goals  */}
 
-               {/* This is an option that incorporates wording from Dhavan and also kind of like Karumi */}
+              {/* This is an option that incorporates wording from Dhavan and also kind of like Karumi */}
               {/* Don't lose visibility on your product  */}
-              
+
               Detect and heal silent failures faster with your AI agents in production
               {/*Have to change this title*/}
             </h1>
@@ -55,9 +55,9 @@ export default function HeroHome() {
                   <a
                     className="btn-md bg-black text-white hover:bg-gray-800 hover:scale-105 transition-all duration-300"
                     style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                    href="https://tally.so/r/3l187v"
+                    href="/top-down"
                   >
-                    Join the Waitlist <span className="ml-1 tracking-normal text-white transition-transform group-hover:translate-x-0.5">&rarr;</span>
+                    Check the Impact<span className="ml-1 tracking-normal text-white transition-transform group-hover:translate-x-0.5">&rarr;</span>
                   </a>
                 </div> */}
                 <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay={400}>
@@ -92,7 +92,7 @@ export default function HeroHome() {
             <img src="/images/nexus-screenshot-2.png" alt="Nexus Screenshot" className="w-auto max-w-sm h-auto rounded-lg" />
           </div> */}
           {/* Strictly for prototype (from Decipher) */}
-        
+
           {/* <div className="flex flex-row justify-center mt-2 md:mt-4 gap-5">
             <p>[Image of value prop]</p>
             <img src="/images/slack-issue creation.png" alt="Slack Screenshot from Decipher" className="w-auto max-w-sm h-auto rounded-lg" />
@@ -116,7 +116,7 @@ export default function HeroHome() {
           /> */}
         </div>
       </div>
-      
+
       {/* Divider */}
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="h-px bg-gradient-to-r from-transparent via-gray-700/50 to-transparent"></div>
