@@ -132,7 +132,7 @@ export default function TopDownContent() {
       {/* Header Area */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 px-6 md:px-8 max-w-5xl mx-auto w-full mb-12">
         <h1 className="text-lg md:text-xl font-semibold font-nacelle text-white">
-          Link your account so our agent can triage your last 100 alerts.
+          Link your account so you can understand the customer impact of the your agent's missed silent failures!
         </h1>
 
         {posthogCred && langfuseCred && (

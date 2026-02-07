@@ -62,16 +62,16 @@ export default function HeroHome() {
                 </div> */}
                 <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay={400}>
                   <a
-                    className="btn-md bg-gray-700 text-white opacity-70 cursor-not-allowed hover:bg-gray-700 transition-all duration-300 px-6"
+                    className="btn-md bg-gray-700 text-white hover:bg-gray-700 transition-all duration-300 px-6"
                     style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
                     href="/top-down"
                   >
                     See Business Impact
                   </a>
 
-                  <span className="mt-2 text-sm text-white text-center opacity-90" style={{ maxWidth: 250 }}>
+                  {/* <span className="mt-2 text-sm text-white text-center opacity-90" style={{ maxWidth: 250 }}>
                     (Coming Soon)
-                  </span>
+                  </span> */}
                 </div>
                 <div data-aos="fade-up" data-aos-delay={400}>
                   <a
