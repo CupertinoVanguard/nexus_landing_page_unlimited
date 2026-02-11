@@ -16,7 +16,7 @@ export default function HeroHome() {
           <div className="mt-6 md:mt-10 pb-2 md:pb-3 space-y-5">
             <div className="flex justify-center mb-4">
               <a
-                href="https://cal.com/nikhilpillai/nexus-15-min-intro-call"
+                href="https://www.character.vc/"
                 className="relative gap-2 inline-flex items-center rounded-full border border-white/30 px-4 py-1.5 text-sm text-white transition-colors hover:bg-white/10"
                 style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
               >
