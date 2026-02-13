@@ -63,10 +63,10 @@ export async function terminate(job_id: string) {
         }
     )
 
-    if (response.status === 200) {
-        const data = await response.json();
-        return data.status;
-    }
-    return false;
+    // if (response.status === 200) {
+    //     const data = await response.json();
+    //     return data.status;
+    // }
+    // return false;
 }
 
