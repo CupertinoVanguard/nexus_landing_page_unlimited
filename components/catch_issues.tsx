@@ -1,107 +1,287 @@
 'use client'
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import CustomerFeedbackCards from "./customer_feedback_cards";
-import PatternMatchingGraphic from "./pattern_matching_graphic";
+
+const CONDITIONS = [
+  "user rephrases or corrects the agent multiple times, indicating dissatisfaction with the response.",
+  "agent makes a choice without referencing available evidence, constraints, or stated goals.",
+  "agent answers from memory despite having an appropriate tool available to verify the information.",
+  "agent uses MRR metric instead of ARR metric in revenue forecast calculation.",
+];
+
+const INITIAL_FILLED = 2;
 
 export default function CatchIssues() {
-  const features = [
-    {
-      title: "Customize silent failure conditions",
-      description: "Add silent failure conditions you want to look for in your agent. Define custom patterns and behaviors that indicate your agent is failing.",
-      image: "/images/main_nexus_page.png", // Placeholder - replace with actual image
-    },
-    {
-      title: "Uncover patterns",
-      description: "Identifies recurring issues and patterns across interactions to surface systemic problems before they escalate",
-      image: "/images/main_nexus_page.png", // Placeholder - replace with actual image
-    },
-  ];
+  const [filledCount, setFilledCount] = useState(INITIAL_FILLED);
+  const [typingText, setTypingText] = useState("");
+  const [addIdx, setAddIdx] = useState(0);
+  const [phase, setPhase] = useState<
+    "waiting" | "typing" | "added" | "resetting"
+  >("waiting");
+  const [newSlot, setNewSlot] = useState<number | null>(null);
+  const [fading, setFading] = useState(false);
+  const [generation, setGeneration] = useState(0);
+  const [plusActive, setPlusActive] = useState(false);
+
+  const targetIdx = INITIAL_FILLED + addIdx;
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    if (phase === "waiting") {
+      if (filledCount >= CONDITIONS.length) {
+        timeout = setTimeout(() => setPhase("resetting"), 2500);
+      } else {
+        timeout = setTimeout(() => setPhase("typing"), 1800);
+      }
+    } else if (phase === "typing") {
+      const target = CONDITIONS[targetIdx];
+      if (typingText.length < target.length) {
+        timeout = setTimeout(() => {
+          setTypingText(target.slice(0, typingText.length + 1));
+        }, 30);
+      } else {
+        setPlusActive(true);
+        timeout = setTimeout(() => {
+          setPlusActive(false);
+          setNewSlot(targetIdx);
+          setFilledCount(targetIdx + 1);
+          setTypingText("");
+          setPhase("added");
+        }, 600);
+      }
+    } else if (phase === "added") {
+      timeout = setTimeout(() => {
+        setNewSlot(null);
+        setAddIdx((prev) => prev + 1);
+        setPhase("waiting");
+      }, 2000);
+    } else if (phase === "resetting") {
+      setFading(true);
+      timeout = setTimeout(() => {
+        setFilledCount(INITIAL_FILLED);
+        setFading(false);
+        setNewSlot(null);
+        setAddIdx(0);
+        setGeneration((g) => g + 1);
+        setPhase("waiting");
+      }, 600);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [phase, typingText, targetIdx, filledCount]);
 
   return (
     <section className="relative">
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes slotIn {
+              from { opacity: 0; transform: scale(0.95) translateY(6px); }
+              to   { opacity: 1; transform: scale(1) translateY(0); }
+            }
+            .slot-enter { animation: slotIn 0.4s ease-out both; }
+          `,
+        }}
+      />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-20">
-          {/* Title Section */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-[repeat(13,minmax(0,1fr))] mb-5 md:mb-10">
-            {/* Left Column - Title */}
-            <div className="md:col-span-10">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
+            {/* Left: Animated panel */}
+            <div className="order-2 md:order-1">
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                {/* Header bar */}
+                <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100">
                   <div className="flex items-center gap-2">
-                    <div className="h-1 w-1 rounded-full bg-[#02B8CC]"></div>
-                    <span className="text-sm font-medium text-gray-400">
-                      Catch Issues
+                    <svg
+                      className="w-3.5 h-3.5 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                    <span className="text-sm font-semibold text-gray-700">
+                      Filters
                     </span>
                   </div>
-                  <span className="text-gray-500">→</span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-mono bg-gray-800/50 border border-gray-700/50 text-gray-300">
-                    pip install nexus-library
-                  </span>
+                  <div className="flex items-center gap-3">
+                    <button
+                      className={`w-6 h-6 flex items-center justify-center rounded transition-colors ${
+                        plusActive
+                          ? "bg-blue-100 text-blue-600"
+                          : "text-gray-400"
+                      }`}
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 4v16m8-8H4"
+                        />
+                      </svg>
+                    </button>
+                    <svg
+                      className="w-4 h-4 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+                      />
+                    </svg>
+                    <span className="text-sm font-semibold text-gray-700">
+                      Modes
+                    </span>
+                  </div>
                 </div>
-                <h2 className="font-nacelle text-3xl font-semibold text-gray-200 md:text-4xl lg:text-5xl">
-                Detect Silent Failures
-                </h2>
+
+                {/* 2x2 card grid */}
+                <div
+                  className={`grid grid-cols-2 gap-3 p-6 transition-opacity duration-500 ${
+                    fading ? "opacity-0" : "opacity-100"
+                  }`}
+                >
+                  {CONDITIONS.map((condition, i) => {
+                    const isFilled = i < filledCount;
+                    const isNew = i === newSlot;
+
+                    if (!isFilled) {
+                      return (
+                        <div
+                          key={`${generation}-empty-${i}`}
+                          className="border border-dashed border-gray-200 rounded-xl p-4 h-[140px] flex items-center justify-center"
+                        >
+                          <svg
+                            className="w-5 h-5 text-gray-300"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={1.5}
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M12 4v16m8-8H4"
+                            />
+                          </svg>
+                        </div>
+                      );
+                    }
+
+                    return (
+                      <div
+                        key={`${generation}-${i}`}
+                        className={`bg-gray-50 border border-gray-200 rounded-xl p-4 h-[140px] flex flex-col justify-between overflow-hidden ${
+                          isNew ? "slot-enter" : ""
+                        }`}
+                      >
+                        <div>
+                          <p className="text-xs font-medium text-gray-400 mb-1.5">
+                            Mode {i + 1}
+                          </p>
+                          <p className="text-sm text-gray-700 leading-relaxed">
+                            {condition}
+                          </p>
+                        </div>
+                        <div className="flex items-center justify-end mt-2">
+                          <div className="w-4 h-4 rounded overflow-hidden">
+                            <Image
+                              src="/images/nexuslogo (3) (1).png"
+                              alt="N"
+                              width={16}
+                              height={16}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Input area */}
+                <div className="px-6 pb-6">
+                  <div className="flex items-center gap-2 rounded-lg bg-gray-50 border border-gray-200 px-3 h-[42px]">
+                    <span className="text-sm flex-1 truncate">
+                      {typingText ? (
+                        <>
+                          <span className="text-gray-800">{typingText}</span>
+                          <span className="animate-pulse text-gray-400">|</span>
+                        </>
+                      ) : (
+                        <span className="text-gray-400">
+                          Add a failure condition...
+                        </span>
+                      )}
+                    </span>
+                    <button
+                      className={`flex items-center justify-center w-6 h-6 rounded transition-colors ${
+                        plusActive
+                          ? "bg-blue-500 text-white"
+                          : "bg-gray-200 text-gray-500"
+                      }`}
+                    >
+                      <svg
+                        className="w-3.5 h-3.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 4v16m8-8H4"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Right Column - Description */}
-            {/* <div className="md:col-span-5">
-              <p className="text-lg text-gray-300 mb-6 max-w-md">
-                <span className="font-semibold text-gray-200">Linear for Agents.</span> Choose from a variety of AI agents and start delegating work, from code generation to other technical tasks.
+            {/* Right: Text content */}
+            <div className="order-1 md:order-2">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="h-1 w-1 rounded-full bg-[#1e3a5f]" />
+                <span className="text-sm font-medium text-gray-500">
+                  Catch Issues
+                </span>
+              </div>
+              <h2 className="font-nacelle text-3xl font-semibold text-gray-900 md:text-4xl lg:text-5xl mb-5">
+                Detect Silent Failures
+              </h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Catch beyond basic failure modes. Define custom modes for your domain and your agent's tasks and goals for Nexus to catch in real-time in production from traces and user sessions.
               </p>
-              <a
-                href="/agents"
-                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-400 border border-gray-700 rounded-lg hover:border-gray-600 hover:text-gray-300 transition-colors"
-              >
-                Learn more
-                <ChevronRight className="w-4 h-4" />
-              </a>
-            </div> */}
-          </div>    
 
-          {/* Content Wrap */}
-          <div className="relative">
-            {/* Feature Detail */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 mx-auto rounded-lg border-2 border-white/20 overflow-hidden" style={{ width: '95%' }}>
-              {features.map((feature, idx) => (
-                <div 
-                  key={idx} 
-                  className={`relative overflow-hidden ${
-                    idx === 0 
-                      ? 'border-r border-white/20' 
-                      : ''
-                  }`}
-                >
-                  {/* Feature Item */}
-                  
-                  {/* Graphic or Customer Feedback Cards */}
-                  {idx === 0 ? (
-                    <div className="relative w-full aspect-video p-4 flex items-center">
-                      <div className="w-full h-full">
-                        <CustomerFeedbackCards />
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="relative w-full aspect-video p-6">
-                      <PatternMatchingGraphic />
-                    </div>
-                  )}
-
-                  {/* Title */}
-                  <div className="px-6 pb-6">
-                    <div className="mb-3 text-center">
-                      <p className="font-nacelle text-xl font-semibold text-gray-200">
-                        {feature.title}
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+              <div className="w-full rounded-xl border border-gray-200 bg-gray-50 p-6">
+                <p className="text-xs uppercase tracking-[0.12em] text-gray-500 mb-4">
+                  Monitored Out of the Box
+                </p>
+                <ul className="grid grid-cols-1 gap-y-3 text-sm text-gray-700 leading-relaxed sm:grid-cols-2 sm:gap-x-8">
+                  <li>Failed tool calls</li>
+                  <li>User frustration in sessions</li>
+                  <li>Agent looping</li>
+                  <li>Information misrepresentation</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -109,4 +289,3 @@ export default function CatchIssues() {
     </section>
   );
 }
-

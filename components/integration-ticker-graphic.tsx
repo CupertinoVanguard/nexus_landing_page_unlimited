@@ -34,14 +34,14 @@ export default function IntegrationTickerGraphic() {
         <ul className="flex flex-row items-center gap-4 ticker-scroll">
           {[...allLogos, ...allLogos].map((logo, idx) => (
             <li key={idx} className="flex-shrink-0">
-              <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-white">
+              <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-gray-100 border border-gray-200">
                 <Image 
                   src={logo.src} 
                   alt={logo.alt} 
                   className="object-contain" 
                   width={24} 
                   height={24}
-                  style={logo.alt === "GitHub" ? { filter: "invert(1)" } : undefined}
+                  style={undefined}
                 />
               </div>
             </li>
@@ -53,14 +53,14 @@ export default function IntegrationTickerGraphic() {
         <ul className="flex flex-row items-center gap-4">
           {allLogos.map((logo, idx) => (
             <li key={idx} className="flex-shrink-0">
-              <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-white">
+              <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-gray-100 border border-gray-200">
                 <Image 
                   src={logo.src} 
                   alt={logo.alt} 
                   className="object-contain" 
                   width={24} 
                   height={24}
-                  style={logo.alt === "GitHub" ? { filter: "invert(1)" } : undefined}
+                  style={undefined}
                 />
               </div>
             </li>

@@ -151,15 +151,15 @@ export default function TopDownContent() {
     <div className="relative w-full font-inter pt-30 pb-16">
       {/* Header Area */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 px-6 md:px-8 max-w-6xl mx-auto w-full mb-12">
-        <h1 className="text-lg md:text-xl font-semibold font-nacelle text-white">
+        <h1 className="text-lg md:text-xl font-semibold font-nacelle text-gray-900">
           Link your account so you can understand the customer impact of the your agent's missed silent failures!
         </h1>
 
         {posthogCred && langfuseCred && (
           <button
-            className={`px-4 py-2 border rounded-full text-sm font-medium text-white transition-colors whitespace-nowrap ${isLoading
-              ? "border-red-500 hover:bg-red-500/20"
-              : "border-gray-700 hover:bg-gray-800/50"
+            className={`px-4 py-2 border rounded-full text-sm font-medium text-gray-900 transition-colors whitespace-nowrap ${isLoading
+              ? "border-red-500 hover:bg-red-50"
+              : "border-gray-300 hover:bg-gray-100"
               }`}
             onClick={isLoading ? terminateAnalysis : runAnalysis}
           >
@@ -170,7 +170,7 @@ export default function TopDownContent() {
 
       {/* Main Content Area */}
       <div className="flex flex-col items-center justify-center px-6 md:px-8">
-        <div className="w-full max-w-6xl rounded-xl flex items-center justify-center relative bg-gray-900/30 backdrop-blur-sm transition-all duration-500 ease-in-out py-8">
+        <div className="w-full max-w-6xl rounded-xl flex items-center justify-center relative bg-gray-50 border border-gray-200 transition-all duration-500 ease-in-out py-8">
 
           {/* Integration Cards - expand inline when clicked */}
           <div className="flex gap-4 md:gap-6 animate-in fade-in zoom-in duration-300 flex-wrap justify-center">
@@ -181,7 +181,7 @@ export default function TopDownContent() {
               return (
                 <div
                   key={integration.id}
-                  className={`group relative flex rounded-2xl bg-gray-800/80 backdrop-blur-sm transition-all duration-500 ease-in-out overflow-hidden ${
+                  className={`group relative flex rounded-2xl bg-white border border-gray-200 transition-all duration-500 ease-in-out overflow-hidden ${
                     integration.comingSoon ? "cursor-default opacity-75" : "cursor-pointer"
                   }`}
                   onClick={() => !isExpanded && !integration.comingSoon && setActivePanel(integration.id)}
@@ -196,7 +196,7 @@ export default function TopDownContent() {
                         className="object-contain"
                       />
                     </div>
-                    <span className="block text-sm font-medium font-nacelle text-gray-200 group-hover:text-white transition-colors font-semibold text-center leading-tight">
+                    <span className="block text-sm font-medium font-nacelle text-gray-700 group-hover:text-gray-900 transition-colors font-semibold text-center leading-tight">
                       {integration.name}
                     </span>
                     {integration.comingSoon && (
@@ -209,13 +209,13 @@ export default function TopDownContent() {
                   {/* Expanded Form Section - slides in/out */}
                   {!integration.comingSoon && !integration.isQuickStart && (
                     <div
-                      className={`flex items-center transition-all duration-500 ease-in-out ${isExpanded ? "max-w-[300px] opacity-100 border-l border-gray-700/50" : "max-w-0 opacity-0"
+                      className={`flex items-center transition-all duration-500 ease-in-out ${isExpanded ? "max-w-[300px] opacity-100 border-l border-gray-200" : "max-w-0 opacity-0"
                         }`}
                     >
                       <div className="p-5 space-y-3 min-w-[260px]">
                         {integration.fields.map((field) => (
                           <div key={field.key} className="space-y-1">
-                            <label htmlFor={`${integration.id}-${field.key}`} className="block text-xs font-medium text-gray-400 text-left">
+                            <label htmlFor={`${integration.id}-${field.key}`} className="block text-xs font-medium text-gray-600 text-left">
                               {field.label}
                             </label>
                             <input
@@ -230,7 +230,7 @@ export default function TopDownContent() {
                                     : ""
                               }
                               onChange={(e) => setFormValues((prev) => ({ ...prev, [field.key]: e.target.value }))}
-                              className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-500 transition-all"
+                              className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 transition-all"
                             />
                           </div>
                         ))}
@@ -241,7 +241,7 @@ export default function TopDownContent() {
                               setActivePanel(null);
                               setFormValues({});
                             }}
-                            className="px-3 py-1.5 rounded-lg border border-gray-600 text-white text-xs font-medium hover:bg-gray-800 transition-colors hover:cursor-pointer"
+                            className="px-3 py-1.5 rounded-lg border border-gray-300 text-gray-700 text-xs font-medium hover:bg-gray-100 transition-colors hover:cursor-pointer"
                           >
                             Cancel
                           </button>
@@ -269,15 +269,15 @@ export default function TopDownContent() {
                   {/* Quick Start Section for Nexus */}
                   {integration.isQuickStart && (
                     <div
-                      className={`flex items-center transition-all duration-500 ease-in-out ${isExpanded ? "max-w-[320px] opacity-100 border-l border-gray-700/50" : "max-w-0 opacity-0"
+                      className={`flex items-center transition-all duration-500 ease-in-out ${isExpanded ? "max-w-[320px] opacity-100 border-l border-gray-200" : "max-w-0 opacity-0"
                         }`}
                     >
                       <div className="p-5 space-y-3 min-w-[280px]">
-                        <p className="text-xs text-gray-300 leading-relaxed">
+                        <p className="text-xs text-gray-700 leading-relaxed">
                           All good! You can just use Nexus to get started:
                         </p>
-                        <div className="bg-gray-900/80 border border-gray-700 rounded-lg p-3">
-                          <code className="text-xs text-green-400 font-mono">
+                        <div className="bg-gray-100 border border-gray-200 rounded-lg p-3">
+                          <code className="text-xs text-green-700 font-mono">
                             pip install nexus-library
                           </code>
                         </div>
@@ -287,7 +287,7 @@ export default function TopDownContent() {
                               e.stopPropagation();
                               setActivePanel(null);
                             }}
-                            className="px-3 py-1.5 rounded-lg border border-gray-600 text-white text-xs font-medium hover:bg-gray-800 transition-colors hover:cursor-pointer"
+                            className="px-3 py-1.5 rounded-lg border border-gray-300 text-gray-700 text-xs font-medium hover:bg-gray-100 transition-colors hover:cursor-pointer"
                           >
                             Close
                           </button>
@@ -318,11 +318,11 @@ export default function TopDownContent() {
             {/* Stats Overview */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Silent Failures Count */}
-              <div className="bg-gray-900/40 border border-gray-800 rounded-xl p-5 relative overflow-hidden group">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <h3 className="text-sm font-medium text-gray-400 mb-1 relative z-10">Silent Failures Detected</h3>
+                <h3 className="text-sm font-medium text-gray-500 mb-1 relative z-10">Silent Failures Detected</h3>
                 <div className="flex items-baseline gap-2 relative z-10">
-                  <span className="text-4xl font-bold font-nacelle text-white">
+                  <span className="text-4xl font-bold font-nacelle text-gray-900">
                     {isLoading ? "-" : analysisResult.silent_failure_number}
                   </span>
                   <span className="text-sm text-gray-500">missed fauilres</span>
@@ -330,9 +330,9 @@ export default function TopDownContent() {
               </div>
 
               {/* Monitoring Need */}
-              <div className="bg-gray-900/40 border border-gray-800 rounded-xl p-5 relative overflow-hidden group">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <h3 className="text-sm font-medium text-gray-400 mb-1 relative z-10">Monitoring Status</h3>
+                <h3 className="text-sm font-medium text-gray-500 mb-1 relative z-10">Monitoring Status</h3>
                 <div className="flex items-center h-10 relative z-10">
                   {isLoading ? (
                     <span className="text-gray-500 animate-pulse">Analyzing...</span>
@@ -348,10 +348,10 @@ export default function TopDownContent() {
 
             {/* Detailed Report */}
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-400 ml-1">Analysis Report</label>
-              <div className="relative min-h-64 bg-gray-900/50 border border-gray-700 rounded-xl px-5 py-4 overflow-auto">
+              <label className="block text-sm font-medium text-gray-600 ml-1">Analysis Report</label>
+              <div className="relative min-h-64 bg-white border border-gray-200 rounded-xl px-5 py-4 overflow-auto">
                 {analysisResult.markdown_report ? (
-                  <article className="text-sm text-gray-300 [&_h1]:text-xl [&_h1]:font-semibold [&_h1]:text-gray-200 [&_h1]:mt-4 [&_h1]:mb-2 [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-gray-200 [&_h2]:mt-3 [&_h2]:mb-2 [&_h3]:text-base [&_h3]:font-medium [&_h3]:text-gray-200 [&_h3]:mt-2 [&_h3]:mb-1 [&_p]:mb-2 [&_p]:leading-relaxed [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-2 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-2 [&_li]:mb-0.5 [&_strong]:text-white [&_strong]:font-semibold [&_code]:bg-gray-800 [&_code]:text-blue-300 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-xs [&_pre]:bg-gray-800 [&_pre]:border [&_pre]:border-gray-700 [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:mb-2 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_blockquote]:border-l-4 [&_blockquote]:border-gray-600 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-gray-400 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:border-gray-600 [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_td]:border [&_td]:border-gray-600 [&_td]:px-3 [&_td]:py-2">
+                  <article className="text-sm text-gray-700 [&_h1]:text-xl [&_h1]:font-semibold [&_h1]:text-gray-900 [&_h1]:mt-4 [&_h1]:mb-2 [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-gray-900 [&_h2]:mt-3 [&_h2]:mb-2 [&_h3]:text-base [&_h3]:font-medium [&_h3]:text-gray-900 [&_h3]:mt-2 [&_h3]:mb-1 [&_p]:mb-2 [&_p]:leading-relaxed [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-2 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-2 [&_li]:mb-0.5 [&_strong]:text-gray-900 [&_strong]:font-semibold [&_code]:bg-gray-100 [&_code]:text-blue-700 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-xs [&_pre]:bg-gray-100 [&_pre]:border [&_pre]:border-gray-200 [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:mb-2 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_blockquote]:border-l-4 [&_blockquote]:border-gray-300 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-gray-500 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:border-gray-300 [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_td]:border [&_td]:border-gray-300 [&_td]:px-3 [&_td]:py-2">
                     <ReactMarkdown
                       remarkPlugins={[remarkGfm]}
                       components={{
@@ -371,9 +371,9 @@ export default function TopDownContent() {
 
                 {/* Loading Overlay */}
                 {isLoading && (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-900/80 backdrop-blur-sm rounded-xl border border-gray-700/50">
-                    <Loader2 className="w-10 h-10 text-blue-400 animate-spin mb-3" />
-                    <span className="text-sm font-medium text-gray-300 animate-pulse">Running Business Analysis...</span>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200">
+                    <Loader2 className="w-10 h-10 text-blue-600 animate-spin mb-3" />
+                    <span className="text-sm font-medium text-gray-700 animate-pulse">Running Business Analysis...</span>
                   </div>
                 )}
               </div>

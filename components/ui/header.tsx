@@ -1,65 +1,55 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Logo from "./logo";
 
+const NAVY = "#1e3a5f";
+
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    // <header className="z-30  w-full  bg-gradient-to-tr shadow-md shadow-gray-800">
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-3xl md:w-3/5 z-50 backdrop-blur-md p-1.5 sm:p-2 rounded-2xl shadow-md bg-gray-800">
-      <div className="px-3 sm:px-4">
-        <div className="relative flex items-center justify-between gap-2 sm:gap-3">
-          {/* Site branding */}
-          <div className="flex flex-1 items-start justify-start">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "py-2 shadow-sm backdrop-blur-md"
+          : "py-4"
+      }`}
+      style={{
+        background: scrolled ? "rgba(235, 241, 248, 0.92)" : "transparent",
+      }}
+    >
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
             <Logo />
           </div>
 
-          {/* <ul className="flex flex-1 items-center justify-center space-x-4"> 
-            <li> 
-              <Link href="/#features-rundown">
-                Features
-              </Link>
-            </li>
-            <li> 
-              <Link href="/#integration-ticker">
-                Integrations
-              </Link>
-            </li>
-            <li> 
-              <Link href="/">
-                Features
-              </Link>
-            </li>
-          </ul> */}
-
-          {/* Desktop sign in links */}
-          <ul className="flex items-center justify-end space-x-2 sm:space-x-4">
-            {/* <li>
-              <Link
-                href="https://tally.so/r/3l187v"
-                // className="btn-sm py-[5px] bg-white text-black hover:bg-gray-100"
-                className="btn-sm relative py-[5px] text-white before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-[length:100%_150%]"
-                style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-              >
-                Join the Waitlist
-              </Link>
-            </li> */}
+          <ul className="flex items-center gap-3 sm:gap-4">
             <li>
               <Link
-                  href="https://nexus-ba-platform.vercel.app/register"
-                  className="btn-sm py-[5px] text-white font-semibold"
-                  style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                >
-                  Log In
+                href="https://nexus-ba-platform.vercel.app/register"
+                className="text-sm font-semibold transition-colors"
+                style={{ fontFamily: "Helvetica, Arial, sans-serif", color: NAVY }}
+              >
+                Log In
               </Link>
             </li>
             <li>
               <Link
                 href="https://cal.com/nikhilpillai/nexus-15-min-intro-call"
-                className="btn-sm py-[5px] bg-white text-black hover:bg-gray-100"
-                style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
+                className="text-sm px-4 py-2 font-semibold text-white hover:opacity-90 transition-colors"
+                style={{ fontFamily: "Helvetica, Arial, sans-serif", background: NAVY }}
               >
-                    Book a Demo <span className="ml-1 tracking-normal text-black/50 transition-transform group-hover:translate-x-0.5">&rarr;</span>
+                Book a Demo <span className="ml-1 opacity-50">&rarr;</span>
               </Link>
             </li>
           </ul>

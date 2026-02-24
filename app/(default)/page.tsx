@@ -36,8 +36,8 @@ export default function Home() {
       <AlertRootCauseFix />
       <CatchIssues />
       <DeepDive />
-      <IntegrationSection />
       <IssueAction />
+      <IntegrationSection />
       {/* <Principles /> */}
       {/* <ProblemStatement /> */}
       {/* <Features/> */}

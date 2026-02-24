@@ -130,7 +130,7 @@ export default function Workflows() {
                     </span>
                   </div>
                   <p className="text-indigo-200/65">
-                    Agents manage their own scheduling, watch for trends, and proactively root-cause issues. They tell you when they find insight or solutions — no prompting needed.
+                    Agents manage their own scheduling, watch for trends, and proactively root-cause issues. They tell you when they find insight or solutions, no prompting needed.
                   </p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function Workflows() {
                     </span>
                   </div>
                   <p className="text-indigo-200/65">
-                    Check-in anytime with any agent like a colleague. Ask for data points, concerns, or analysis — all through natural language.
+                    Check-in anytime with any agent like a colleague. Ask for data points, concerns, or analysis, all through natural language.
                   </p>
                 </div>
               </div>
