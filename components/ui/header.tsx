@@ -34,7 +34,7 @@ export default function Header() {
           </div>
 
           <ul className="flex items-center gap-3 sm:gap-4">
-            <li>
+            {/* <li>
               <Link
                 href="https://nexus-ba-platform.vercel.app/register"
                 className="text-sm font-semibold transition-colors"
@@ -42,7 +42,7 @@ export default function Header() {
               >
                 Log In
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 href="https://cal.com/nikhilpillai/nexus-15-min-intro-call"
