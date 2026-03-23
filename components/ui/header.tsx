@@ -45,8 +45,17 @@ export default function Header() {
             </li> */}
             <li>
               <Link
+                href="/blogs"
+                className="text-sm font-semibold transition-colors"
+                style={{ fontFamily: "Helvetica, Arial, sans-serif", color: NAVY }}
+              >
+                Blogs
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="https://cal.com/nikhilpillai/nexus-15-min-intro-call"
-                className="text-sm px-4 py-2 font-semibold text-white hover:opacity-90 transition-colors"
+                className="text-sm px-4 py-2 font-semibold text-white hover:opacity-90 transition-colors rounded"
                 style={{ fontFamily: "Helvetica, Arial, sans-serif", background: NAVY }}
               >
                 Book a Demo <span className="ml-1 opacity-50">&rarr;</span>

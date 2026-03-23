@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const CONDITIONS = [
-  "user rephrases or corrects the agent multiple times, indicating dissatisfaction with the response.",
-  "agent makes a choice without referencing available evidence, constraints, or stated goals.",
+  "User rephrases the agent multiple times, indicating dissatisfaction.",
+  "Agent makes a choice without referencing available evidence or goals.",
   "agent answers from memory despite having an appropriate tool available to verify the information.",
   "agent uses MRR metric instead of ARR metric in revenue forecast calculation.",
 ];
@@ -86,10 +86,27 @@ export default function CatchIssues() {
       />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-20">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
-            {/* Left: Animated panel */}
-            <div className="order-2 md:order-1">
-              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+
+          {/* Top title — centered */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="h-1 w-1 rounded-full bg-[#1e3a5f]" />
+              <span className="text-sm font-medium text-gray-500">Catch Issues</span>
+            </div>
+            <h2 className="font-nacelle text-2xl font-semibold text-gray-900 md:text-3xl lg:text-4xl mb-4">
+              Catch silent failures that impact users
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Detect beyond basic failure modes in real-time. Customize modes based on your agent's goals and align closer to delivering user value.
+            </p>
+          </div>
+
+          {/* Two columns: panel + monitored out of box */}
+          <div className="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-6 items-start">
+
+            {/* Animated panel */}
+            <div>
+              <div className="bg-white rounded-lg shadow-sm overflow-hidden">
                 {/* Header bar */}
                 <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100">
                   <div className="flex items-center gap-2">
@@ -107,31 +124,10 @@ export default function CatchIssues() {
                       />
                     </svg>
                     <span className="text-sm font-semibold text-gray-700">
-                      Filters
+                      Failure Modes
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <button
-                      className={`w-6 h-6 flex items-center justify-center rounded transition-colors ${
-                        plusActive
-                          ? "bg-blue-100 text-blue-600"
-                          : "text-gray-400"
-                      }`}
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 4v16m8-8H4"
-                        />
-                      </svg>
-                    </button>
                     <svg
                       className="w-4 h-4 text-gray-400"
                       fill="none"
@@ -145,15 +141,12 @@ export default function CatchIssues() {
                         d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
                       />
                     </svg>
-                    <span className="text-sm font-semibold text-gray-700">
-                      Modes
-                    </span>
                   </div>
                 </div>
 
                 {/* 2x2 card grid */}
                 <div
-                  className={`grid grid-cols-2 gap-3 p-6 transition-opacity duration-500 ${
+                  className={`grid grid-cols-2 gap-3 p-6 transition-opacity duration-500 h-[320px] content-start ${
                     fading ? "opacity-0" : "opacity-100"
                   }`}
                 >
@@ -165,7 +158,7 @@ export default function CatchIssues() {
                       return (
                         <div
                           key={`${generation}-empty-${i}`}
-                          className="border border-dashed border-gray-200 rounded-xl p-4 h-[140px] flex items-center justify-center"
+                          className="border border-dashed border-gray-200 rounded-md p-4 min-h-[100px] flex items-center justify-center"
                         >
                           <svg
                             className="w-5 h-5 text-gray-300"
@@ -187,15 +180,15 @@ export default function CatchIssues() {
                     return (
                       <div
                         key={`${generation}-${i}`}
-                        className={`bg-gray-50 border border-gray-200 rounded-xl p-4 h-[140px] flex flex-col justify-between overflow-hidden ${
+                        className={`bg-gray-50 border border-gray-200 rounded-md p-4 flex flex-col gap-3 overflow-hidden ${
                           isNew ? "slot-enter" : ""
                         }`}
                       >
                         <div>
-                          <p className="text-xs font-medium text-gray-400 mb-1.5">
+                          <p className="text-xs font-medium text-gray-400 mb-1.5" style={{ fontFamily: "Helvetica, Arial, sans-serif" }}>
                             Mode {i + 1}
                           </p>
-                          <p className="text-sm text-gray-700 leading-relaxed">
+                          <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: "Helvetica, Arial, sans-serif" }}>
                             {condition}
                           </p>
                         </div>
@@ -256,33 +249,19 @@ export default function CatchIssues() {
               </div>
             </div>
 
-            {/* Right: Text content */}
-            <div className="order-1 md:order-2">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="h-1 w-1 rounded-full bg-[#1e3a5f]" />
-                <span className="text-sm font-medium text-gray-500">
-                  Catch Issues
-                </span>
-              </div>
-              <h2 className="font-nacelle text-3xl font-semibold text-gray-900 md:text-4xl lg:text-5xl mb-5">
-                Detect Silent Failures
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Catch beyond basic failure modes. Define custom modes for your domain and your agent's tasks and goals for Nexus to catch in real-time in production from traces and user sessions.
+            {/* Monitored Out of the Box — second column */}
+            <div className="rounded-lg bg-gray-50 p-6 h-full">
+              <p className="text-xs uppercase tracking-[0.12em] text-gray-500 mb-4" style={{ fontFamily: "Helvetica, Arial, sans-serif" }}>
+                Custom modes in plain English
               </p>
-
-              <div className="w-full rounded-xl border border-gray-200 bg-gray-50 p-6">
-                <p className="text-xs uppercase tracking-[0.12em] text-gray-500 mb-4">
-                  Monitored Out of the Box
-                </p>
-                <ul className="grid grid-cols-1 gap-y-3 text-sm text-gray-700 leading-relaxed sm:grid-cols-2 sm:gap-x-8">
-                  <li>Failed tool calls</li>
-                  <li>User frustration in sessions</li>
-                  <li>Agent looping</li>
-                  <li>Information misrepresentation</li>
-                </ul>
-              </div>
+              <ul className="flex flex-col gap-y-3 text-sm text-gray-700 leading-relaxed" style={{ fontFamily: "Helvetica, Arial, sans-serif" }}>
+                <li>Failed tool calls</li>
+                <li>User frustration in sessions</li>
+                <li>Agent looping</li>
+                <li>Information misrepresentation</li>
+              </ul>
             </div>
+
           </div>
         </div>
       </div>

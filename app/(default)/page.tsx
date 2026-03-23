@@ -27,12 +27,14 @@ import CatchIssues from "@/components/catch_issues";
 import DeepDive from "@/components/deep_dive";
 import IssueAction from "@/components/issue_action";
 import AlertRootCauseFix from "@/components/alert-rootcause-fix";
+import HeroPreviewPage from "./hero-preview/page";
 
 export default function Home() {
   return (
     <>
       {/* <PageIllustration /> */}
       <Hero />
+      {/* <HeroPreviewPage /> */}
       <AlertRootCauseFix />
       <CatchIssues />
       <DeepDive />

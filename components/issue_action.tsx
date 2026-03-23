@@ -3,13 +3,19 @@ import { GitPullRequest } from "lucide-react";
 import Image from "next/image";
 import CursorLogo from "@/public/images/cursor_logo.png";
 import ClaudeLogo from "@/public/images/Claude_AI_symbol.svg";
+import SlackLogo from "@/public/images/slack.png";
+import LinearLogo from "@/public/images/linear.png";
+import GithubLogo from "@/public/images/github_logo.png";
 
 const NAVY = "#1e3a5f";
 
 function SlackMockup() {
   return (
     <div className="rounded border border-gray-200 bg-white p-3 font-sans">
-      <p className="text-[10px] font-semibold text-gray-400 mb-2">#nexus-alerts</p>
+      <div className="flex items-center gap-1.5 mb-2">
+        <Image src={SlackLogo} alt="Slack" width={12} height={12} className="object-contain" />
+        <p className="text-[10px] font-semibold text-gray-400">#nexus-alerts</p>
+      </div>
       <div className="flex items-start gap-2">
         <div className="w-5 h-5 rounded-sm flex-shrink-0 flex items-center justify-center mt-0.5" style={{ background: NAVY }}>
           <span className="text-white text-[8px] font-bold">N</span>
@@ -29,7 +35,10 @@ function LinearMockup() {
   return (
     <div className="rounded border border-gray-200 bg-white p-3 mb-5">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-[9px] font-mono text-gray-400">NEX-247</span>
+        <div className="flex items-center gap-1.5">
+          <Image src={LinearLogo} alt="Linear" width={12} height={12} className="object-contain" />
+          <span className="text-[9px] font-mono text-gray-400">NEX-247</span>
+        </div>
         <span className="text-[9px] px-1.5 py-0.5 rounded-sm font-medium bg-red-50 text-red-500">High</span>
       </div>
       <p className="text-[10px] font-semibold text-gray-800 leading-snug mb-2">Tool hallucination in checkout flow</p>
@@ -71,6 +80,7 @@ function PrMockup() {
   return (
     <div className="rounded border border-gray-200 bg-white p-3 mb-5">
       <div className="flex items-center gap-1.5 mb-2">
+        <Image src={GithubLogo} alt="GitHub" width={12} height={12} className="object-contain" style={{ filter: "invert(1)" }} />
         <GitPullRequest className="w-3 h-3 text-emerald-500 flex-shrink-0" />
         <span className="text-[10px] font-semibold text-gray-800 truncate">fix: tool selection fallback</span>
       </div>
@@ -118,11 +128,11 @@ export default function IssueAction() {
               <div className="h-1 w-1 rounded-full" style={{ background: NAVY }} />
               <span className="text-sm font-medium text-gray-500">Take Action</span>
             </div>
-            <h2 className="font-nacelle text-3xl font-semibold text-gray-900 md:text-4xl lg:text-5xl mb-4">
-              Know and fix silent failures fast
+            <h2 className="font-nacelle text-2xl font-semibold text-gray-900 md:text-3xl lg:text-4xl mb-4">
+              Fix failures fast
             </h2>
             <p className="text-md text-gray-600 leading-relaxed">
-              Get alerted and ship solutions faster before more users get impacted
+              Operate with complete context and ship solutions faster before more users get impacted
             </p>
           </div>
 

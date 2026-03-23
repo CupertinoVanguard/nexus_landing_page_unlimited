@@ -31,7 +31,7 @@ const WINDOWS = [
 ] as const;
 
 const PANEL_CLASS =
-  "rounded-none border border-gray-900 bg-white shadow-sm overflow-hidden flex flex-col";
+  "rounded-md bg-white shadow-sm overflow-hidden flex flex-col";
 const PANEL_MIN_H = "min-h-[420px]";
 
 /* ── Panel 1: Context Fusion ── */
@@ -328,7 +328,7 @@ export default function DeepDive() {
                 Deep Analysis
               </span>
             </div>
-            <h2 className="font-nacelle text-3xl font-semibold text-gray-900 md:text-4xl lg:text-5xl mb-4">
+            <h2 className="font-nacelle text-2xl font-semibold text-gray-900 md:text-3xl lg:text-4xl mb-4">
               Root-cause on autopilot
             </h2>
             <p className="text-md text-gray-600">
@@ -343,7 +343,7 @@ export default function DeepDive() {
               const textEl = (
                 <div className="flex items-center order-first md:order-none">
                   <div className="p-6 md:p-7">
-                    <p className="text-xs uppercase tracking-[0.12em] mb-3" style={{ color: NAVY }}>
+                    <p className="text-xs uppercase tracking-[0.12em] mb-3" style={{ color: "#2d6a9f" }}>
                       {window.badge}
                     </p>
                     <h3 className="font-nacelle text-2xl md:text-3xl text-gray-900 mb-3">
