@@ -23,8 +23,8 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
-    slug: "why-your-support-agent-passes-every-eval",
-    title: "Why Your Support Agent Passes Every Eval and Still Fails Your Customers",
+    slug: "what-evals-miss-once-your-support-agent-goes-live",
+    title: "What Evals Miss Once Your Support Agent Goes Live",
     subtitle:
       "Evals catch a lot. But there is a class of production failure they were never designed to see.",
     tags: ["Evals", "Support Agents", "AI Quality"],
