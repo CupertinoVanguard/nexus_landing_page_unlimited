@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import AlertImg from "@/public/images/filter_area.gif";
-import RootCauseImg from "@/public/images/root_cause_nexus.gif";
-import FixImg from "@/public/images/action_area_nexus.gif";
+import AlertImg from "@/public/images/catch_new_mode.gif";
+import RootCauseImg from "@/public/images/rootcause_fix.gif";
+import FixImg from "@/public/images/track_nexus.gif";
 
 type Tab = {
   label: string;
@@ -24,9 +24,9 @@ const TABS: Tab[] = [
     alt: "Root-Cause screenshot",
   },
   {
-    label: "Fix",
+    label: "Track",
     image: FixImg,
-    alt: "Fix screenshot",
+    alt: "Track screenshot",
   },
 ];
 
