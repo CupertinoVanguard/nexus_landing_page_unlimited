@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import AlertImg from "@/public/images/catch_new_mode.gif";
-import RootCauseImg from "@/public/images/rootcause_fix.gif";
+import RootCauseImg from "@/public/images/rootcausefix.gif";
 import FixImg from "@/public/images/track_nexus.gif";
 
 type Tab = {
