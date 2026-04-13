@@ -59,11 +59,11 @@ export default function HeroHome() {
               >
                 {CYCLE_PHRASES[idx]}
               </span>{" "}
-              before they reach your users.
+              before they reach your users, with complete context.
             </p>
           </div>
 
-          <div className="flex flex-row gap-4 mt-8" data-aos="fade-up" data-aos-delay={400}>
+          {/* <div className="flex flex-row gap-4 mt-8" data-aos="fade-up" data-aos-delay={400}>
             <a
               className="btn-md text-white hover:opacity-90 transition-all duration-300 px-8 py-3 text-base"
               style={{ fontFamily: "Helvetica, Arial, sans-serif", background: NAVY }}
@@ -78,7 +78,7 @@ export default function HeroHome() {
             >
               Book a Demo
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* Right column: live monitoring graphic (commented out for now)
