@@ -23,6 +23,54 @@ function Block({ block }: { block: ContentBlock }) {
       <p className="text-gray-600 leading-relaxed mb-4 text-base">{block.text}</p>
     );
   }
+  if (block.type === "image") {
+    return (
+      <figure className="my-8">
+        <div className="w-full rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+          <img
+            src={block.src}
+            alt={block.alt}
+            className="w-full h-auto object-contain"
+          />
+        </div>
+        {block.caption && (
+          <figcaption className="mt-3 text-xs text-gray-400 leading-relaxed text-center italic">
+            {block.caption}
+          </figcaption>
+        )}
+      </figure>
+    );
+  }
+  if (block.type === "image-comparison") {
+    return (
+      <figure className="my-8 -mx-4 sm:-mx-8 md:-mx-12">
+        <div className="flex flex-col gap-6">
+          {block.images.map((img, i) => (
+            <div key={i} className="flex flex-col gap-2">
+              <span
+                className="px-4 sm:px-8 md:px-12 text-xs font-semibold uppercase tracking-widest"
+                style={{ color: BLUE }}
+              >
+                {img.label}
+              </span>
+              <div className="w-full overflow-hidden border-y border-gray-100 shadow-sm bg-gray-50">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+        {block.caption && (
+          <figcaption className="mt-5 px-4 sm:px-8 md:px-12 text-xs text-gray-400 leading-relaxed text-center italic">
+            {block.caption}
+          </figcaption>
+        )}
+      </figure>
+    );
+  }
   return (
     <ul className="mb-4 space-y-2 pl-1">
       {block.items.map((item, i) => (
@@ -88,7 +136,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="mx-auto max-w-4xl px-6 sm:px-10 mb-14">
           <div className="w-full h-52 sm:h-72 rounded-sm overflow-hidden">
             <img
-              src="/images/evalagent.jpg"
+              src={post.coverImage ?? "/images/evalagent.jpg"}
               alt={post.title}
               className="w-full h-full object-cover"
             />

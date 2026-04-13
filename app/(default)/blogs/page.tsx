@@ -47,7 +47,7 @@ export default function BlogsPage() {
                     {/* Thumbnail */}
                     <div className="hidden sm:block flex-shrink-0 w-48 h-28 rounded-sm overflow-hidden">
                       <img
-                        src="/images/evalagent.jpg"
+                        src={post.coverImage ?? "/images/evalagent.jpg"}
                         alt={post.title}
                         className="w-full h-full object-cover"
                       />
