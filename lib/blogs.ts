@@ -26,6 +26,185 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    slug: "the-interesting-case-of-domain-specific-agents",
+    title: "The Interesting Case of Domain-Specific Agents",
+    subtitle:
+      "Evals catch a lot. But there is a class of production failure they were never designed to see, especially when dealing with domain-specific AI agents.",
+    tags: ["Finance", "Insurance", "Domain-Specific Agents"],
+    summary: [
+      "Domain-specific agents in finance and insurance face silent failure modes that standard evals are blind to",
+      "The convenience hallucination occurs when agents distort real data to deliver confident answers rather than surface ambiguity",
+      "Non-determinism means the exact same request can yield two different strategic narratives",
+      "Complaint rates are notoriously low. Financial folks abandon threads rather than filing thumbs-down reviews",
+      "Closing the loop requires real-time trace monitoring, implicit user signal detection, and customizable grading thresholds",
+    ],
+    author: { name: "Nikhil Pillai", initials: "NP" },
+    date: "April 16, 2026",
+    readTime: "6 min read",
+    excerpt:
+      "When an AI agent is deployed to handle specialized, high-stakes work in finance or insurance, the extent of silent failures in production is staggering, and standard evaluation frameworks are blind to them.",
+    coverImage: "/images/insurance_finance.png",
+    sections: [
+      {
+        id: "intro",
+        heading: "",
+        content: [
+          {
+            type: "paragraph",
+            text: "Evals catch a lot. But there is a class of production failure they were never designed to see, especially when dealing with domain-specific AI agents.",
+          },
+          {
+            type: "paragraph",
+            text: "When an AI agent is deployed to handle specialized, high-stakes work in finance or insurance, deeply subjective tasks are being handed over to a probabilistic system. These are agents that finance teams rely on to query and interpret their financial data, that investment folks use to research and forecast, and that insurance teams depend on to process, compare, and reconcile.",
+          },
+          {
+            type: "paragraph",
+            text: "The stakes are high, the questions are complex, and the answers are expected to be authoritative. The extent of silent failures in production is staggering, and standard evaluation frameworks are blind to them.",
+          },
+        ],
+      },
+      {
+        id: "convenience-hallucination",
+        heading: "The Convenience Hallucination",
+        content: [
+          {
+            type: "paragraph",
+            text: "Domain-specific agents are under immense pressure to deliver. They are expected to synthesize across proprietary databases, live market feeds, or core systems of record, and return something structured and confident.",
+          },
+          {
+            type: "paragraph",
+            text: "The problem arises when the agent encounters ambiguity. Agents have gotten much better at handling data, but they still struggle with the friction of the unknown. Instead of returning an error or asking for clarification, the agent compromises:",
+          },
+          {
+            type: "list",
+            items: [
+              "It takes intermediate data that is a borderline fit and massages the reasoning to justify its inclusion.",
+              "It forces information to fit the required threshold because the system is mandated to deliver a completed result.",
+              "It is not inventing a fake financial metric or a fake insurance policy. It is distorting the interpretation of real data to fulfill the task.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "This is the convenience hallucination.",
+          },
+          {
+            type: "paragraph",
+            text: "If a finance agent is asked why an expense line spiked last quarter and finds conflicting signals across its connected systems, it might quietly pick one source, ignore the discrepancy, and confidently generate a narrative explaining the variance. It is simply more convenient to deliver a seamless answer than to push back and ask the user to clarify.",
+          },
+          {
+            type: "paragraph",
+            text: "If an insurance agent encounters an ambiguous field during a comparison or intake, it might infer a value based on surrounding context rather than flagging it for review.",
+          },
+          {
+            type: "paragraph",
+            text: "The output looks like a valid, well-reasoned report or a perfectly formatted comparison. A single-turn grader scores it a pass. The failure is entirely silent, buried in the intermediate steps of the agent's decision trace.",
+          },
+        ],
+      },
+      {
+        id: "context-non-determinism-trap",
+        heading: "The Context and Non-Determinism Trap",
+        content: [
+          {
+            type: "paragraph",
+            text: "Another critical failure mode is the tension between live tool retrieval and the non-deterministic path the agent takes through it.",
+          },
+          {
+            type: "paragraph",
+            text: "The retrieval and extraction themselves are almost always solid. The concern is the decision making around what to pull fresh versus what the agent infers when context is missing.",
+          },
+          {
+            type: "paragraph",
+            text: "When a research agent is tasked with synthesizing market signals, management commentary, and macro conditions to produce a view on a company, it dynamically composes multiple models to tackle the task. Because the user's natural language request can come in thousands of variations, the path to the answer is highly non-deterministic.",
+          },
+          {
+            type: "paragraph",
+            text: "The exact same request can be submitted twice and produce two different strategic narratives, simply because the agent chose a slightly different path through its tools or weighted a different piece of context more heavily.",
+          },
+          {
+            type: "paragraph",
+            text: "This is why companies building domain-specific agents consistently run into internal hallucinations. The context gap between what the user actually meant and what the underlying systems provide forces the agent to make assumptions.",
+          },
+          {
+            type: "paragraph",
+            text: "The response is grammatically perfect, confidently delivered, and factually consistent with the agent's internal state, so standard evals miss the error entirely. The user acts on the flawed analysis, and no error trace is ever flagged.",
+          },
+        ],
+      },
+      {
+        id: "why-evals-not-enough",
+        heading: "Why Evals Are Not Enough",
+        content: [
+          {
+            type: "paragraph",
+            text: "Trace-level observability is not the problem. Most tooling is genuinely solid at storing traces. The problem is what teams can do with them.",
+          },
+          {
+            type: "paragraph",
+            text: "Unless someone is visually debugging in real time as it is happening, trace storage is practically useless for catching silent failures in multi-step reasoning. Teams are stuck being reactive, waiting on periodic eval runs to surface a pattern that has already hit users.",
+          },
+          {
+            type: "paragraph",
+            text: "Single-turn evals are often too late for domain-specific, user-facing agents. The complaint rate is notoriously low. Most don't leave detailed thumbs-down reviews when an agent misses the mark. They get frustrated, go back and forth trying to get the right answer, and maybe abandon the thread altogether.",
+          },
+          {
+            type: "paragraph",
+            text: "That distinction is everything, because:",
+          },
+          {
+            type: "list",
+            items: [
+              "The more agentic the system becomes, the less a final-output eval actually covers. Evals might only cover 50% of the equation.",
+              "Agents do not hallucinate because they are broken. They hallucinate because they are adapting to difficult task requirements under pressure to deliver.",
+              "A 0-100 score means nothing without the ability to pattern match against the situation it happened in, or customize that grading for a specific definition of correct.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "closing-the-loop",
+        heading: "What Actually Closes the Loop",
+        content: [
+          {
+            type: "paragraph",
+            text: "Domain-specific agents are user-facing, which means accuracy is always cumbersome to judge. The greatest signal is whether the user is getting the value they expected, and that is hard to know from a single-turn eval or a rare thumbs down.",
+          },
+          {
+            type: "paragraph",
+            text: "There are two options:",
+          },
+          {
+            type: "list",
+            items: [
+              "Wait for a user to report that the analysis was wrong, usually after they have already acted on it.",
+              "Know the moment it happens and figure out why, so the issue gets caught before it spreads.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "The second option is what keeps customers. Pulling it off requires three things happening together:",
+          },
+          {
+            type: "list",
+            items: [
+              "Watching the decisions the agent makes inside each trace as they happen. Not after the fact, not in a periodic eval run, but in real time, as the agent is reasoning through a financial question or an insurance comparison. Whether it is making a convenient assumption due to a context gap, following the wrong internal formula, or massaging intermediate data to reach a coherent answer, the failure lives in the trace, not the output.",
+              "Picking up the implicit signals users give outside the output itself. A user who rephrases the same question three times, who keeps narrowing their request, or who abandons a thread and starts over is telling you something. These signals do not show up in a thumbs down. They show up in the pattern of how users interact with the agent across a session.",
+              "Customization. Depending on the situation, a generic eval suite will not capture what \"correct\" means for a specific fund's investment thesis, or what \"complete\" means for a specific carrier's reconciliation format. Enterprise customers have their own thresholds, their own terminology, and their own expectations. Production monitoring has to be configurable at that level to be useful.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Nexus automates all of this. Silent errors compound fast. A string of convenient but wrong answers leads directly to eroded trust, and by the time it shows up in an eval dashboard, it has already shown up in churn.",
+          },
+          {
+            type: "paragraph",
+            text: "The teams that get this right are the ones that stop waiting for the output to look wrong and start catching the compromises in live traffic, tied directly to whether the user got what they expected, before a complaint ever lands.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "whats-missing-with-your-sourcing-agent",
     title: "What's Missing With Your Sourcing Agent",
     subtitle:
