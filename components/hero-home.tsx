@@ -44,22 +44,16 @@ export default function HeroHome() {
           </div>
 
           <h1
-            className="pb-3 font-nacelle text-gray-900 text-4xl font-normal md:text-6xl lg:text-7xl leading-tight"
+            className="pb-3 font-nacelle text-gray-900 text-4xl font-normal md:text-5xl lg:text-6xl leading-tight"
             data-aos="fade-up"
           >
-            Monitor your AI agents in production
+            Monitor your AI agents in{" "}
+            <span className="whitespace-nowrap">production with <span style={{ color: "#2563eb", fontWeight: 600 }}>complete context</span></span>
           </h1>
 
-          <div className="mt-4 h-[72px] flex items-center justify-center" data-aos="fade-up">
+          <div className="mt-4 flex items-center justify-center" data-aos="fade-up">
             <p className="text-xl md:text-2xl text-gray-500 leading-relaxed text-center" style={{ fontFamily: "Helvetica, Arial, sans-serif" }}>
-              Catch and handle{" "}
-              <span
-                className="font-medium text-gray-800 inline-block"
-                style={{ opacity: visible ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}
-              >
-                {CYCLE_PHRASES[idx]}
-              </span>{" "}
-              before they reach your users, with complete context.
+              The AI engineer that watches and fixes your agents in realtime
             </p>
           </div>
 
