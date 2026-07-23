@@ -25,7 +25,7 @@ const testimonials_1 = [
     // clientImg: ClientImg01,
     agent_name: "Session Replay Agent",
     status: "Recurring",
-    integration_list: ["Zendesk","Posthog"],
+    integration_list: ["Zndesk","Posthog"],
     summary: "Proactively monitors high-value customers to identify and prevent churn risks.",
     content:
     "Proactively monitors high-value customers to identify and prevent churn risks.",  
