@@ -8,71 +8,62 @@ import Linear from "@/public/images/linear.png";
 import Langfuse from "@/public/images/langfuse_logo.png";
 import LangSmith from "@/public/images/langsmith.png";
 
-const NAVY = "#1a56a0";
-
 const LOGOS = [
-  { src: Langfuse,   alt: "Langfuse",   invert: false },
-  { src: Braintrust, alt: "Braintrust", invert: false },
-  { src: LangSmith,  alt: "LangSmith",  invert: true  },
-  { src: PostHog,    alt: "PostHog",    invert: false },
-  { src: GitHub,     alt: "GitHub",     invert: true  },
-  { src: Linear,     alt: "Linear",     invert: false },
-  { src: Slack,      alt: "Slack",      invert: false },
+  { src: Langfuse, alt: "Langfuse" },
+  { src: Braintrust, alt: "Braintrust" },
+  { src: LangSmith, alt: "LangSmith" },
+  { src: PostHog, alt: "PostHog" },
+  { src: GitHub, alt: "GitHub" },
+  { src: Linear, alt: "Linear" },
+  { src: Slack, alt: "Slack" },
 ];
 
 export default function IntegrationSection() {
   return (
-    <section className="relative">
+    <section className="relative border-t border-edge">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="py-12 md:py-16">
-          {/* Divider top */}
-          <div className="h-px bg-gradient-to-r from-transparent via-gray-300/60 to-transparent mb-12" />
-
-          <div className="text-center max-w-2xl mx-auto mb-8">
-            <h2 className="font-nacelle text-2xl font-semibold text-gray-900 md:text-3xl mb-3">
-              Connect with tools you already use
+        <div className="py-16 md:py-20">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <p className="eyebrow mb-4">Integrations</p>
+            <h2 className="font-nacelle text-2xl font-normal tracking-[-0.02em] text-fg md:text-3xl">
+              Connect the tools you already use
             </h2>
           </div>
 
-          {/* Logo row */}
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-10">
+          {/* Logos are flattened to a single ink so the mixed source marks
+              read as one system on the dark surface. */}
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-5">
             {LOGOS.map((logo) => (
               <div
                 key={logo.alt}
-                className="flex items-center justify-center h-12 w-12 rounded-lg bg-white border border-gray-200 shadow-sm"
+                title={logo.alt}
+                className="group flex h-14 w-14 items-center justify-center rounded-xl border border-edge bg-surface transition-colors hover:border-edge-strong"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  className="object-contain"
-                  width={28}
-                  height={28}
-                  style={logo.invert ? { filter: "invert(1)" } : {}}
+                  className="object-contain opacity-60 transition-opacity group-hover:opacity-100"
+                  width={26}
+                  height={26}
+                  style={{ filter: "brightness(0) invert(1)" }}
                 />
               </div>
             ))}
           </div>
 
           {/* Nexus fallback */}
-          <div className="text-center">
-            <p className="text-sm text-gray-400 mb-3">
+          <div className="mt-14 text-center">
+            <p className="font-mono text-[13px] text-fg-subtle">
               Don&apos;t have observability?
             </p>
-            <div className="inline-flex flex-col items-center gap-2">
-              <p className="text-base font-semibold" style={{ color: NAVY }}>
-                Just use Nexus.
-              </p>
-              <span
-                className="inline-flex items-center px-4 py-2 text-sm font-mono font-medium rounded"
-                style={{ borderWidth: 1, borderStyle: "solid", borderColor: NAVY, color: NAVY, background: `${NAVY}0d` }}
-              >
-                pip install nexus-library
-              </span>
-            </div>
+            <p className="mt-3 text-lg font-medium tracking-tight text-fg">
+              Just use Nexus.
+            </p>
+            <span className="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/50 bg-accent/10 px-4 py-2 font-mono text-sm text-accent-hover">
+              <span className="text-fg-subtle">$</span>
+              pip install nexus-library
+            </span>
           </div>
-
-          {/* Divider bottom */}
-          <div className="h-px bg-gradient-to-r from-transparent via-gray-300/60 to-transparent mt-12" />
         </div>
       </div>
     </section>

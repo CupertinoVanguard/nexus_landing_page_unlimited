@@ -1,7 +1,8 @@
 'use client'
 import { useState, useEffect } from "react";
+import SectionHeading from "@/components/ui/section-heading";
 
-const NAVY = "#1e3a5f";
+const ACCENT = "#2563eb";
 
 const WINDOWS = [
   {
@@ -31,7 +32,7 @@ const WINDOWS = [
 ] as const;
 
 const PANEL_CLASS =
-  "rounded-md bg-white shadow-sm overflow-hidden flex flex-col";
+  "rounded-xl border border-edge bg-surface overflow-hidden flex flex-col";
 const PANEL_MIN_H = "min-h-[420px]";
 
 /* ── Panel 1: Context Fusion ── */
@@ -50,35 +51,35 @@ function ContextFusionPanel() {
         }}
       />
       <div className="grid grid-cols-3 gap-3">
-        <div className="rounded-none border border-gray-900 bg-gray-50 p-3">
-          <p className="text-[11px] uppercase tracking-[0.08em] text-gray-500 mb-2">Code</p>
-          <div className="font-mono text-[10px] leading-relaxed space-y-0.5 text-gray-500">
-            <p><span className="text-gray-400">41</span> def summarize_deal_flow(</p>
-            <p><span className="text-gray-400">42</span>   self, date_range):</p>
-            <p className="bg-red-50 border-l-2 border-red-300 pl-1 text-red-700">
-              <span className="text-gray-400">43</span>   range = fallback(90)
+        <div className="rounded-none border border-edge-strong bg-surface-2 p-3">
+          <p className="text-[11px] uppercase tracking-[0.08em] text-fg-subtle mb-2">Code</p>
+          <div className="font-mono text-[10px] leading-relaxed space-y-0.5 text-fg-subtle">
+            <p><span className="text-fg-subtle">41</span> def summarize_deal_flow(</p>
+            <p><span className="text-fg-subtle">42</span>   self, date_range):</p>
+            <p className="bg-red-500/10 border-l-2 border-red-500/60 pl-1 text-red-300">
+              <span className="text-fg-subtle">43</span>   range = fallback(90)
             </p>
-            <p><span className="text-gray-400">44</span>   return self.query(range)</p>
+            <p><span className="text-fg-subtle">44</span>   return self.query(range)</p>
           </div>
         </div>
-        <div className="rounded-none border border-gray-900 bg-gray-50 p-3">
-          <p className="text-[11px] uppercase tracking-[0.08em] text-gray-500 mb-2">Traces</p>
-          <div className="font-mono text-[10px] leading-relaxed space-y-0.5 text-gray-500">
-            <p className="text-gray-400">__start__</p>
-            <p className="pl-2"><span style={{ color: NAVY }}>&#9656;</span> retrieve_deals <span className="text-gray-400">0.3s</span></p>
-            <p className="pl-2 bg-red-50 border-l-2 border-red-300 pl-1 text-red-700">
-              <span>&#9656;</span> summarize_deal_flow <span className="text-gray-400">1.2s</span>
+        <div className="rounded-none border border-edge-strong bg-surface-2 p-3">
+          <p className="text-[11px] uppercase tracking-[0.08em] text-fg-subtle mb-2">Traces</p>
+          <div className="font-mono text-[10px] leading-relaxed space-y-0.5 text-fg-subtle">
+            <p className="text-fg-subtle">__start__</p>
+            <p className="pl-2"><span style={{ color: ACCENT }}>&#9656;</span> retrieve_deals <span className="text-fg-subtle">0.3s</span></p>
+            <p className="pl-2 bg-red-500/10 border-l-2 border-red-500/60 pl-1 text-red-300">
+              <span>&#9656;</span> summarize_deal_flow <span className="text-fg-subtle">1.2s</span>
             </p>
-            <p className="pl-2"><span style={{ color: NAVY }}>&#9656;</span> format_output <span className="text-gray-400">0.4s</span></p>
-            <p className="text-gray-400">__end__</p>
+            <p className="pl-2"><span style={{ color: ACCENT }}>&#9656;</span> format_output <span className="text-fg-subtle">0.4s</span></p>
+            <p className="text-fg-subtle">__end__</p>
           </div>
         </div>
-        <div className="rounded-none border border-gray-900 bg-gray-50 p-3">
-          <p className="text-[11px] uppercase tracking-[0.08em] text-gray-500 mb-2">Prompts</p>
-          <div className="text-[10px] leading-relaxed space-y-0.5 text-gray-500">
+        <div className="rounded-none border border-edge-strong bg-surface-2 p-3">
+          <p className="text-[11px] uppercase tracking-[0.08em] text-fg-subtle mb-2">Prompts</p>
+          <div className="text-[10px] leading-relaxed space-y-0.5 text-fg-subtle">
             <p>Summarize pipeline deals</p>
             <p>for the given date range.</p>
-            <p className="bg-amber-50 border-l-2 border-amber-300 pl-1 text-amber-700">
+            <p className="bg-amber-500/10 border-l-2 border-amber-500/60 pl-1 text-amber-300">
               No mention of actual_range_used
             </p>
           </div>
@@ -87,25 +88,25 @@ function ContextFusionPanel() {
 
       <div className="my-2 flex-shrink-0">
         <svg viewBox="0 0 300 56" className="w-full h-auto overflow-visible">
-          <path d="M 50,2 C 50,30 150,30 150,52" fill="none" stroke="#E5E7EB" strokeWidth="1.5" strokeDasharray="3 3" />
-          <path d="M 150,2 C 150,20 150,34 150,52" fill="none" stroke="#E5E7EB" strokeWidth="1.5" strokeDasharray="3 3" />
-          <path d="M 250,2 C 250,30 150,30 150,52" fill="none" stroke="#E5E7EB" strokeWidth="1.5" strokeDasharray="3 3" />
-          <circle cx="150" cy="52" r="4" fill="#D1D5DB" className="dot-pulse" />
-          <circle r="3.5" fill="#F87171" className="dot-pulse">
+          <path d="M 50,2 C 50,30 150,30 150,52" fill="none" stroke="#3f3a36" strokeWidth="1.5" strokeDasharray="3 3" />
+          <path d="M 150,2 C 150,20 150,34 150,52" fill="none" stroke="#3f3a36" strokeWidth="1.5" strokeDasharray="3 3" />
+          <path d="M 250,2 C 250,30 150,30 150,52" fill="none" stroke="#3f3a36" strokeWidth="1.5" strokeDasharray="3 3" />
+          <circle cx="150" cy="52" r="4" fill="#57534e" className="dot-pulse" />
+          <circle r="3.5" fill="#f87171" className="dot-pulse">
             <animateMotion dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1" path="M 50,2 C 50,30 150,30 150,52" />
           </circle>
-          <circle r="3.5" fill={NAVY} className="dot-pulse">
+          <circle r="3.5" fill={ACCENT} className="dot-pulse">
             <animateMotion dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1" path="M 150,2 C 150,20 150,34 150,52" />
           </circle>
-          <circle r="3.5" fill="#818CF8" className="dot-pulse">
+          <circle r="3.5" fill="#a78bfa" className="dot-pulse">
             <animateMotion dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1" path="M 250,2 C 250,30 150,30 150,52" />
           </circle>
         </svg>
       </div>
 
-      <div className="rounded-none border border-gray-900 bg-gray-50 p-3 md:p-4 mt-auto">
-        <p className="text-xs font-medium text-gray-900 mb-2">Root-cause identified</p>
-        <p className="text-xs text-gray-600 leading-relaxed">
+      <div className="rounded-none border border-edge-strong bg-surface-2 p-3 md:p-4 mt-auto">
+        <p className="text-xs font-medium text-fg mb-2">Root-cause identified</p>
+        <p className="text-xs text-fg-muted leading-relaxed">
           <span className="font-medium">summarize_deal_flow</span> silently overrides date_range to &quot;last 90 days&quot; via probabilistic fallback. System prompt does not instruct agent to use <span className="font-medium">actual_range_used</span>.
         </p>
       </div>
@@ -126,8 +127,8 @@ function SignalPanel() {
   return (
     <div className={`${PANEL_CLASS} ${PANEL_MIN_H} p-4 md:p-5`}>
       <div className="mb-3 flex items-center justify-between">
-        <p className="text-xs font-medium text-gray-900">Cross-reference check</p>
-        <span className="text-[11px] text-gray-500">5 issues &rarr; 3 high-signal</span>
+        <p className="text-xs font-medium text-fg">Cross-reference check</p>
+        <span className="text-[11px] text-fg-subtle">5 issues &rarr; 3 high-signal</span>
       </div>
 
       <div className="space-y-1.5 mb-4 flex-1">
@@ -136,28 +137,28 @@ function SignalPanel() {
             key={iss.id}
             className={`flex items-center gap-2 rounded-none px-2.5 py-2 text-[11px] border ${
               iss.signal
-                ? "bg-white border-gray-900 text-gray-900"
-                : "bg-gray-50 border-gray-200 text-gray-400"
+                ? "bg-surface border-edge-strong text-fg"
+                : "bg-surface-2 border-edge text-fg-subtle"
             }`}
           >
-            <span className="font-mono text-[10px] text-gray-400 flex-shrink-0">{iss.id}</span>
+            <span className="font-mono text-[10px] text-fg-subtle flex-shrink-0">{iss.id}</span>
             <span className="flex-1">{iss.text}</span>
             {iss.signal ? (
               <span className="flex items-center gap-1 flex-shrink-0">
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: NAVY }} />
-                <span className="text-[10px] font-medium" style={{ color: NAVY }}>
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: ACCENT }} />
+                <span className="text-[10px] font-medium" style={{ color: ACCENT }}>
                   {iss.patterns} pattern matches
                 </span>
               </span>
             ) : (
-              <span className="text-[10px] text-gray-400 flex-shrink-0">no match</span>
+              <span className="text-[10px] text-fg-subtle flex-shrink-0">no match</span>
             )}
           </div>
         ))}
       </div>
 
-      <div className="rounded-none border border-gray-900 bg-gray-50 p-3 mt-auto">
-        <p className="text-xs text-gray-700">
+      <div className="rounded-none border border-edge-strong bg-surface-2 p-3 mt-auto">
+        <p className="text-xs text-fg-muted">
           <span className="font-medium">3 high-signal issues</span> cross-referenced across patterns. 2 filtered as noise
         </p>
       </div>
@@ -175,9 +176,9 @@ const BAR_DATA = [
 ];
 
 const FREQ_MODES = [
-  { name: "Tool hallucination", type: "built-in", count: 23, pct: 18, color: "#9CA3AF" },
-  { name: "Extended date range", type: "custom", count: 41, pct: 32, color: NAVY },
-  { name: "Skips confirmation", type: "custom", count: 15, pct: 12, color: NAVY },
+  { name: "Tool hallucination", type: "built-in", count: 23, pct: 18, color: "#78716c" },
+  { name: "Extended date range", type: "custom", count: 41, pct: 32, color: ACCENT },
+  { name: "Skips confirmation", type: "custom", count: 15, pct: 12, color: ACCENT },
 ];
 
 function DashboardPanel() {
@@ -210,12 +211,12 @@ function DashboardPanel() {
           }`}
         >
           <div className="flex items-center justify-between mb-5">
-            <p className="text-xs font-medium text-gray-900">Agent trajectories</p>
+            <p className="text-xs font-medium text-fg">Agent trajectories</p>
             <div className="flex items-center gap-3">
               {[
-                { label: "Success",    color: "#6EE7B7", text: "#065F46" },
-                { label: "Concerning", color: "#FDE68A", text: "#92400E" },
-                { label: "Failed",     color: "#FCA5A5", text: "#991B1B" },
+                { label: "Success",    color: "#34d399", text: "#34d399" },
+                { label: "Concerning", color: "#fbbf24", text: "#fbbf24" },
+                { label: "Failed",     color: "#f87171", text: "#f87171" },
               ].map((l) => (
                 <span key={l.label} className="flex items-center gap-1 text-[10px]" style={{ color: l.text }}>
                   <span className="w-2 h-2 rounded-sm inline-block" style={{ background: l.color }} />
@@ -229,13 +230,13 @@ function DashboardPanel() {
             {BAR_DATA.map((d) => {
               const total = d.fine + d.recovered + d.degraded;
               const segs = [
-                { pct: (d.fine      / total) * 100, color: "#6EE7B7", textColor: "#065F46" },
-                { pct: (d.recovered / total) * 100, color: "#FDE68A", textColor: "#92400E" },
-                { pct: (d.degraded  / total) * 100, color: "#FCA5A5", textColor: "#991B1B" },
+                { pct: (d.fine      / total) * 100, color: "#34d399", textColor: "#0c0a09" },
+                { pct: (d.recovered / total) * 100, color: "#fbbf24", textColor: "#0c0a09" },
+                { pct: (d.degraded  / total) * 100, color: "#f87171", textColor: "#0c0a09" },
               ];
               return (
                 <div key={d.mode}>
-                  <p className="text-[11px] text-gray-500 mb-1.5">{d.mode}</p>
+                  <p className="text-[11px] text-fg-subtle mb-1.5">{d.mode}</p>
                   <div className="flex h-6 rounded-full overflow-hidden">
                     {segs.map((s, i) => (
                       <div
@@ -263,31 +264,31 @@ function DashboardPanel() {
             slide === 1 ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
-          <p className="text-xs font-medium text-gray-900 mb-3">Failure mode frequency</p>
+          <p className="text-xs font-medium text-fg mb-3">Failure mode frequency</p>
           <div className="space-y-2 flex-1">
             {FREQ_MODES.map((m) => (
-              <div key={m.name} className="border border-gray-200 bg-gray-50 p-3">
+              <div key={m.name} className="border border-edge bg-surface-2 p-3">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: m.color }} />
-                    <p className="text-xs font-medium text-gray-800">{m.name}</p>
+                    <p className="text-xs font-medium text-fg">{m.name}</p>
                     <span
                       className="text-[10px] px-1.5 py-0.5 font-medium"
                       style={
                         m.type === "custom"
-                          ? { background: `${NAVY}15`, color: NAVY }
-                          : { background: "#F3F4F6", color: "#9CA3AF" }
+                          ? { background: "rgba(37,99,235,0.15)", color: "#3b82f6" }
+                          : { background: "#231f1d", color: "#78716c" }
                       }
                     >
                       {m.type}
                     </span>
                   </div>
-                  <p className="text-lg font-semibold text-gray-900">{m.count}</p>
+                  <p className="text-lg font-semibold text-fg">{m.count}</p>
                 </div>
-                <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                <div className="w-full h-1 bg-edge-strong rounded-full overflow-hidden">
                   <div className="h-1 rounded-full" style={{ width: `${m.pct}%`, background: m.color }} />
                 </div>
-                <p className="text-[10px] text-gray-400 mt-1">{m.pct}% of all issues</p>
+                <p className="text-[10px] text-fg-subtle mt-1">{m.pct}% of all issues</p>
               </div>
             ))}
           </div>
@@ -295,13 +296,13 @@ function DashboardPanel() {
       </div>
 
       {/* Slide indicators */}
-      <div className="flex justify-center gap-1.5 py-3 border-t border-gray-100">
+      <div className="flex justify-center gap-1.5 py-3 border-t border-edge">
         {[0, 1].map((i) => (
           <button
             key={i}
             onClick={() => setSlide(i)}
             className={`h-1 rounded-full transition-all duration-300 ${
-              slide === i ? "w-5 bg-gray-900" : "w-2 bg-gray-300"
+              slide === i ? "w-5 bg-fg" : "w-2 bg-edge-strong"
             }`}
           />
         ))}
@@ -321,20 +322,11 @@ export default function DeepDive() {
     <section className="relative">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-20">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="h-1 w-1 rounded-full" style={{ background: NAVY }} />
-              <span className="text-sm font-medium text-gray-500">
-                Deep Analysis
-              </span>
-            </div>
-            <h2 className="font-nacelle text-2xl font-semibold text-gray-900 md:text-3xl lg:text-4xl mb-4">
-              Root-cause on autopilot
-            </h2>
-            <p className="text-md text-gray-600">
-              Analyze, triage, and track issues in one continuous flow.
-            </p>
-          </div>
+          <SectionHeading
+            eyebrow="Deep Analysis"
+            title="Root-cause on autopilot"
+            body="Analyze, triage, and track issues in one continuous flow."
+          />
 
           <div className="space-y-8 md:space-y-10">
             {WINDOWS.map((window, idx) => {
@@ -343,13 +335,13 @@ export default function DeepDive() {
               const textEl = (
                 <div className="flex items-center order-first md:order-none">
                   <div className="p-6 md:p-7">
-                    <p className="text-xs uppercase tracking-[0.12em] mb-3" style={{ color: "#2d6a9f" }}>
+                    <p className="eyebrow mb-3">
                       {window.badge}
                     </p>
-                    <h3 className="font-nacelle text-2xl md:text-3xl text-gray-900 mb-3">
+                    <h3 className="font-nacelle text-2xl md:text-[30px] font-normal tracking-[-0.03em] leading-[1.15] text-fg mb-4">
                       {window.title}
                     </h3>
-                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                    <p className="text-sm md:text-base text-fg-muted leading-relaxed">
                       {window.body}
                     </p>
                   </div>

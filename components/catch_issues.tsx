@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import SectionHeading from "@/components/ui/section-heading";
 
 const CONDITIONS = [
   "User rephrases the agent multiple times, indicating dissatisfaction.",
@@ -88,30 +89,23 @@ export default function CatchIssues() {
         <div className="py-12 md:py-20">
 
           {/* Top title — centered */}
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="h-1 w-1 rounded-full bg-[#1e3a5f]" />
-              <span className="text-sm font-medium text-gray-500">Catch Issues</span>
-            </div>
-            <h2 className="font-nacelle text-2xl font-semibold text-gray-900 md:text-3xl lg:text-4xl mb-4">
-              Catch silent failures that impact users
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Detect beyond basic failure modes in real-time. Customize modes based on your agent's goals and align closer to delivering user value.
-            </p>
-          </div>
+          <SectionHeading
+            eyebrow="Catch Issues"
+            title="Catch silent failures that impact users"
+            body="Detect beyond basic failure modes in real-time. Customize modes based on your agent's goals and align closer to delivering user value."
+          />
 
           {/* Two columns: panel + monitored out of box */}
           <div className="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-6 items-start">
 
             {/* Animated panel */}
             <div>
-              <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <div className="bg-surface border border-edge rounded-xl overflow-hidden">
                 {/* Header bar */}
-                <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100">
+                <div className="flex items-center justify-between px-5 py-3 border-b border-edge">
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-3.5 h-3.5 text-gray-400"
+                      className="w-3.5 h-3.5 text-fg-subtle"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -123,13 +117,13 @@ export default function CatchIssues() {
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
-                    <span className="text-sm font-semibold text-gray-700">
+                    <span className="text-sm font-semibold text-fg-muted">
                       Failure Modes
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <svg
-                      className="w-4 h-4 text-gray-400"
+                      className="w-4 h-4 text-fg-subtle"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -158,10 +152,10 @@ export default function CatchIssues() {
                       return (
                         <div
                           key={`${generation}-empty-${i}`}
-                          className="border border-dashed border-gray-200 rounded-md p-4 min-h-[100px] flex items-center justify-center"
+                          className="border border-dashed border-edge rounded-md p-4 min-h-[100px] flex items-center justify-center"
                         >
                           <svg
-                            className="w-5 h-5 text-gray-300"
+                            className="w-5 h-5 text-fg-ghost"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -180,15 +174,15 @@ export default function CatchIssues() {
                     return (
                       <div
                         key={`${generation}-${i}`}
-                        className={`bg-gray-50 border border-gray-200 rounded-md p-4 flex flex-col gap-3 overflow-hidden ${
+                        className={`bg-surface-2 border border-edge rounded-md p-4 flex flex-col gap-3 overflow-hidden ${
                           isNew ? "slot-enter" : ""
                         }`}
                       >
                         <div>
-                          <p className="text-xs font-medium text-gray-400 mb-1.5" style={{ fontFamily: "Helvetica, Arial, sans-serif" }}>
+                          <p className="text-xs font-medium text-fg-subtle mb-1.5">
                             Mode {i + 1}
                           </p>
-                          <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: "Helvetica, Arial, sans-serif" }}>
+                          <p className="text-sm text-fg-muted leading-relaxed">
                             {condition}
                           </p>
                         </div>
@@ -210,15 +204,15 @@ export default function CatchIssues() {
 
                 {/* Input area */}
                 <div className="px-6 pb-6">
-                  <div className="flex items-center gap-2 rounded-lg bg-gray-50 border border-gray-200 px-3 h-[42px]">
+                  <div className="flex items-center gap-2 rounded-lg bg-surface-2 border border-edge px-3 h-[42px]">
                     <span className="text-sm flex-1 truncate">
                       {typingText ? (
                         <>
-                          <span className="text-gray-800">{typingText}</span>
-                          <span className="animate-pulse text-gray-400">|</span>
+                          <span className="text-fg">{typingText}</span>
+                          <span className="animate-pulse text-fg-subtle">|</span>
                         </>
                       ) : (
-                        <span className="text-gray-400">
+                        <span className="text-fg-subtle">
                           Add a failure condition...
                         </span>
                       )}
@@ -226,8 +220,8 @@ export default function CatchIssues() {
                     <button
                       className={`flex items-center justify-center w-6 h-6 rounded transition-colors ${
                         plusActive
-                          ? "bg-blue-500 text-white"
-                          : "bg-gray-200 text-gray-500"
+                          ? "bg-accent text-white"
+                          : "bg-edge-strong text-fg-subtle"
                       }`}
                     >
                       <svg
@@ -250,11 +244,11 @@ export default function CatchIssues() {
             </div>
 
             {/* Monitored Out of the Box — second column */}
-            <div className="rounded-lg bg-gray-50 p-6 h-full">
-              <p className="text-xs uppercase tracking-[0.12em] text-gray-500 mb-4" style={{ fontFamily: "Helvetica, Arial, sans-serif" }}>
+            <div className="rounded-xl border border-edge bg-surface p-6 h-full">
+              <p className="text-xs uppercase tracking-[0.12em] text-fg-subtle mb-4">
                 Custom modes in plain English
               </p>
-              <ul className="flex flex-col gap-y-3 text-sm text-gray-700 leading-relaxed" style={{ fontFamily: "Helvetica, Arial, sans-serif" }}>
+              <ul className="flex flex-col gap-y-3 text-sm text-fg-muted leading-relaxed">
                 <li>Failed tool calls</li>
                 <li>User frustration in sessions</li>
                 <li>Agent looping</li>

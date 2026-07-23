@@ -1,32 +1,50 @@
-import { CalendarIcon } from "lucide-react";
-
-const NAVY = "#1e3a5f";
-
 export default function Cta() {
   return (
-    <section id="cta" className="relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="py-12 md:py-20">
-          <div className="mx-auto max-w-3xl text-center rounded-2xl p-12">
-            <h2
-              className="pb-8 font-nacelle text-3xl font-semibold text-gray-900 md:text-4xl"
-              data-aos="fade-up"
+    <section id="cta" className="relative overflow-hidden border-t border-edge">
+      {/* soft wash behind the closing statement */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[420px]"
+        aria-hidden="true"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 100% at 50% 100%, rgba(37,99,235,0.16), transparent 70%)",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-4xl px-6">
+        <div className="py-24 text-center md:py-32">
+          <h2
+            className="text-[34px] font-normal leading-[1.1] tracking-[-0.03em] text-fg md:text-[46px]"
+            data-aos="fade-up"
+          >
+            Don&apos;t let AI bugs in prod
+            <br className="hidden sm:block" /> reach your customers
+          </h2>
+
+          <p
+            className="mx-auto mt-6 max-w-lg font-mono text-[14px] leading-relaxed text-fg-muted"
+            data-aos="fade-up"
+          >
+            See Nexus catch a silent failure in your own agent, live.
+          </p>
+
+          <div
+            className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            data-aos="fade-up"
+          >
+            <a
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-[15px] font-medium text-white transition-colors hover:bg-accent-hover"
+              href="https://cal.com/nikhilpillai/nexus-15-min-intro-call"
             >
-              Don&apos;t let AI bugs in prod affect your customer&apos;s experience. Use Nexus.
-            </h2>
-            <br />
-            <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center gap-4">
-              <div data-aos="fade-up" data-aos-delay={600}>
-                <a
-                  className="btn relative w-full gap-2 items-center text-white hover:opacity-90 transition-all duration-300 sm:w-auto"
-                  style={{ background: NAVY }}
-                  href="https://cal.com/nikhilpillai/nexus-15-min-intro-call"
-                >
-                  <CalendarIcon size={15} />
-                  Book a Demo
-                </a>
-              </div>
-            </div>
+              Book a demo
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a
+              className="inline-flex items-center gap-2 rounded-full border border-edge-strong px-6 py-3 text-[15px] text-fg-muted transition-colors hover:border-fg-ghost hover:text-fg"
+              href="https://docs.trynexus.io"
+            >
+              Read the docs
+            </a>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 'use client'
 import { GitPullRequest } from "lucide-react";
+import SectionHeading from "@/components/ui/section-heading";
 import Image from "next/image";
 import CursorLogo from "@/public/images/cursor_logo.png";
 import ClaudeLogo from "@/public/images/Claude_AI_symbol.svg";
@@ -7,24 +8,24 @@ import SlackLogo from "@/public/images/slack.png";
 import LinearLogo from "@/public/images/linear.png";
 import GithubLogo from "@/public/images/github_logo.png";
 
-const NAVY = "#1e3a5f";
+const ACCENT = "#2563eb";
 
 function SlackMockup() {
   return (
-    <div className="rounded border border-gray-200 bg-white p-3 font-sans">
+    <div className="rounded border border-edge bg-surface p-3 font-sans">
       <div className="flex items-center gap-1.5 mb-2">
         <Image src={SlackLogo} alt="Slack" width={12} height={12} className="object-contain" />
-        <p className="text-[10px] font-semibold text-gray-400">#nexus-alerts</p>
+        <p className="text-[10px] font-semibold text-fg-subtle">#nexus-alerts</p>
       </div>
       <div className="flex items-start gap-2">
-        <div className="w-5 h-5 rounded-sm flex-shrink-0 flex items-center justify-center mt-0.5" style={{ background: NAVY }}>
+        <div className="w-5 h-5 rounded-sm flex-shrink-0 flex items-center justify-center mt-0.5" style={{ background: ACCENT }}>
           <span className="text-white text-[8px] font-bold">N</span>
         </div>
         <div className="min-w-0">
-          <p className="text-[10px] font-semibold text-gray-800 leading-tight">Tool hallucination detected</p>
-          <p className="text-[9px] text-gray-400 mt-0.5">checkout-agent · just now</p>
-          <p className="text-[9px] text-gray-500 mt-1 leading-relaxed">Prompt v4.2 removed inventory fallback on line 14</p>
-          <span className="inline-block mt-1.5 text-[9px] font-semibold" style={{ color: NAVY }}>View in Nexus →</span>
+          <p className="text-[10px] font-semibold text-fg leading-tight">Tool hallucination detected</p>
+          <p className="text-[9px] text-fg-subtle mt-0.5">checkout-agent · just now</p>
+          <p className="text-[9px] text-fg-subtle mt-1 leading-relaxed">Prompt v4.2 removed inventory fallback on line 14</p>
+          <span className="inline-block mt-1.5 text-[9px] font-semibold" style={{ color: ACCENT }}>View in Nexus →</span>
         </div>
       </div>
     </div>
@@ -33,21 +34,21 @@ function SlackMockup() {
 
 function LinearMockup() {
   return (
-    <div className="rounded border border-gray-200 bg-white p-3 mb-5">
+    <div className="rounded border border-edge bg-surface p-3 mb-5">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-1.5">
           <Image src={LinearLogo} alt="Linear" width={12} height={12} className="object-contain" />
-          <span className="text-[9px] font-mono text-gray-400">NEX-247</span>
+          <span className="text-[9px] font-mono text-fg-subtle">NEX-247</span>
         </div>
-        <span className="text-[9px] px-1.5 py-0.5 rounded-sm font-medium bg-red-50 text-red-500">High</span>
+        <span className="text-[9px] px-1.5 py-0.5 rounded-sm font-medium bg-red-500/10 text-red-400">High</span>
       </div>
-      <p className="text-[10px] font-semibold text-gray-800 leading-snug mb-2">Tool hallucination in checkout flow</p>
+      <p className="text-[10px] font-semibold text-fg leading-snug mb-2">Tool hallucination in checkout flow</p>
       <div className="space-y-1">
-        <div className="flex items-center gap-1.5 text-[9px] text-gray-400">
+        <div className="flex items-center gap-1.5 text-[9px] text-fg-subtle">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
           Root-cause attached
         </div>
-        <div className="flex items-center gap-1.5 text-[9px] text-gray-400">
+        <div className="flex items-center gap-1.5 text-[9px] text-fg-subtle">
           <span className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
           Logs &amp; traces linked
         </div>
@@ -58,19 +59,19 @@ function LinearMockup() {
 
 function McpMockup() {
   return (
-    <div className="rounded border border-gray-200 bg-gray-50 p-3 flex items-center justify-center gap-6 h-full">
+    <div className="rounded border border-edge bg-surface-2 p-3 flex items-center justify-center gap-6 h-full">
       <div className="flex flex-col items-center gap-1.5">
-        <div className="w-10 h-10 rounded-lg bg-white border border-gray-200 flex items-center justify-center shadow-sm">
-          <Image src={CursorLogo} alt="Cursor" width={24} height={24} className="object-contain" style={{ filter: "invert(1)" }} />
+        <div className="w-10 h-10 rounded-lg bg-surface border border-edge flex items-center justify-center">
+          <Image src={CursorLogo} alt="Cursor" width={24} height={24} className="object-contain" />
         </div>
-        <span className="text-[9px] text-gray-500">Cursor</span>
+        <span className="text-[9px] text-fg-subtle">Cursor</span>
       </div>
 
       <div className="flex flex-col items-center gap-1.5">
-        <div className="w-10 h-10 rounded-lg bg-white border border-gray-200 flex items-center justify-center shadow-sm">
+        <div className="w-10 h-10 rounded-lg bg-surface border border-edge flex items-center justify-center">
           <Image src={ClaudeLogo} alt="Claude Code" width={24} height={24} className="object-contain" />
         </div>
-        <span className="text-[9px] text-gray-500">Claude Code</span>
+        <span className="text-[9px] text-fg-subtle">Claude Code</span>
       </div>
     </div>
   );
@@ -78,18 +79,18 @@ function McpMockup() {
 
 function PrMockup() {
   return (
-    <div className="rounded border border-gray-200 bg-white p-3 mb-5">
+    <div className="rounded border border-edge bg-surface p-3 mb-5">
       <div className="flex items-center gap-1.5 mb-2">
-        <Image src={GithubLogo} alt="GitHub" width={12} height={12} className="object-contain" style={{ filter: "invert(1)" }} />
+        <Image src={GithubLogo} alt="GitHub" width={12} height={12} className="object-contain" />
         <GitPullRequest className="w-3 h-3 text-emerald-500 flex-shrink-0" />
-        <span className="text-[10px] font-semibold text-gray-800 truncate">fix: tool selection fallback</span>
+        <span className="text-[10px] font-semibold text-fg truncate">fix: tool selection fallback</span>
       </div>
       <div className="flex items-center gap-2 mb-2">
-        <span className="text-[9px] font-mono text-emerald-600">+3</span>
-        <span className="text-[9px] font-mono text-red-500">−1</span>
-        <span className="text-[9px] text-gray-400">checkout/agent.py</span>
+        <span className="text-[9px] font-mono text-emerald-400">+3</span>
+        <span className="text-[9px] font-mono text-red-400">−1</span>
+        <span className="text-[9px] text-fg-subtle">checkout/agent.py</span>
       </div>
-      <p className="text-[9px] text-gray-400">Auto-generated by Nexus · ready to merge</p>
+      <p className="text-[9px] text-fg-subtle">Auto-generated by Nexus · ready to merge</p>
     </div>
   );
 }
@@ -123,28 +124,21 @@ export default function IssueAction() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-20">
           {/* Header */}
-          <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="h-1 w-1 rounded-full" style={{ background: NAVY }} />
-              <span className="text-sm font-medium text-gray-500">Take Action</span>
-            </div>
-            <h2 className="font-nacelle text-2xl font-semibold text-gray-900 md:text-3xl lg:text-4xl mb-4">
-              Fix failures fast
-            </h2>
-            <p className="text-md text-gray-600 leading-relaxed">
-              Operate with complete context and ship solutions faster before more users get impacted
-            </p>
-          </div>
+          <SectionHeading
+            eyebrow="Take Action"
+            title="Fix failures fast"
+            body="Operate with complete context and ship solutions faster before more users get impacted"
+          />
 
           {/* 4-column grid, sharp corners, outer black border, inner dividers */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-gray-900">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-edge rounded-xl overflow-hidden">
             {ACTIONS.map((action, i) => {
               return (
               <div
                 key={action.title}
-                className={`p-5 md:p-6 flex flex-col bg-white ${
-                  i < 3 ? "border-b border-gray-900 lg:border-b-0 lg:border-r" : ""
-                } ${i === 1 ? "sm:border-r sm:border-gray-900" : ""}`}
+                className={`p-5 md:p-6 flex flex-col bg-surface ${
+                  i < 3 ? "border-b border-edge lg:border-b-0 lg:border-r" : ""
+                } ${i === 1 ? "sm:border-r sm:border-edge" : ""}`}
               >
                 {/* Fixed-height mockup, fades top to bottom */}
                 <div
@@ -153,10 +147,10 @@ export default function IssueAction() {
                 >
                   {action.mockup}
                 </div>
-                <h3 className="font-nacelle text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="font-nacelle text-lg font-semibold text-fg mb-2">
                   {action.title}
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-fg-muted leading-relaxed">
                   {action.description}
                 </p>
               </div>
