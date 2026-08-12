@@ -15,24 +15,24 @@
   --font-nacelle: var(--font-sans);
   --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
 
-  /* Dark surface scale (warm stone) */
-  --color-bg: #0c0a09;
-  --color-surface: #1c1917;
-  --color-surface-2: #231f1d;
-  --color-edge: #292524;
-  --color-edge-strong: #3f3a36;
+  /* Light surface scale (warm stone, mirrored from the old dark scale) */
+  --color-bg: #fafaf9;
+  --color-surface: #f5f5f4;
+  --color-surface-2: #eeecea;
+  --color-edge: #e7e5e4;
+  --color-edge-strong: #d6d3d1;
 
   /* Foreground scale */
-  --color-fg: #f5f5f4;
-  --color-fg-muted: #a8a29e;
+  --color-fg: #1c1917;
+  --color-fg-muted: #57534e;
   --color-fg-subtle: #78716c;
-  --color-fg-ghost: #57534e;
-  --color-fg-faint: #44403c;
+  --color-fg-ghost: #a8a29e;
+  --color-fg-faint: #d6d3d1;
 
   /* Accent — the Nexus blue */
   --color-accent: #2563eb;
-  --color-accent-hover: #3b82f6;
-  --color-accent-soft: #60a5fa;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-soft: #3b82f6;
 
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.5384;
@@ -108,7 +108,7 @@
   html {
     scroll-behavior: smooth;
     background-color: var(--color-bg);
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   *,
@@ -142,6 +142,18 @@
 }
 
 @layer components {
+  /* Mobile content rails keep dense groups in one row without forcing the
+     page into tall stacks. They remain touch-scrollable while the browser's
+     ornamental scrollbar stays out of the way. */
+  .mobile-rail {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .mobile-rail::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Small uppercase mono eyebrow used above section headings */
   .eyebrow {
     font-family: var(--font-mono);
@@ -149,5 +161,40 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-fg-subtle);
+  }
+
+  /* Scoped theme islands — the site is light-mode by default, but a
+     section wrapped in one of these repoints every bg-bg/text-fg/etc.
+     token for its whole subtree, since those utilities all resolve to
+     var(--color-*) at the point of use. Nothing downstream has to know
+     it's sitting in a different theme; the cascade does the work. */
+  .theme-dark {
+    --color-bg: #0c0a09;
+    --color-surface: #1c1917;
+    --color-surface-2: #231f1d;
+    --color-edge: #292524;
+    --color-edge-strong: #3f3a36;
+    --color-fg: #f5f5f4;
+    --color-fg-muted: #a8a29e;
+    --color-fg-subtle: #78716c;
+    --color-fg-ghost: #57534e;
+    --color-fg-faint: #44403c;
+    color-scheme: dark;
+  }
+
+  /* Deep navy — the same idea, tinted toward the brand blue instead of
+     neutral black, for a section that should feel like an accent beat. */
+  .theme-navy {
+    --color-bg: #0a1628;
+    --color-surface: #11213c;
+    --color-surface-2: #17294a;
+    --color-edge: #1f3358;
+    --color-edge-strong: #2c4470;
+    --color-fg: #f4f7fd;
+    --color-fg-muted: #aebedc;
+    --color-fg-subtle: #8093bb;
+    --color-fg-ghost: #5b6f9c;
+    --color-fg-faint: #3e4f77;
+    color-scheme: dark;
   }
 }

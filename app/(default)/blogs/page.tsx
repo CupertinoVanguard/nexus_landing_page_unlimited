@@ -1,9 +1,5 @@
 import Link from "next/link";
-import Header from "@/components/ui/header";
 import { posts } from "@/lib/blogs";
-
-const NAVY = "#1e3a5f";
-const BLUE = "#2d6a9f";
 
 export const metadata = {
   title: "Blog — Nexus",
@@ -12,88 +8,66 @@ export const metadata = {
 
 export default function BlogsPage() {
   return (
-    <>
-      <Header />
-      <div className="min-h-screen bg-white pt-28 pb-24">
-        <div className="mx-auto max-w-5xl px-6 sm:px-10">
-
-          {/* Hero */}
-          <div className="mb-14 border-b border-gray-200 pb-10">
-            <p
-              className="mb-3 text-xs font-bold uppercase tracking-widest"
-              style={{ color: BLUE }}
-            >
-              Blog
-            </p>
-            <h1 className="text-3xl sm:text-4xl font-bold leading-tight text-gray-900">
-              Insights &amp; Updates
-            </h1>
-            <p className="mt-3 text-gray-500 text-lg">
-              Perspectives on agents, reliability and monitoring.
-            </p>
-          </div>
-
-          {/* Post list */}
-          <ul className="divide-y divide-gray-200">
-            {posts.length === 0 ? (
-              <li className="py-12 text-gray-400">Posts coming soon.</li>
-            ) : (
-              posts.map((post) => (
-                <li key={post.slug}>
-                  <Link
-                    href={`/blogs/${post.slug}`}
-                    className="group flex flex-col gap-4 py-10 transition-colors hover:bg-stone-50 -mx-4 px-4 rounded-sm sm:flex-row sm:items-start sm:gap-8"
-                  >
-                    {/* Thumbnail */}
-                    <div className="hidden sm:block flex-shrink-0 w-48 h-28 rounded-sm overflow-hidden">
-                      <img
-                        src={post.coverImage ?? "/images/evalagent.jpg"}
-                        alt={post.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    <div className="flex-1 min-w-0">
-                      {/* Tags */}
-                      <p
-                        className="mb-2 text-xs font-bold uppercase tracking-widest"
-                        style={{ color: BLUE }}
-                      >
-                        {post.tags.join(" • ")}
-                      </p>
-
-                      {/* Title */}
-                      <h2 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:underline underline-offset-2 leading-snug mb-2">
-                        {post.title}
-                      </h2>
-
-                      {/* Excerpt */}
-                      <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-4">
-                        {post.excerpt}
-                      </p>
-
-                      {/* Author meta */}
-                      <div className="flex items-center gap-2 text-xs text-gray-400">
-                        <span
-                          className="flex items-center justify-center w-5 h-5 rounded-full text-white text-[10px] font-bold flex-shrink-0"
-                          style={{ background: NAVY }}
-                        >
-                          {post.author.initials}
-                        </span>
-                        <span className="font-medium text-gray-600">{post.author.name}</span>
-                        <span>·</span>
-                        <span>{post.date}</span>
-                        <span>·</span>
-                        <span>{post.readTime}</span>
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-              ))
-            )}
-          </ul>
+    <div className="min-h-screen bg-bg pb-24 pt-32 sm:pb-28 sm:pt-40">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+        <div className="mb-14 max-w-3xl sm:mb-16">
+          <p className="eyebrow text-accent">Blog</p>
+          <h1 className="mt-4 text-[40px] font-normal leading-[1.05] tracking-[-0.035em] text-fg sm:text-[56px]">
+            Insights &amp; updates
+          </h1>
+          <p className="mt-5 max-w-2xl font-mono text-[15px] leading-relaxed text-fg-muted">
+            Perspectives on agents, deployment context, and the systems teams
+            build around them.
+          </p>
         </div>
+
+        <ul className="border-t border-edge">
+          {posts.length === 0 ? (
+            <li className="py-12 font-mono text-sm text-fg-subtle">
+              Posts coming soon.
+            </li>
+          ) : (
+            posts.map((post) => (
+              <li key={post.slug} className="border-b border-edge">
+                <Link
+                  href={`/blogs/${post.slug}`}
+                  className="group -mx-4 grid gap-6 rounded-md px-4 py-8 transition-colors hover:bg-surface sm:grid-cols-[224px_minmax(0,1fr)] sm:items-start sm:gap-9 sm:py-10"
+                >
+                  <div className="aspect-video w-full overflow-hidden rounded-md border border-edge bg-surface sm:aspect-[16/10]">
+                    <img
+                      src={post.coverImage ?? "/images/evalagent.jpg"}
+                      alt={post.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  </div>
+
+                  <div className="min-w-0">
+                    <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-accent">
+                      {post.tags.join(" · ")}
+                    </p>
+                    <h2 className="mb-3 text-[24px] font-normal leading-tight tracking-[-0.025em] text-fg transition-colors group-hover:text-accent sm:text-[30px]">
+                      {post.title}
+                    </h2>
+                    <p className="mb-5 line-clamp-2 max-w-3xl text-[15px] leading-relaxed text-fg-muted">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] text-fg-subtle">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-fg text-[9px] font-medium text-bg">
+                        {post.author.initials}
+                      </span>
+                      <span className="text-fg-muted">{post.author.name}</span>
+                      <span aria-hidden="true">·</span>
+                      <span>{post.date}</span>
+                      <span aria-hidden="true">·</span>
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            ))
+          )}
+        </ul>
       </div>
-    </>
+    </div>
   );
 }

@@ -26,6 +26,363 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    slug: "fdes-connect-everything-problem-solved-not-quite",
+    title: "FDEs Connect Everything. Problem Solved? Not Quite.",
+    subtitle:
+      "Connecting every source makes information searchable. It does not automatically give an FDE the isolated decision history and shared team learning a deployment needs.",
+    tags: ["Forward Deployed Engineering", "Context", "Knowledge Graphs"],
+    summary: [
+      "An FDE needs a deployment's decision history, not merely access to all of its information",
+      "One shared context pool creates overload by mixing facts from unrelated deployments",
+      "Fully isolated workspaces prevent successful decisions and processes from compounding across the team",
+      "The right architecture has two layers: one brain per deployment and a cross-deployment learning layer",
+    ],
+    author: { name: "Nikhil Pillai", initials: "NP" },
+    date: "August 11, 2026",
+    readTime: "5 min read",
+    excerpt:
+      "Connect Slack, Drive, contracts, meeting notes, and calls to an agent and answers arrive instantly. But an FDE's real context problem is not access to information. It is understanding a deployment's evolving decision history without losing what the whole team should learn.",
+    coverImage: "/images/blog/fdes-connect-everything.png",
+    sections: [
+      {
+        id: "intro",
+        heading: "",
+        content: [
+          {
+            type: "paragraph",
+            text: "Connect all your tools to Claude. Slack, Drive, contracts, meeting notes, calls. Ask it a question and get an answer back instantly.",
+          },
+          { type: "paragraph", text: "Problem solved?" },
+          {
+            type: "paragraph",
+            text: "Yes and no. As a team, you can query it, go back and forth, learn as you go.",
+          },
+          {
+            type: "paragraph",
+            text: "Even as a founder, I've done exactly this, connected everything I touch and just started asking it things constantly. It works. The first few times, it feels like magic.",
+          },
+          {
+            type: "paragraph",
+            text: "So when an FDE asks for the same setup, the instinct is to say yes immediately. FDEs complain about context constantly. FDE teams hate silos.",
+          },
+          {
+            type: "paragraph",
+            text: "Getting the right information in front of an FDE fast is often the difference between a deployment moving and a deployment stalling. Connect everything, and the problem should be solved.",
+          },
+          { type: "paragraph", text: "Real FDEs know it isn't that easy. Here's why." },
+        ],
+      },
+      {
+        id: "decision-history",
+        heading: "What an FDE deals with isn't information, it's a decision history",
+        content: [
+          {
+            type: "paragraph",
+            text: "Give an agent access to your sources and it gets good at answering \"what.\" What's the contract value, what's the current SLA, what did the last call cover. That's a data analytics job: get the right numbers back, run semantic search, done.",
+          },
+          {
+            type: "paragraph",
+            text: "An FDE's job isn't a \"what\" job. The role is decision-making, customer support, and engineering rolled into one person, and none of those functions are separable from the deployment's history.",
+          },
+          {
+            type: "paragraph",
+            text: "What matters isn't just what the customer said, it's why they said it, what stage the deployment was in when they said it, and what changed as a result. Context here isn't a pile of documents. It's relational: one decision chained to the next as the deployment moves through its stages.",
+          },
+          {
+            type: "paragraph",
+            text: "Reasoning over that means inferring how something was decided, not retrieving that it was decided. That's not a search index. That's closer to a knowledge graph, a brain built for one deployment.",
+          },
+        ],
+      },
+      {
+        id: "context-overload-fallacy",
+        heading: "The context-overload fallacy",
+        content: [
+          {
+            type: "paragraph",
+            text: "So: connect every source, shared across the team, Slack, Drive, contracts, meeting notes, Linear, engineering decisions, all of it, and let the agent sort it out.",
+          },
+          {
+            type: "paragraph",
+            text: "This breaks in a specific way. Every deployment is its own product. Ask an agent a question about the customer you're running, and it will happily pull in a fact from a deployment you've never touched, because it has no way to tell that fact apart from one that actually matters to you.",
+          },
+          {
+            type: "paragraph",
+            text: "The agent isn't wrong, it's just talking too much. It can't infer relevance it was never taught to track.",
+          },
+          {
+            type: "paragraph",
+            text: "If every customer deserves one FDE, every deployment deserves its own brain, one that learns and tracks only what's relevant to that deployment. That way, the priorities and context that matter to the FDE running it are the only things that surface when they ask.",
+          },
+        ],
+      },
+      {
+        id: "silo-fallacy",
+        heading: "The silo fallacy",
+        content: [
+          {
+            type: "paragraph",
+            text: "The obvious fix is to swing the other way. Give every FDE their own workspace, keep it personal, keep each customer's context fully separate. Clean, contained, no overload.",
+          },
+          {
+            type: "paragraph",
+            text: "That's a great setup if you're running a consulting business. It's a bad one if you're running a product company.",
+          },
+          {
+            type: "paragraph",
+            text: "FDE teams live on the question of what's working and what should get pulled back into the core platform. Full isolation means every deployment lead is now personally responsible for documenting and broadcasting every lesson, by hand, or it dies with that deployment.",
+          },
+          {
+            type: "paragraph",
+            text: "Your best FDE should know how to approach a scenario without starting from zero just because a different FDE hit it first. Left fully siloed, you're not preventing overload, you're just guaranteeing your product never gets smarter.",
+          },
+        ],
+      },
+      {
+        id: "two-layers",
+        heading: "It's not one brain. It's two layers.",
+        content: [
+          {
+            type: "paragraph",
+            text: "The mistake is treating this as one context problem with one setting: connected or not, shared or not. It's two different layers that both need to be true at once.",
+          },
+          {
+            type: "paragraph",
+            text: "Each deployment needs an isolated, self-updating brain scoped to exactly what that customer and that FDE need, nothing pulled in from unrelated accounts. On top of that, a second layer has to be constantly learning across every deployment, compounding the best practices, skills, and process that make the next deployment faster than the last.",
+          },
+          {
+            type: "paragraph",
+            text: "Get both right and an FDE ships faster, gets time back to actually focus on the customer in front of them, and the product itself gets better with every deployment instead of staying flat.",
+          },
+          {
+            type: "paragraph",
+            text: "That's what we built Nexus to be: an AI context engine for the forward deployed motion, at the individual FDE level and the team level. Every deployment gets its own self-updating brain.",
+          },
+          {
+            type: "paragraph",
+            text: "Underneath that, Nexus is constantly learning across deployments to maintain a library of best practices, skills, and process the whole team compounds on. We can show it to you in fifteen minutes.",
+          },
+          { type: "paragraph", text: "Connect everything. Problem solved?" },
+          {
+            type: "paragraph",
+            text: "Yes, if you scope it to what the deployment actually needs. No, if scoping it was never part of the plan.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "context-is-changing-and-you-didnt-even-know",
+    title: "Context Is Changing, and You Didn't Even Know About It",
+    subtitle:
+      "Forward deployed engineering has become a primary motion, but its hybrid context still lives in tools built for narrower, more stable jobs.",
+    tags: ["Forward Deployed Engineering", "Deployment Context", "AI Engineering"],
+    summary: [
+      "FDE context spans customer history, code, decisions, and a deployment's constantly changing stage",
+      "As FDE-to-deployment ratios grow, context becomes an operational bottleneck and deployments turn into silos",
+      "A deployment brain needs both isolated per-customer memory and cross-deployment learning",
+      "Purpose-built context lets AI remove glue work while FDEs retain the human judgment the role requires",
+    ],
+    author: { name: "Nikhil Pillai", initials: "NP" },
+    date: "August 6, 2026",
+    readTime: "7 min read",
+    excerpt:
+      "Forward deployed engineering is now a default motion, but its context is neither narrow nor stable. The role combines engineering, customer success, and decision-making, and the existing toolchain was never built to hold that shared picture together.",
+    coverImage: "/images/blog/deployment-paradox.png",
+    sections: [
+      {
+        id: "deployment-paradox",
+        heading: "The Deployment Paradox",
+        content: [
+          {
+            type: "paragraph",
+            text: "A few years ago, forward deployed engineering was a Palantir thing. A weird, one-off model for one weird, one-off company.",
+          },
+          { type: "paragraph", text: "Now it's default." },
+          {
+            type: "paragraph",
+            text: "Ask around and you'll find it everywhere: Decagon, Sierra, Cursor, Cognition, Ramp, Rippling, Anthropic, OpenAI. Not as an experiment. As the primary motion. Even teams that consider themselves product-led — one product, one roadmap, ship it to everyone — are running an FDE org underneath, because \"ship it to everyone\" still means someone has to make it work inside this specific customer's mess of systems and edge cases.",
+          },
+          {
+            type: "paragraph",
+            text: "That shift changes what \"context\" means for the person doing the job.",
+          },
+          {
+            type: "paragraph",
+            text: "A regular engineer's context is narrow and stable: the codebase, the ticket, maybe some product analytics. You can hold most of it in your head.",
+          },
+          {
+            type: "paragraph",
+            text: "An FDE's context looks nothing like that. It's a call from last Tuesday. A Slack thread with a customer's ops lead. A doc nobody updated in three weeks. A decision made in a meeting the FDE wasn't even in. The actual codebase. And underneath all of it, a constant read on where this customer is in their journey and what happens if you get that wrong.",
+          },
+          {
+            type: "paragraph",
+            text: "That's not an engineer's context. It's a hybrid: part engineer, part customer success, part decision-maker. A supersoldier role nobody built tools for, because the tools we have were built for the engineer version of the job, not this one.",
+          },
+        ],
+      },
+      {
+        id: "rising-patchwork",
+        heading: "A Rising Patchwork That Keeps Leaking",
+        content: [
+          {
+            type: "paragraph",
+            text: "Talked to a Series A/B team recently who are living this in real time.",
+          },
+          {
+            type: "paragraph",
+            text: "They started with pods, small groups assigned to a deployment. Then customer count grew, and pods gave way to 1:1: one FDE, one deployment, full context depth, no dilution.",
+          },
+          { type: "paragraph", text: "That worked too. For a while." },
+          {
+            type: "paragraph",
+            text: "Now it's slipping. 1:1 is quietly becoming 1:2. Everyone can see where it's heading: 1:4, 1:5, because that's what happens when customer growth outpaces FDE hiring.",
+          },
+          {
+            type: "paragraph",
+            text: "Here's the part that doesn't show up on a headcount chart: every deployment has its own context, and that context isn't static. It grows. It moves through stages, discovery, build, launch, hypercare, each with a different shape of what matters right now. Multiply that by however many accounts one FDE is juggling, and you get an actual nightmare.",
+          },
+          {
+            type: "paragraph",
+            text: "What that pressure produces, eventually, is silos. The worst symptom of all of this.",
+          },
+          {
+            type: "paragraph",
+            text: "Each deployment turns into its own island, living in one person's head. Nobody else can reference it. Nobody can borrow a pattern that worked, or avoid one that's already failed somewhere else. Common complaints pile up across ten customers, unconnected, because there's no shared place for them to collide and become a signal.",
+          },
+          {
+            type: "paragraph",
+            text: "The team I talked to described exactly this: scrambling to extract what \"best practice\" even means across their deployments, mostly losing that fight. Not because anyone's bad at their job. Because nothing holds the shared picture together.",
+          },
+          {
+            type: "paragraph",
+            text: "Every deployment needs its own context. Every team also needs the context across all of them. Right now, almost nobody has both.",
+          },
+        ],
+      },
+      {
+        id: "purpose-built-context",
+        heading: "A New Age of AI & Engineering Demands Purpose-Built Context",
+        content: [
+          {
+            type: "paragraph",
+            text: "The FDE role doesn't map cleanly onto any existing job description, and that's the problem.",
+          },
+          {
+            type: "paragraph",
+            text: "They build and ship like engineers. They read and adapt to customer needs like an AE closing a deal. They carry customers through rough patches like a Customer Success rep who also writes code. One person, three jobs, stitched together by whatever context they can hold onto that week.",
+          },
+          {
+            type: "paragraph",
+            text: "Generic tooling was never going to serve this. A ticket system built for engineering doesn't know what a customer said on a call. A CRM built for sales doesn't know what broke in production last night.",
+          },
+          {
+            type: "paragraph",
+            text: "This is exactly where AI, coding agents especially, should be the unlock. An FDE with the right context behind them can hypercare a client in a way that used to take a whole team: catching drift before it becomes a fire, shipping a fix the moment it's needed, keeping five accounts moving without any of them feeling deprioritized.",
+          },
+          {
+            type: "paragraph",
+            text: "But that only happens if the context is actually there, shaped for this specific job. Not company-wide search. Something built around what an FDE's day actually looks like: customer, code, decision, repeat.",
+          },
+          {
+            type: "paragraph",
+            text: "Get that right, and the silos stop forming in the first place. The whole team gets faster, because the win on one deployment stops staying trapped in one person's head.",
+          },
+        ],
+      },
+      {
+        id: "deployment-brain-vs-company-brain",
+        heading: "A Deployment Brain vs. a Company Brain",
+        content: [
+          {
+            type: "paragraph",
+            text: "There's a version of this idea going around already: give the company a brain. One shared model of what the company knows, so people and agents stop losing context across Slack, docs, and meetings.",
+          },
+          { type: "paragraph", text: "That's a real problem. But it's not the same problem." },
+          {
+            type: "paragraph",
+            text: "A company brain is internal, built to represent one organization to itself. A deployment brain has two very different sides at once.",
+          },
+          { type: "paragraph", text: "Picture it as left and right." },
+          {
+            type: "paragraph",
+            text: "The left side is per-deployment. Each customer engagement gets its own graph, isolated and dense with everything unique to that relationship: their stack, their stakeholders, their history, their open threads. It's the FDE's working memory for that one account.",
+          },
+          {
+            type: "paragraph",
+            text: "The right side is cross-deployment. This is where the patterns live: what's worked before in a similar problem, what's failed, what three different customers all independently asked for last month. This side catches the exact thing that dies in silos, the win nobody else gets to use.",
+          },
+          {
+            type: "paragraph",
+            text: "And this isn't static. Each graph on the left keeps updating and growing as the deployment moves, through weeks, months, sometimes years. It's not a wiki someone has to remember to edit.",
+          },
+          {
+            type: "paragraph",
+            text: "The point isn't search. Search already exists. The point is a workspace built for how a deployment actually moves, so the whole motion, from first call to steady state, gets faster because the system underneath stopped leaking.",
+          },
+        ],
+      },
+      {
+        id: "final-form",
+        heading: "FDEs Reach Their Final Form",
+        content: [
+          {
+            type: "paragraph",
+            text: "Give an FDE a deployment brain, and something changes about what the role even is.",
+          },
+          {
+            type: "paragraph",
+            text: "Right now, a huge share of the job is glue work that has nothing to do with judgment: tracking what changed, remembering what was promised, chasing what stage a deployment is in, manually stitching together information that already exists somewhere.",
+          },
+          {
+            type: "paragraph",
+            text: "Take that away, and what's left is the part that can't be automated: understanding a customer's journey well enough to know what they need before they ask.",
+          },
+          {
+            type: "paragraph",
+            text: "With the right context and AI, an FDE stops manually tracking shifting priorities, the system tracks it. Stops chasing where a deployment stands, it's visible. Starts shipping fixes autonomously through coding agents instead of context-switching into \"now I write code\" mode. For product-led teams, the patterns that used to die in silos start flowing back into the core product on their own.",
+          },
+          {
+            type: "paragraph",
+            text: "On every front, context is what makes the motion self-managing. Not self-managing in the sense that FDEs disappear, the opposite. They become the piece of this that was never automatable: the human interface for the most heterogeneous, judgment-heavy part of the process. Every customer is different. Every deployment breaks differently. That part stays human.",
+          },
+          { type: "paragraph", text: "What stops being human is the burden around it. That's the whole point." },
+        ],
+      },
+      {
+        id: "why-we-built-nexus",
+        heading: "Why We Built Nexus",
+        content: [
+          {
+            type: "paragraph",
+            text: "We pivoted Nexus to this less than two weeks ago, because we'd already been staring straight at it.",
+          },
+          {
+            type: "paragraph",
+            text: "For months before that, we were basically pseudo-forward-deployed ourselves, embedded with teams, watching how the work actually happened. And across every one of those teams, the loudest complaints came from the people doing agent deployments. They had almost no hours in a week to build anything for themselves. Stuck in the stone age, doing this high-leverage job with none of the tooling that should exist for it.",
+          },
+          { type: "paragraph", text: "So we built the thing that should exist." },
+          {
+            type: "paragraph",
+            text: "We want to give every company an AI context engine and a unified workspace to manage their deployments and context, automatically. Every deployment gets a self-updating brain. Cross-deployment context surfaces the patterns that used to die in silos, so the whole team moves faster together instead of each person re-solving the same problem alone.",
+          },
+          {
+            type: "paragraph",
+            text: "The deployments update, grow, and learn as they go. Execution stops being about thinking and stitching context together by hand, and starts being about just doing the work.",
+          },
+          {
+            type: "paragraph",
+            text: "Managing this knowledge in someone's head, or scattered across a dozen tools, is a 2022 way of working. The FDE motion has outgrown it, and the timing for this shift is now. AI needs context to actually help these teams, not just generate more noise for them to manage.",
+          },
+          {
+            type: "paragraph",
+            text: "That's what Nexus gives them. Context, built for the way they actually work, so the forward deployed motion can move as fast as it's supposed to.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "the-interesting-case-of-domain-specific-agents",
     title: "The Interesting Case of Domain-Specific Agents",
     subtitle:

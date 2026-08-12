@@ -27,10 +27,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 py-16 sm:grid-cols-2">
           <div>
             <p className="text-[15px] font-semibold tracking-tight text-fg">
-              nexus
+              Nexus
             </p>
             <p className="mt-2 font-mono text-[13px] text-fg-subtle">
-              AI FDE that never forgets anything
+              The AI context engine for your deployments
             </p>
           </div>
 

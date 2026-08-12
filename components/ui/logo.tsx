@@ -18,7 +18,7 @@ export default function Logo() {
         priority
       />
       <span className="text-[19px] font-semibold tracking-tight text-fg">
-        nexus
+        Nexus
       </span>
     </Link>
   );

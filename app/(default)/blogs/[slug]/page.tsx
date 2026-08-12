@@ -1,10 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Header from "@/components/ui/header";
 import { getPost, posts, ContentBlock } from "@/lib/blogs";
-
-const NAVY = "#1e3a5f";
-const BLUE = "#2d6a9f";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -20,21 +16,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 function Block({ block }: { block: ContentBlock }) {
   if (block.type === "paragraph") {
     return (
-      <p className="text-gray-600 leading-relaxed mb-4 text-base">{block.text}</p>
+      <p className="mb-5 text-[16px] leading-[1.75] text-fg-muted sm:text-[17px]">
+        {block.text}
+      </p>
     );
   }
   if (block.type === "image") {
     return (
-      <figure className="my-8">
-        <div className="w-full rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+      <figure className="my-10">
+        <div className="w-full overflow-hidden rounded-md border border-edge bg-surface">
           <img
             src={block.src}
             alt={block.alt}
-            className="w-full h-auto object-contain"
+            className="h-auto w-full object-contain"
           />
         </div>
         {block.caption && (
-          <figcaption className="mt-3 text-xs text-gray-400 leading-relaxed text-center italic">
+          <figcaption className="mt-3 text-center font-mono text-[11px] leading-relaxed text-fg-subtle">
             {block.caption}
           </figcaption>
         )}
@@ -43,28 +41,25 @@ function Block({ block }: { block: ContentBlock }) {
   }
   if (block.type === "image-comparison") {
     return (
-      <figure className="my-8 -mx-4 sm:-mx-8 md:-mx-12">
+      <figure className="my-10 -mx-4 sm:-mx-8 md:-mx-12">
         <div className="flex flex-col gap-6">
           {block.images.map((img, i) => (
             <div key={i} className="flex flex-col gap-2">
-              <span
-                className="px-4 sm:px-8 md:px-12 text-xs font-semibold uppercase tracking-widest"
-                style={{ color: BLUE }}
-              >
+              <span className="px-4 font-mono text-[11px] uppercase tracking-[0.14em] text-accent sm:px-8 md:px-12">
                 {img.label}
               </span>
-              <div className="w-full overflow-hidden border-y border-gray-100 shadow-sm bg-gray-50">
+              <div className="w-full overflow-hidden rounded-md border border-edge bg-surface">
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="w-full h-auto object-contain"
+                  className="h-auto w-full object-contain"
                 />
               </div>
             </div>
           ))}
         </div>
         {block.caption && (
-          <figcaption className="mt-5 px-4 sm:px-8 md:px-12 text-xs text-gray-400 leading-relaxed text-center italic">
+          <figcaption className="mt-5 px-4 text-center font-mono text-[11px] leading-relaxed text-fg-subtle sm:px-8 md:px-12">
             {block.caption}
           </figcaption>
         )}
@@ -72,10 +67,10 @@ function Block({ block }: { block: ContentBlock }) {
     );
   }
   return (
-    <ul className="mb-4 space-y-2 pl-1">
+    <ul className="mb-6 space-y-3 pl-1">
       {block.items.map((item, i) => (
-        <li key={i} className="flex gap-3 text-gray-600 text-base leading-relaxed">
-          <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full" style={{ background: BLUE }} />
+        <li key={i} className="flex gap-3 text-[16px] leading-[1.75] text-fg-muted sm:text-[17px]">
+          <span className="mt-[0.7em] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
           {item}
         </li>
       ))}
@@ -89,74 +84,62 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound();
 
   return (
-    <>
-      <Header />
-      <div className="min-h-screen bg-white pt-24 pb-24">
+    <div className="min-h-screen bg-bg pb-24 pt-28 sm:pb-28 sm:pt-32">
 
-        {/* Back link */}
-        <div className="mx-auto max-w-5xl px-6 sm:px-10 pt-6 mb-10">
+        <div className="mx-auto mb-12 max-w-7xl px-6 pt-6 sm:px-10">
           <Link
             href="/blogs"
-            className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-gray-700 transition-colors"
+            className="font-mono text-[11px] uppercase tracking-[0.14em] text-fg-subtle transition-colors hover:text-accent"
           >
-            ← All Posts
+            &larr; All posts
           </Link>
         </div>
 
-        {/* Post header — centered */}
-        <div className="mx-auto max-w-2xl px-6 sm:px-10 text-center mb-10">
-          <p
-            className="mb-4 text-xs font-bold uppercase tracking-widest"
-            style={{ color: BLUE }}
-          >
-            {post.tags.join(" • ")}
+        <header className="mx-auto mb-12 max-w-4xl px-6 sm:px-10">
+          <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.14em] text-accent">
+            {post.tags.join(" · ")}
           </p>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-4">
+          <h1 className="mb-5 text-[38px] font-normal leading-[1.06] tracking-[-0.035em] text-fg sm:text-[52px] md:text-[60px]">
             {post.title}
           </h1>
-          <p className="text-lg text-gray-500 mb-6 leading-relaxed">{post.subtitle}</p>
+          <p className="mb-7 max-w-3xl font-mono text-[15px] leading-relaxed text-fg-muted">
+            {post.subtitle}
+          </p>
 
-          {/* Author meta */}
-          <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
-            <span
-              className="flex items-center justify-center w-7 h-7 rounded-full text-white text-xs font-bold flex-shrink-0"
-              style={{ background: NAVY }}
-            >
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] text-fg-subtle">
+            <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-fg text-[10px] font-medium text-bg">
               {post.author.initials}
             </span>
-            <span className="font-medium text-gray-700">{post.author.name}</span>
-            <span>·</span>
+            <span className="text-fg-muted">{post.author.name}</span>
+            <span aria-hidden="true">·</span>
             <span>{post.date}</span>
-            <span>·</span>
+            <span aria-hidden="true">·</span>
             <span>{post.readTime}</span>
           </div>
-        </div>
+        </header>
 
-        {/* Featured image */}
-        <div className="mx-auto max-w-4xl px-6 sm:px-10 mb-14">
-          <div className="w-full h-52 sm:h-72 rounded-sm overflow-hidden">
+        <div className="mx-auto mb-16 max-w-6xl px-6 sm:px-10">
+          <div className="aspect-[16/8] w-full overflow-hidden rounded-md border border-edge bg-surface">
             <img
               src={post.coverImage ?? "/images/evalagent.jpg"}
               alt={post.title}
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
             />
           </div>
         </div>
 
-        {/* Two-column: TOC + content */}
-        <div className="mx-auto max-w-5xl px-6 sm:px-10 flex flex-col md:flex-row gap-12">
+        <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 sm:px-10 md:flex-row md:gap-16">
 
-          {/* Sticky TOC */}
           <aside className="hidden md:block w-52 flex-shrink-0">
             <div className="sticky top-28">
-              <p className="mb-4 text-xs font-bold uppercase tracking-widest text-gray-400">
-                On This Page
+              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.14em] text-fg-subtle">
+                On this page
               </p>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="#summary"
-                    className="text-sm text-gray-400 hover:text-gray-900 transition-colors leading-snug block"
+                    className="block text-[13px] leading-snug text-fg-subtle transition-colors hover:text-accent"
                   >
                     Summary
                   </a>
@@ -167,7 +150,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <li key={section.id}>
                       <a
                         href={`#${section.id}`}
-                        className="text-sm text-gray-400 hover:text-gray-900 transition-colors leading-snug block"
+                        className="block text-[13px] leading-snug text-fg-subtle transition-colors hover:text-accent"
                       >
                         {section.heading}
                       </a>
@@ -177,60 +160,48 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
           </aside>
 
-          {/* Article body */}
-          <article className="flex-1 min-w-0 max-w-2xl">
+          <article className="min-w-0 max-w-3xl flex-1">
 
-            {/* Summary box */}
             <div
               id="summary"
-              className="mb-10 scroll-mt-28 border-l-4 pl-5 py-1"
-              style={{ borderColor: BLUE }}
+              className="mb-12 scroll-mt-28 rounded-md border border-edge bg-surface px-6 py-6 sm:px-7"
             >
-              <p
-                className="text-xs font-bold uppercase tracking-widest mb-3"
-                style={{ color: BLUE }}
-              >
+              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.14em] text-accent">
                 Summary
               </p>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {post.summary.map((point, i) => (
-                  <li key={i} className="flex gap-3 text-gray-600 text-sm leading-relaxed">
-                    <span
-                      className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full"
-                      style={{ background: BLUE }}
-                    />
+                  <li key={i} className="flex gap-3 text-[14px] leading-relaxed text-fg-muted">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
                     {point}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Sections */}
             {post.sections.map((section) => (
-              <div key={section.id} id={section.id} className="mb-10 scroll-mt-28">
+              <section key={section.id} id={section.id} className="mb-12 scroll-mt-28">
                 {section.heading && (
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                  <h2 className="mb-5 text-[26px] font-normal tracking-[-0.025em] text-fg sm:text-[32px]">
                     {section.heading}
                   </h2>
                 )}
                 {section.content.map((block, i) => (
                   <Block key={i} block={block} />
                 ))}
-              </div>
+              </section>
             ))}
 
-            {/* Back link */}
-            <div className="mt-10 pt-8 border-t border-gray-200">
+            <div className="mt-12 border-t border-edge pt-8">
               <Link
                 href="/blogs"
-                className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-gray-700 transition-colors"
+                className="font-mono text-[11px] uppercase tracking-[0.14em] text-fg-subtle transition-colors hover:text-accent"
               >
-                ← All Posts
+                &larr; All posts
               </Link>
             </div>
           </article>
         </div>
-      </div>
-    </>
+    </div>
   );
 }
