@@ -71,7 +71,7 @@ export default function HeroHome() {
                   href={WAITLIST_URL}
                   className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap bg-accent px-6 py-3 text-[14px] font-medium text-white transition-colors hover:bg-accent-hover"
                 >
-                  Join the waitlist
+                  Join waitlist
                   <span aria-hidden="true">&rarr;</span>
                 </a>
                 <a
