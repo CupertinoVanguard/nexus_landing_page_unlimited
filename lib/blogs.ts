@@ -26,6 +26,199 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    slug: "change-management-is-a-context-problem",
+    title: "Change management is a context problem",
+    subtitle:
+      "The hardest part of an AI deployment is often work the organization has already done, captured in a form the next team cannot reach.",
+    tags: ["Change Management", "Forward Deployed Engineering", "Context"],
+    summary: [
+      "Change management stays hard because deployment decisions, workarounds, and stakeholder context are rarely captured in a reusable form",
+      "Scattered context makes an account difficult to reconstruct, while siloed deployments prevent teams from learning from one another",
+      "Wikis and source retrieval still depend on manual upkeep or flatten decision chains into disconnected facts",
+      "A self-updating, cross-deployment context layer lets every engagement build on the lessons of the last",
+    ],
+    author: { name: "Nikhil Pillai", initials: "NP" },
+    date: "August 20, 2026",
+    readTime: "6 min read",
+    excerpt:
+      "Change management is usually framed as a people problem. In practice, it stays hard because the reasoning, decisions, and workarounds from one deployment rarely reach the next.",
+    coverImage: "/images/blog/change-management-context.png",
+    sections: [
+      {
+        id: "intro",
+        heading: "",
+        content: [
+          {
+            type: "paragraph",
+            text: "Someone posted two words on X last week: \"Change management.\" An FDE at OpenAI replied: \"probably the hardest part of the job.\"",
+          },
+          {
+            type: "paragraph",
+            text: "That's worth sitting with, not because deployment work being hard is surprising, but because of who was saying it. This is OpenAI: best models in the world, engineers who can build almost anything, and a customer who has already signed.",
+          },
+          {
+            type: "paragraph",
+            text: "Every technical advantage available, and the hardest part of the job is still getting a room full of people to change how they work. If that's the hardest part there, it isn't a problem you solve by hiring better.",
+          },
+        ],
+      },
+      {
+        id: "people-problem",
+        heading: "Everyone reads this as a people problem",
+        content: [
+          {
+            type: "paragraph",
+            text: "The default interpretation is that change management is about soft skills. Stakeholder wrangling, executive buy-in, the ops lead who quietly hates the rollout and slows it down for four weeks without ever saying no out loud.",
+          },
+          {
+            type: "paragraph",
+            text: "All of that is real, but it isn't why change management stays hard forever. It stays hard because almost none of it is written down anywhere the next deployment can reach.",
+          },
+          {
+            type: "paragraph",
+            text: "Think about what it actually consists of. Which process you're replacing and which one you're leaving alone. Who signed off, and what they were actually agreeing to versus what they thought they were agreeing to. The workaround you built in week three because the approval chain had an undocumented step.",
+          },
+          {
+            type: "paragraph",
+            text: "None of that is soft. It's specific, hard-won, expensive to acquire, and almost entirely undocumented.",
+          },
+        ],
+      },
+      {
+        id: "fde-model-compounds",
+        heading: "The whole premise of the FDE model is that this compounds",
+        content: [
+          {
+            type: "paragraph",
+            text: "The reason the model works is that the first deployment subsidizes the next one. You accept bad margins on customer one because what you learn gets absorbed into how you run customer two.",
+          },
+          {
+            type: "paragraph",
+            text: "The fifth should be faster than the second, and by the twentieth you're solving a harder class of problem for the same effort. Every deployment is supposed to leave the organization smarter than it found it.",
+          },
+          {
+            type: "paragraph",
+            text: "So deployment number nine should be meaningfully easier than number one. Ask anyone running an FDE team whether it actually is.",
+          },
+        ],
+      },
+      {
+        id: "deployment-nine",
+        heading: "In practice, number nine starts a lot like number one",
+        content: [
+          {
+            type: "paragraph",
+            text: "Two things break the loop, and most teams have both.",
+          },
+          {
+            type: "paragraph",
+            text: "The context is scattered. The reasoning behind a decision lives in a Slack thread, the requirement lives in a call recording nobody re-listened to, and the revised scope lives in a doc that stopped being true a month ago. The actual state of the engagement lives in one engineer's head, where it's genuinely current, which is exactly the problem.",
+          },
+          {
+            type: "paragraph",
+            text: "The deployments are siloed. Even when one team documents well, that record is scoped to that account. The FDE on a different customer, hitting a nearly identical approval-chain problem, has no way to know it was already solved.",
+          },
+          {
+            type: "paragraph",
+            text: "Scattered context means you can't reconstruct your own account. Siloed deployments mean you can't learn from anyone else's. Together they guarantee each engagement restarts from close to zero, on the customer's clock.",
+          },
+        ],
+      },
+      {
+        id: "person-is-the-fix",
+        heading: "Right now the fix is a person, and that's why it doesn't hold",
+        content: [
+          {
+            type: "paragraph",
+            text: "The standard answer is discipline. Write better docs, run retros, maintain the playbook.",
+          },
+          {
+            type: "paragraph",
+            text: "This fails for reasons that have nothing to do with whether the team is any good. Codifying a best practice means noticing that what just happened is generalizable, deciding it's worth writing up, writing it so a stranger can use it, then keeping it current as the product changes underneath it.",
+          },
+          {
+            type: "paragraph",
+            text: "All of that competes with the deployment they're currently being measured on, and nobody wins that tradeoff consistently. The FDE closest to the lesson has the least time to record it.",
+          },
+          {
+            type: "paragraph",
+            text: "What does get written has a short half-life anyway, because the author rotates to another account, the product ships three releases, and the doc silently becomes wrong. The result is a team that keeps re-solving problems it already solved.",
+          },
+        ],
+      },
+      {
+        id: "querying-is-not-learning",
+        heading: "Querying your sources is not the same as learning a process",
+        content: [
+          {
+            type: "paragraph",
+            text: "There are two versions of the obvious objection, and both deserve a straight answer.",
+          },
+          {
+            type: "paragraph",
+            text: "The first is the wiki. Confluence exists, Notion exists, and every one of these teams already has a knowledge base.",
+          },
+          {
+            type: "paragraph",
+            text: "The problem was never a missing container. It's that every container built so far assumes a human will keep it current, and a system that only knows what someone remembered to type into it will always lag the engagement.",
+          },
+          {
+            type: "paragraph",
+            text: "The second objection is newer: why not plug all the sources into a model and ask it questions? You can, and you'll get real answers back.",
+          },
+          {
+            type: "paragraph",
+            text: "But retrieval and deployment knowledge are different things. What an FDE carries isn't a set of facts to look up, it's a decision chain: why a scope got cut, what that traded away, which stakeholder it unblocked, and what that implies for the next customer with a similar org chart.",
+          },
+          {
+            type: "paragraph",
+            text: "That has to be learned, kept current, and traversed in order. Search across a pile of documents flattens it into disconnected answers that read plausible and miss the reasoning.",
+          },
+          {
+            type: "paragraph",
+            text: "A senior FDE at Ranger put it plainly when we described this to him: \"overloading an agent with sources\" doesn't reliably produce good output for the FDE job. The sources are necessary. They were never sufficient.",
+          },
+        ],
+      },
+      {
+        id: "what-were-building",
+        heading: "What we're building",
+        content: [
+          {
+            type: "paragraph",
+            text: "We built Nexus (trynexus.io) as a unified workspace for all of your deployments. It keeps each deployment's context up to date automatically, pulling from the tools the work already happens in, and pools best practices and decisions across deployments back into the core product.",
+          },
+          {
+            type: "paragraph",
+            text: "Two properties matter more than any feature. The context updates without anyone maintaining it, so it doesn't go stale the week after kickoff.",
+          },
+          {
+            type: "paragraph",
+            text: "And it's cross-deployment aware, so a pattern that worked on one customer is already known to the next. It isn't a place to store lessons, it's a layer that notices them and carries them forward.",
+          },
+        ],
+      },
+      {
+        id: "back-to-the-start",
+        heading: "Back to the thing that started this",
+        content: [
+          {
+            type: "paragraph",
+            text: "The OpenAI FDE who said change management is the hardest part of the job wasn't complaining about people being difficult. The hardest part of his job is work his organization has almost certainly done before, in a form he cannot reach.",
+          },
+          {
+            type: "paragraph",
+            text: "If that's true at OpenAI, it's true at every AI company staffing deployment teams right now.",
+          },
+          {
+            type: "paragraph",
+            text: "Deployments should compound. Right now they mostly just repeat.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "fdes-connect-everything-problem-solved-not-quite",
     title: "FDEs Connect Everything. Problem Solved? Not Quite.",
     subtitle:
